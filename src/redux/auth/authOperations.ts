@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { logInApi } from "../../services/authApi";
+import { logInApi, verificationLogInApi } from "../../services/authApi";
 
-import type { Credentials } from "../../types/auth";
+import type { Credentials, VerifyData, Token } from "../../types/auth";
 
 export const logInThunk = createAsyncThunk<
   Credentials,
@@ -10,6 +10,20 @@ export const logInThunk = createAsyncThunk<
 >("auth/login", async (credentials, { rejectWithValue }) => {
   try {
     const data = await logInApi(credentials);
+
+    return data;
+  } catch (error: any) {
+    return rejectWithValue(error.message);
+  }
+});
+
+export const verificationThunk = createAsyncThunk<
+  Token,
+  VerifyData,
+  { rejectValue: string }
+>("auth/verify", async (credentials, { rejectWithValue }) => {
+  try {
+    const data = await verificationLogInApi(credentials);
 
     return data;
   } catch (error: any) {

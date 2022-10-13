@@ -4,7 +4,7 @@ import Container from "../container/Container";
 import Loader from "../loader/Loader";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/reduxHooks";
-import { isExistToken } from '../../redux/auth/authSelectors';
+import { isExistToken } from "../../redux/auth/authSelectors";
 
 const SharedLoyaout: React.FC = () => {
   const isLoggedIn = useAppSelector(isExistToken);
@@ -12,8 +12,8 @@ const SharedLoyaout: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (pathname === '/') {
-      isLoggedIn ? navigate('albums') : navigate('auth');
+    if (pathname === "/") {
+      isLoggedIn ? navigate("onboard") : navigate("auth");
     }
   }, [isLoggedIn, navigate, pathname]);
 

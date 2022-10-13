@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import type { Credentials } from "../types/auth";
+import type { Credentials, VerifyData } from "../types/auth";
 
 axios.defaults.baseURL =
   "https://77hfz4zquh.execute-api.eu-west-2.amazonaws.com/dev";
@@ -20,8 +20,10 @@ export const logInApi = async (creadentials: Credentials) => {
   return data;
 };
 
-export const verificationLogInApi = async (creadentials: Credentials) => {
+export const verificationLogInApi = async (creadentials: VerifyData) => {
+  console.log(creadentials);
   const { data } = await axios.post("client/verifyOtp", creadentials);
+  saveToken.set(data.token);
 
   return data;
 };

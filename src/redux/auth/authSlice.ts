@@ -1,5 +1,5 @@
 import { AnyAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { logInThunk } from "./authOperations";
+import { logInThunk, verificationThunk } from "./authOperations";
 
 type Auth = {
   accessToken: string;
@@ -30,6 +30,17 @@ const authSlice = createSlice({
       })
       .addCase(logInThunk.fulfilled, (state, { payload }) => {
         state.number = payload.number;
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(verificationThunk.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(verificationThunk.fulfilled, (state, { payload }) => {
+        state.accessToken = payload.token;
+        state.isLoggedIn = true;
+        state.number = "";
         state.isLoading = false;
         state.error = null;
       })

@@ -6,6 +6,27 @@ export const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  & div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  & input {
+    width: 45px;
+    height: 40px;
+    background-color: ${(p) => p.theme.colors.backgroundInput};
+    color: ${(p) => p.theme.colors.primary};
+    border: ${(p) => p.theme.borders.none};
+    border-radius: 10px;
+    font-size: ${(p) => p.theme.fontSizes.s};
+    line-height: ${(p) => p.theme.lineHeights.secondary};
+    text-align: center;
+    padding: 0;
+  }
 `;
 
 export const Title = styled.h2`
@@ -25,25 +46,11 @@ export const InfoText = styled.b`
   margin-bottom: 20px;
 `;
 
-export const Input = styled.input`
-  width: calc(100% - 26px);
-  background-color: ${(p) => p.theme.colors.backgroundInput};
-  border: ${(p) => p.theme.borders.normal};
-  border-radius: 10px;
-  font-size: ${(p) => p.theme.fontSizes.s};
-  line-height: 1.31;
-  display: inline-flex;
-  align-items: center;
-  padding: 14px 13px;
-  color: ${(p) => p.theme.colors.primary};
-  margin-bottom: 20px;
-`;
-
 export const ResendCode = styled.button`
   cursor: pointer;
   background-color: transparent;
   color: ${(p) => p.theme.colors.accent};
-  border: none;
+  border: ${(p) => p.theme.borders.none};
   text-align: start;
   font-size: ${(p) => p.theme.fontSizes.s};
   line-height: ${(p) => p.theme.lineHeights.secondary};

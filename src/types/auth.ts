@@ -5,3 +5,8 @@ export type Credentials = {
 export type Token = {
   token: string;
 };
+
+export type VerifyData = {
+  number: string;
+  code: string;
+};
