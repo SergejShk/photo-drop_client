@@ -36,6 +36,7 @@ export const Avatar = styled.img`
 
 export const BtnAddAvatar = styled.button`
   position: absolute;
+  z-index: 10;
   right: 0;
   bottom: 0;
   width: 42px;
