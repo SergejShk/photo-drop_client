@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h2`
+  font-family: ${(p) => p.theme.fonts.heading};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   font-size: ${(p) => p.theme.fontSizes.l};
   line-height: ${(p) => p.theme.lineHeights.title};
@@ -17,6 +18,7 @@ export const Title = styled.h2`
 `;
 
 export const Text = styled.p`
+  font-family: ${(p) => p.theme.fonts.body};
   font-size: ${(p) => p.theme.fontSizes.m};
   line-height: ${(p) => p.theme.lineHeights.body};
   color: ${(p) => p.theme.colors.primary};

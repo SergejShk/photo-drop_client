@@ -49,6 +49,7 @@ export const FormStyled = styled.form`
 
 export const Title = styled.h2`
   margin: 0 auto;
+  font-family: ${(p) => p.theme.fonts.heading};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   font-size: ${(p) => p.theme.fontSizes.l};
   line-height: ${(p) => p.theme.lineHeights.title};
