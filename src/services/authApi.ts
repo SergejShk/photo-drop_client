@@ -21,7 +21,6 @@ export const logInApi = async (creadentials: Credentials) => {
 };
 
 export const verificationLogInApi = async (creadentials: VerifyData) => {
-  console.log(creadentials);
   const { data } = await axios.post("client/verifyOtp", creadentials);
   saveToken.set(data.token);
 
