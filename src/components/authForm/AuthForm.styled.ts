@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 export const FormStyled = styled.form`
   width: 100%;
-  height: calc(100vh - 55px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 136px;
 
   & .react-tel-input {
     position: static;
@@ -18,22 +17,23 @@ export const FormStyled = styled.form`
   & .react-tel-input .flag-dropdown {
     position: static;
     width: 70px;
+    height: 40px;
     background-color: ${(p) => p.theme.colors.backgroundInput};
     border: ${(p) => p.theme.borders.normal};
     border-radius: 10px;
     font-size: ${(p) => p.theme.fontSizes.s};
     line-height: 1.31;
     align-items: center;
-    padding: 14px 13px;
+    padding: 8px 32px 7px 8px;
     color: ${(p) => p.theme.colors.primary};
     margin-right: 10px;
-    padding: 14px 13px;
     margin-bottom: 0;
   }
 
   & .react-tel-input .form-control {
     position: static;
     width: 100%;
+    height: 40px;
     background-color: ${(p) => p.theme.colors.backgroundInput};
     border: ${(p) => p.theme.borders.normal};
     border-radius: 10px;
@@ -41,7 +41,7 @@ export const FormStyled = styled.form`
     line-height: 1.31;
     display: inline-flex;
     align-items: center;
-    padding: 14px 13px;
+    padding: 15px 13px 14px 13px;
     color: ${(p) => p.theme.colors.primary};
     margin-bottom: 20px;
   }
@@ -57,7 +57,7 @@ export const Title = styled.h2`
   margin-bottom: 14px;
 `;
 
-export const CallText = styled.b`
+export const CallText = styled.p`
   font-weight: ${(p) => p.theme.fontWeights.medium};
   font-size: ${(p) => p.theme.fontSizes.m};
   line-height: ${(p) => p.theme.lineHeights.body};
@@ -75,7 +75,7 @@ export const Button = styled.button`
   font-size: ${(p) => p.theme.fontSizes.m};
   line-height: ${(p) => p.theme.lineHeights.body};
   color: ${(p) => p.theme.colors.white};
-  padding: 14px 20px;
+  padding: 14px 20px 13px 20px;
   margin-bottom: 20px;
   border: none;
 `;

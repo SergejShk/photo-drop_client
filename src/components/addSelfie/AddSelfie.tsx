@@ -31,35 +31,34 @@ const AddSelfie: React.FC = () => {
     restrictions: { maxNumberOfFiles: 1 },
     autoProceed: true,
   });
-  uppy
-    .use(AwsS3, {
-      async getUploadParameters(file: any): Promise<any> {
-        try {
-          const { data } = await axios.post(`/client/selfie`, {
-            extension: file.name.split(".").reverse()[0],
-          });
+  uppy.use(AwsS3, {
+    async getUploadParameters(file: any): Promise<any> {
+      try {
+        const { data } = await axios.post(`/client/selfie`, {
+          extension: file.name.split(".").reverse()[0],
+        });
 
-          return {
-            method: data.data.method,
-            url: data.data.url,
-            fields: data.data.fields,
-            headers: {
-              "Content-Type": file.type,
-            },
-          };
-        } catch (error) {
-          console.log(error);
-        }
-      },
-    })
-    .use(Webcam, {
-      modes: ["picture"],
-      mirror: true,
-      videoConstraints: {
-        facingMode: "user",
-      },
-      // mobileNativeCamera: isMobile({ tablet: true }),
-    });
+        return {
+          method: data.data.method,
+          url: data.data.url,
+          fields: data.data.fields,
+          headers: {
+            "Content-Type": file.type,
+          },
+        };
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
+  uppy.use(Webcam, {
+    modes: ["picture"],
+    mirror: true,
+    videoConstraints: {
+      facingMode: "user",
+    },
+    // mobileNativeCamera: isMobile({ tablet: true }),
+  });
 
   return (
     <Wrapper>

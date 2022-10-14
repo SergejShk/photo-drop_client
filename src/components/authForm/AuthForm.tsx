@@ -34,7 +34,9 @@ const AuthForm: React.FC = () => {
       <CallText>Enter your phone number</CallText>
       <PhoneInput country={"us"} value={phone} onChange={handleChange} />
 
-      <Button type="submit">Create account</Button>
+      <Button type="submit" disabled={Number(phone) < 5 ? true : false}>
+        Create account
+      </Button>
       <PolicyText>
         By proceeding, you consent to get WhatsApp or SMS messages, from
         PhotoDrop and its affiliates to the number provided. Text “STOP” to
