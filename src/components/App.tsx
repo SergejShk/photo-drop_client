@@ -5,6 +5,8 @@ import PublicRoute from "./routes/PublicRoute";
 import SharedLoyaout from "./sharedLoyaout/SharedLoyaout";
 
 const HomePage = lazy(() => import("../pages/HomePage"));
+const TermsPage = lazy(() => import("../pages/TermsPage"));
+const PolicyPage = lazy(() => import("../pages/PolicyPage"));
 const VerificationPage = lazy(() => import("../pages/VerificationPage"));
 const OnboardPage = lazy(() => import("../pages/OnboardPage"));
 
@@ -19,7 +21,23 @@ const App: React.FC = () => {
               <HomePage />
             </PublicRoute>
           }
-        ></Route>
+        />
+        <Route
+          path="terms"
+          element={
+            <PublicRoute>
+              <TermsPage />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="policy"
+          element={
+            <PublicRoute>
+              <PolicyPage />
+            </PublicRoute>
+          }
+        />
         <Route
           path="verification"
           element={

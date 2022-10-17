@@ -34,7 +34,7 @@ const VerificationForm: React.FC = () => {
       <InfoText>
         Enter the code sent to <b>{number}</b>
       </InfoText>
-      <AuthCode onChange={handleChange} />
+      <AuthCode allowedCharacters="numeric" onChange={handleChange} />
       <ResendCode
         type="button"
         onClick={() => dispatch(logInThunk({ number }))}

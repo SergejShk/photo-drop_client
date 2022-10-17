@@ -83,11 +83,14 @@ export const Button = styled.button`
 export const PolicyText = styled.p`
   font-size: ${(p) => p.theme.fontSizes.xs};
   line-height: ${(p) => p.theme.lineHeights.body};
-  display: flex;
-  align-items: center;
   color: ${(p) => p.theme.colors.secondary};
 
   &:not(:last-child) {
     margin-bottom: 38px;
+  }
+
+  & a {
+    border-bottom: 1px solid #3300cc;
+    margin-left: 3px;
   }
 `;

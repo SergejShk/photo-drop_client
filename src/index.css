@@ -8,7 +8,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: "Futura PT, sans-serif";
+    font-family: "futura-pt, sans-serif";
 }
 
 code {
@@ -42,4 +42,8 @@ img {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

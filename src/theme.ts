@@ -8,10 +8,9 @@ export const theme = {
     background: "#fff",
     backgroundInput: "#f4f4f4",
   },
-  space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
-    body: "Futura PT, sans-serif",
-    heading: "Termina, sans-serif",
+    body: "futura-pt, sans-serif",
+    heading: "termina, sans-serif",
   },
   fontSizes: {
     xs: "14px",

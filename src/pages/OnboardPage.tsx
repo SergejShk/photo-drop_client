@@ -1,7 +1,7 @@
-import AddSelfie from "../components/addSelfie/AddSelfie";
+import AddSelfie from "../components/onboard/Onboard";
 
 const OnboardPage = () => {
-  return <AddSelfie/>;
+  return <AddSelfie />;
 };
 
 export default OnboardPage;

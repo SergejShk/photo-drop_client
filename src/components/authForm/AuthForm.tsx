@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { Link } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/reduxHooks";
 import { logInThunk } from "../../redux/auth/authOperations";
 
@@ -43,8 +44,9 @@ const AuthForm: React.FC = () => {
         89203 to opt out.
       </PolicyText>
       <PolicyText>
-        By continuing, you indicate that you have read and agree to our Terms of
-        Use & Privacy Policy
+        By continuing, you indicate that you have read and agree to our
+        <Link to="/terms">Terms of Use</Link> &
+        <Link to="/policy">Privacy Policy</Link>
       </PolicyText>
     </FormStyled>
   );

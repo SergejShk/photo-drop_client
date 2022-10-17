@@ -1,7 +1,6 @@
 import React, { useEffect, Suspense } from "react";
 import Header from "../header/Header";
 import Container from "../container/Container";
-import Loader from "../loader/Loader";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/reduxHooks";
 import { isExistToken } from "../../redux/auth/authSelectors";
@@ -19,10 +18,10 @@ const SharedLoyaout: React.FC = () => {
 
   return (
     <>
-      <Header />
+      {pathname !== "/" && <Header />}
       <main>
         <Container>
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={<></>}>
             <Outlet />
           </Suspense>
         </Container>

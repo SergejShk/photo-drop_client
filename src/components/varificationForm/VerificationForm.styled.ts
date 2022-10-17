@@ -5,7 +5,7 @@ export const FormStyled = styled.form`
   height: calc(100vh - 55px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 106px;
 
   & div {
     width: 100%;
