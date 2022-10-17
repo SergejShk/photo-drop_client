@@ -35,7 +35,7 @@ const AuthForm: React.FC = () => {
       <CallText>Enter your phone number</CallText>
       <PhoneInput country={"us"} value={phone} onChange={handleChange} />
 
-      <Button type="submit" disabled={Number(phone) < 5 ? true : false}>
+      <Button type="submit" disabled={phone.length < 8 ? true : false}>
         Create account
       </Button>
       <PolicyText>

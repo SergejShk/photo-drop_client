@@ -71,6 +71,7 @@ export const Button = styled.button`
   background-color: ${(p) =>
     p.disabled ? p.theme.colors.muted : p.theme.colors.accent};
   border-radius: 50px;
+  font-family: ${(p) => p.theme.fonts.body};
   font-weight: ${(p) => p.theme.fontWeights.medium};
   font-size: ${(p) => p.theme.fontSizes.m};
   line-height: ${(p) => p.theme.lineHeights.body};

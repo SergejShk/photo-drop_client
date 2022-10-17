@@ -9,29 +9,35 @@ import {
   Wrapper,
   WrapperAvatar,
 } from "./Onboard.styled";
+import Crop from "../crop/Crop";
 
 const AddSelfie: React.FC = () => {
   const filePicker = useRef<HTMLInputElement>(null);
-  const [selectedFile, setSelectedFile] = useState<FileList | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [photoURL, setPhotoURL] = useState<string>("");
+  const [openCrop, setOpenCrop] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.files);
-    setSelectedFile(e.target.files);
+    const file = e.target.files![0];
+
+    if (file) {
+      setSelectedFile(file);
+      setPhotoURL(URL.createObjectURL(file));
+      setOpenCrop(true);
+    }
   };
 
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-    console.log(filePicker.current);
+  const onSelectImage = (e: React.MouseEvent<HTMLElement>) => {
     filePicker.current?.click();
-    console.log(selectedFile);
   };
 
-  return (
+  return !openCrop ? (
     <Wrapper>
       <Title>Add a selfie</Title>
       <Text>A selfie allows your photos to be synced with your account.</Text>
       <WrapperAvatar>
         <Avatar src={avatar} alt="avatar" />
-        <BtnAddAvatar type="button" onClick={handleClick}>
+        <BtnAddAvatar type="button" onClick={onSelectImage}>
           <AiFillPlusCircle />
         </BtnAddAvatar>
 
@@ -44,6 +50,17 @@ const AddSelfie: React.FC = () => {
         />
       </WrapperAvatar>
     </Wrapper>
+  ) : (
+    <>
+      <Crop {...{ photoURL, onSelectImage, setPhotoURL, setSelectedFile }} />
+      <input
+        className="hidden"
+        type="file"
+        ref={filePicker}
+        accept="image/*,.png,.jpg,.jpeg"
+        onChange={handleChange}
+      />
+    </>
   );
 };
 

@@ -10,3 +10,9 @@ export type VerifyData = {
   number: string;
   code: string;
 };
+
+export type PreparedData = {
+  method: string;
+  url: string;
+  fields: {};
+};
