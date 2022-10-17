@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { logInApi, verificationLogInApi } from "../../services/authApi";
 
-import type { Credentials, VerifyData, Token } from "../../types/auth";
+import type { Credentials, VerifyData, Token } from "../../types/authTypes";
 
 export const logInThunk = createAsyncThunk<
   Credentials,

@@ -1,3 +1,11 @@
+export type Auth = {
+  accessToken: string;
+  number: string;
+  isLoggedIn: boolean;
+  isLoading: boolean;
+  error: string | null;
+};
+
 export type Credentials = {
   number: string;
 };

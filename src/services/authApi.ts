@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import type { Credentials, VerifyData, PreparedData } from "../types/auth";
+import type { Credentials, VerifyData } from "../types/authTypes";
 
 axios.defaults.baseURL =
   "https://77hfz4zquh.execute-api.eu-west-2.amazonaws.com/dev";
@@ -25,22 +25,4 @@ export const verificationLogInApi = async (creadentials: VerifyData) => {
   saveToken.set(data.token);
 
   return data;
-};
-
-export const prepareSelfieData = async (extension: Object) => {
-  const { data } = await axios.post("/client/selfie", extension);
-  console.log(data);
-  return {
-    method: data.data.method,
-    url: data.data.url,
-    fields: data.data.fields,
-  };
-};
-
-export const saveAvatar = async (preparedData: PreparedData) => {
-  axios.defaults.baseURL = "";
-
-  const { data } = await axios.put(`${preparedData.url}`);
-
-  console.log(data);
 };

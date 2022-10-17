@@ -1,13 +1,7 @@
 import { AnyAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { logInThunk, verificationThunk } from "./authOperations";
 
-type Auth = {
-  accessToken: string;
-  number: string;
-  isLoggedIn: boolean;
-  isLoading: boolean;
-  error: string | null;
-};
+import type { Auth } from "../../types/authTypes";
 
 const initialState: Auth = {
   accessToken: "",

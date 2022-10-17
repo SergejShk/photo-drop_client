@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Cropper from "react-easy-crop";
-import { prepareSelfieData, saveAvatar } from "../../services/authApi";
+import { prepareSelfieData, saveAvatar } from "../../services/userApi";
 import getCroppedImg from "../../utils/cropImage";
 import { ButtonWrapper, CropWrapper, Button } from "./Crop.styled";
 
@@ -31,8 +31,9 @@ const Crop: React.FC<IProps> = ({
       const extension = avatar.name.split(".").reverse()[0];
 
       const preparedData = await prepareSelfieData({ extension });
-      const res = await saveAvatar(preparedData);
-      console.log(res);
+   
+      const res = await saveAvatar(preparedData, avatar);
+   
     } catch (error) {
       console.log(error);
     }
