@@ -1,4 +1,5 @@
-import { AnyAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { addSelfieThunk } from "./userOperations";
 
 import type { UserType } from "../../types/userTypes";
 
@@ -7,37 +8,19 @@ const initialState: UserType = {
   email: "",
   name: "",
   selfie: "",
+  selfieUploaded: false,
 };
 
 const userSlice = createSlice({
-  name: "user",
+  name: "userData",
   initialState,
   reducers: {},
 
-    // extraReducers: (builder) => {
-    //   builder
-    //     .addCase(logInThunk.pending, (state) => {
-    //       state.error = null;
-    //     })
-    //     .addCase(logInThunk.fulfilled, (state, { payload }) => {
-    //       state.number = payload.number;
-    //       state.error = null;
-    //     })
-    //     .addCase(verificationThunk.pending, (state) => {
-    //       state.error = null;
-    //     })
-    //     .addCase(verificationThunk.fulfilled, (state, { payload }) => {
-    //       state.accessToken = payload.token;
-    //       state.isLoggedIn = true;
-    //       state.number = "";
-    //       state.error = null;
-    //     })
-
-    //     .addMatcher(isError, (state, action: PayloadAction<string>) => {
-    //       state.isLoading = false;
-    //       state.error = action.payload;
-    //     });
-    // },
+  extraReducers: (builder) => {
+    builder.addCase(addSelfieThunk.fulfilled, (state, { payload }) => {
+      state.selfieUploaded = true;
+    });
+  },
 });
 
 export default userSlice.reducer;

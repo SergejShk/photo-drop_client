@@ -1,8 +1,8 @@
 import axios from "axios";
 import { saveToken } from "./authApi";
+import { Buffer } from "buffer";
 
-import type { PreparedData } from "../types/authTypes";
-import type { UserDataToUpdate } from "../types/userTypes";
+import type { addSelfieDataType, UserDataToUpdate } from "../types/userTypes";
 
 export const getUserApi = async (persistedToken: string) => {
   saveToken.set(persistedToken);
@@ -21,12 +21,20 @@ export const prepareSelfieData = async (extension: Object) => {
   };
 };
 
-export const saveAvatar = async (preparedData: PreparedData, avatar: File) => {
-  axios.defaults.baseURL = "";
-  console.log(avatar);
-  const { data } = await axios.put(`${preparedData.url}`, avatar);
+export const saveAvatar = async (selfieData: addSelfieDataType) => {
+  const { file, url } = selfieData;
+  const buf = Buffer.from(
+    file!.replace(/^data:image\/\w+;base64,/, ""),
+    "base64"
+  );
 
-  console.log(data);
+  const data = await fetch(url, {
+    method: "put",
+    headers: { ContentEncoding: "base64", "Content-Type": "image/jpeg" },
+    body: buf,
+  });
+
+  return data;
 };
 
 export const updateUserData = async (dataToUpd: UserDataToUpdate) => {

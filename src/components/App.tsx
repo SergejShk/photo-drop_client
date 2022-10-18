@@ -1,5 +1,8 @@
-import React, { lazy } from "react";
+import React, { lazy, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { useAppSelector } from "../hooks/reduxHooks";
+import { getTokenStore } from "../redux/auth/authSelectors";
+import { saveToken } from "../services/authApi";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 import SharedLoyaout from "./sharedLoyaout/SharedLoyaout";
@@ -11,6 +14,12 @@ const VerificationPage = lazy(() => import("../pages/VerificationPage"));
 const OnboardPage = lazy(() => import("../pages/OnboardPage"));
 
 const App: React.FC = () => {
+  const token = useAppSelector(getTokenStore);
+
+  useEffect(() => {
+    saveToken.set(token);
+  }, [token]);
+
   return (
     <Routes>
       <Route path="/" element={<SharedLoyaout />}>

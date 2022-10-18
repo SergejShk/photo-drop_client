@@ -1,39 +1,31 @@
 import { useState } from "react";
 import Cropper from "react-easy-crop";
-import { prepareSelfieData, saveAvatar } from "../../services/userApi";
+import { useAppDispatch } from "../../hooks/reduxHooks";
+import { addSelfieThunk } from "../../redux/user/userOperations";
+import { prepareSelfieData } from "../../services/userApi";
 import getCroppedImg from "../../utils/cropImage";
-import { ButtonWrapper, CropWrapper, Button } from "./Crop.styled";
+import { ButtonWrapper, CropWrapper, Button, Title, Text } from "./Crop.styled";
 
 interface IProps {
   photoURL: string;
   onSelectImage: (e: React.MouseEvent<HTMLElement>) => void;
-  setPhotoURL: Function;
-  setSelectedFile: Function;
 }
 
-const Crop: React.FC<IProps> = ({
-  photoURL,
-  onSelectImage,
-  setPhotoURL,
-  setSelectedFile,
-}) => {
+const Crop: React.FC<IProps> = ({ photoURL, onSelectImage }) => {
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Object | null>(
     null
   );
 
+  const dispatch = useAppDispatch();
+
   const cropImage = async () => {
     try {
-      // @ts-ignore
-      const { file } = await getCroppedImg(photoURL, croppedAreaPixels);
+      const file = await getCroppedImg(photoURL, croppedAreaPixels);
 
-      const avatar = new File([file], "avatar.jpg");
-      const extension = avatar.name.split(".").reverse()[0];
+      const { url } = await prepareSelfieData({ extension: "jpg" });
 
-      const preparedData = await prepareSelfieData({ extension });
-   
-      const res = await saveAvatar(preparedData, avatar);
-   
+      dispatch(addSelfieThunk({ url, file }));
     } catch (error) {
       console.log(error);
     }
@@ -49,10 +41,13 @@ const Crop: React.FC<IProps> = ({
   return (
     <>
       <CropWrapper>
+        <Title>Take selfie</Title>
+        <Text>Drag and zoom image to crop</Text>
         <Cropper
           image={photoURL}
           crop={crop}
           aspect={1}
+          showGrid={false}
           onCropChange={setCrop}
           onCropComplete={cropComplete}
         />

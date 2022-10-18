@@ -11,6 +11,7 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import authReducer from "./auth/authSlice";
+import userReducer from "./user/userSlice";
 
 const authPersistConfig = {
   key: "authCl",
@@ -20,6 +21,7 @@ const authPersistConfig = {
 
 const reducers = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
+  userData: userReducer,
 });
 
 const store = configureStore({

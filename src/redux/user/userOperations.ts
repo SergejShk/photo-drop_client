@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "./../store";
-import { getUserApi } from "../../services/userApi";
+import { getUserApi, saveAvatar } from "../../services/userApi";
 
-import type { UserType } from "../../types/userTypes";
+import type { addSelfieDataType, UserType } from "../../types/userTypes";
 
 export const getUserDataThunk = createAsyncThunk<
   UserType,
@@ -20,6 +20,18 @@ export const getUserDataThunk = createAsyncThunk<
     const data = await getUserApi(persistedToken);
 
     return data;
+  } catch (error: any) {
+    return rejectWithValue(error.message);
+  }
+});
+
+export const addSelfieThunk = createAsyncThunk<
+  undefined,
+  addSelfieDataType,
+  { rejectValue: string }
+>("user/addSelfie", async (selfieData, { rejectWithValue }: string | any) => {
+  try {
+    await saveAvatar(selfieData);
   } catch (error: any) {
     return rejectWithValue(error.message);
   }
