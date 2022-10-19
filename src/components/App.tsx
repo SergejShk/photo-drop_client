@@ -1,6 +1,7 @@
 import React, { lazy, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useAppSelector } from "../hooks/reduxHooks";
+import DashboardPage from "../pages/DashboardPage";
 import { getTokenStore } from "../redux/auth/authSelectors";
 import { saveToken } from "../services/authApi";
 import PrivateRoute from "./routes/PrivateRoute";
@@ -60,6 +61,14 @@ const App: React.FC = () => {
           element={
             <PrivateRoute>
               <OnboardPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="dashboard"
+          element={
+            <PrivateRoute>
+              <DashboardPage />
             </PrivateRoute>
           }
         />

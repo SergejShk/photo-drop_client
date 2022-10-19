@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/reduxHooks";
 import { logInThunk } from "../../redux/auth/authOperations";
 
@@ -16,6 +16,7 @@ import {
 const AuthForm: React.FC = () => {
   const [phone, setPhone] = useState<string>("");
 
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const handleChange = (value: any) => {
@@ -27,6 +28,7 @@ const AuthForm: React.FC = () => {
 
     dispatch(logInThunk({ number: phone }));
     setPhone("");
+    navigate("/verification");
   };
 
   return (

@@ -1,9 +1,8 @@
 import React, { useEffect, Suspense } from "react";
-import Header from "../header/Header";
-import Container from "../container/Container";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/reduxHooks";
 import { isExistToken } from "../../redux/auth/authSelectors";
+import { Container } from "./SharedLoyaut.styled";
 
 const SharedLoyaout: React.FC = () => {
   const isLoggedIn = useAppSelector(isExistToken);
@@ -18,7 +17,6 @@ const SharedLoyaout: React.FC = () => {
 
   return (
     <>
-      {pathname !== "/" && <Header />}
       <main>
         <Container>
           <Suspense fallback={<></>}>

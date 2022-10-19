@@ -62,7 +62,7 @@ export const CallText = styled.p`
   font-size: ${(p) => p.theme.fontSizes.m};
   line-height: ${(p) => p.theme.lineHeights.body};
   color: ${(p) => p.theme.colors.primary};
-  margin-bottom: 20px;
+  margin-bottom: 19px;
 `;
 
 export const Button = styled.button`
