@@ -1,12 +1,18 @@
-import { BottomLine, BtnGoBack, HeaderStyled } from "./Header.styled";
+import {
+  BottomLine,
+  BtnGoBack,
+  ContainerAvatar,
+  HeaderStyled,
+} from "./Header.styled";
 import sprite from "../../assets/sprite.svg";
 import { useNavigate } from "react-router-dom";
 
 interface IProps {
   goBack?: boolean;
+  selfie?: string;
 }
 
-const Header: React.FC<IProps> = ({ goBack }) => {
+const Header: React.FC<IProps> = ({ goBack, selfie }) => {
   const navigate = useNavigate();
 
   const onGoBack: React.MouseEventHandler<HTMLButtonElement> = () =>
@@ -26,6 +32,11 @@ const Header: React.FC<IProps> = ({ goBack }) => {
         <svg className="logo">
           <use href={sprite + "#icon-Logo"} />
         </svg>
+        {selfie && (
+          <ContainerAvatar>
+            <img src={selfie} alt="avatar" />
+          </ContainerAvatar>
+        )}
       </HeaderStyled>
     </>
   );

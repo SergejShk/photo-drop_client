@@ -2,6 +2,7 @@ import { AnyAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { logInThunk, verificationThunk } from "./authOperations";
 
 import type { Auth } from "../../types/authTypes";
+import { getUserDataThunk } from "../user/userOperations";
 
 const initialState: Auth = {
   accessToken: "",
@@ -33,6 +34,12 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
         state.number = "";
         state.error = null;
+      })
+      .addCase(getUserDataThunk.pending, (state, { payload }) => {
+        state.isLoading = true;
+      })
+      .addCase(getUserDataThunk.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
       })
 
       .addMatcher(isError, (state, action: PayloadAction<string>) => {

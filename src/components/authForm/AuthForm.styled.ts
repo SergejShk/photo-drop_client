@@ -38,7 +38,7 @@ export const FormStyled = styled.form`
     border: ${(p) => p.theme.borders.normal};
     border-radius: 10px;
     font-size: ${(p) => p.theme.fontSizes.s};
-    line-height: 1.31;
+    line-height: ${(p) => p.theme.lineHeights.secondary};
     display: inline-flex;
     align-items: center;
     padding: 15px 13px 14px 13px;

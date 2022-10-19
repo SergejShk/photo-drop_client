@@ -1,10 +1,15 @@
+import DashboardNotify from "../components/dashboardNotify/DashboardNotify";
 import Header from "../components/header/Header";
+import { useAppSelector } from "../hooks/reduxHooks";
+import { getSelfieStore } from "../redux/user/userSelectors";
 
 const DashboardPage = () => {
+  const selfie = useAppSelector(getSelfieStore);
+
   return (
     <>
-      <Header />
-      DASHBOARD
+      <Header selfie={selfie} />
+      <DashboardNotify />
     </>
   );
 };

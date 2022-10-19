@@ -8,7 +8,7 @@ export const getUserApi = async (persistedToken: string) => {
   saveToken.set(persistedToken);
   const { data } = await axios.get("client");
 
-  return data;
+  return data.data;
 };
 
 export const prepareSelfieData = async (extension: Object) => {

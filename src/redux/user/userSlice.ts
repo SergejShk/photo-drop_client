@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addSelfieThunk } from "./userOperations";
+import { addSelfieThunk, getUserDataThunk } from "./userOperations";
 
 import type { UserType } from "../../types/userTypes";
 
@@ -17,9 +17,16 @@ const userSlice = createSlice({
   reducers: {},
 
   extraReducers: (builder) => {
-    builder.addCase(addSelfieThunk.fulfilled, (state, { payload }) => {
-      state.selfieUploaded = true;
-    });
+    builder
+      .addCase(addSelfieThunk.fulfilled, (state, { payload }) => {
+        state.selfieUploaded = true;
+      })
+      .addCase(getUserDataThunk.fulfilled, (state, { payload }) => {
+        state.number = payload.number;
+        state.email = payload.email;
+        state.name = payload.name;
+        state.selfie = payload.selfie;
+      });
   },
 });
 

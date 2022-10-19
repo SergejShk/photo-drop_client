@@ -1,8 +1,13 @@
 import React, { lazy, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { useAppSelector } from "../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 import DashboardPage from "../pages/DashboardPage";
-import { getTokenStore } from "../redux/auth/authSelectors";
+import {
+  getMustCurUser,
+  getTokenStore,
+  isExistToken,
+} from "../redux/auth/authSelectors";
+import { getUserDataThunk } from "../redux/user/userOperations";
 import { saveToken } from "../services/authApi";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
@@ -16,6 +21,17 @@ const OnboardPage = lazy(() => import("../pages/OnboardPage"));
 
 const App: React.FC = () => {
   const token = useAppSelector(getTokenStore);
+  const dispatch = useAppDispatch();
+  const isMustCurUser = useAppSelector(getMustCurUser);
+  const isLoggedIn = useAppSelector(isExistToken);
+
+  useEffect(() => {
+    isMustCurUser && dispatch(getUserDataThunk());
+  }, [dispatch, isMustCurUser]);
+
+  useEffect(() => {
+    isLoggedIn && dispatch(getUserDataThunk());
+  }, [dispatch, isLoggedIn]);
 
   useEffect(() => {
     saveToken.set(token);

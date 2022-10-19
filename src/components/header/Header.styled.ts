@@ -42,3 +42,23 @@ export const BtnGoBack = styled.button`
     width: 8px;
   }
 `;
+
+export const ContainerAvatar = styled.div`
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: auto;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+`;
