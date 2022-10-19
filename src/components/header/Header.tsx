@@ -29,9 +29,11 @@ const Header: React.FC<IProps> = ({ goBack, selfie }) => {
             </svg>
           </BtnGoBack>
         )}
+
         <svg className="logo">
           <use href={sprite + "#icon-Logo"} />
         </svg>
+
         {selfie && (
           <ContainerAvatar>
             <img src={selfie} alt="avatar" />

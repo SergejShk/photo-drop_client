@@ -6,8 +6,18 @@ export const FormStyled = styled.form`
   flex-direction: column;
   padding-top: 136px;
 
+  & .icon {
+    position: absolute;
+    z-index: 10;
+    top: 17px;
+    left: 44px;
+    width: 14px;
+    height: 7px;
+    cursor: pointer;
+  }
+
   & .react-tel-input {
-    position: static;
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
@@ -16,7 +26,7 @@ export const FormStyled = styled.form`
 
   & .react-tel-input .flag-dropdown {
     position: static;
-    width: 70px;
+    width: 80px;
     height: 40px;
     background-color: ${(p) => p.theme.colors.backgroundInput};
     border: ${(p) => p.theme.borders.normal};
@@ -24,10 +34,63 @@ export const FormStyled = styled.form`
     font-size: ${(p) => p.theme.fontSizes.s};
     line-height: 1.31;
     align-items: center;
-    padding: 8px 32px 7px 8px;
+    padding: 8px 32px 7px 5px;
     color: ${(p) => p.theme.colors.primary};
     margin-right: 10px;
     margin-bottom: 0;
+  }
+
+  & .react-tel-input .flag-dropdown.open {
+    position: static;
+    width: 80px;
+    height: 40px;
+    background-color: ${(p) => p.theme.colors.backgroundInput};
+    border: ${(p) => p.theme.borders.normal};
+    border-radius: 10px;
+    font-size: ${(p) => p.theme.fontSizes.s};
+    line-height: 1.31;
+    align-items: center;
+    padding: 8px 32px 7px 5px;
+    color: ${(p) => p.theme.colors.primary};
+    margin-right: 10px;
+    margin-bottom: 0;
+    background-color: transparent;
+  }
+
+  & .react-tel-input .selected-flag {
+    outline: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    width: 70px;
+    height: 100%;
+    padding: 0;
+    border-radius: 10px;
+    background-color: transparent;
+  }
+
+  & .react-tel-input .flag-dropdown.open .selected-flag {
+    background-color: ${(p) => p.theme.colors.backgroundInput};
+    border-radius: 10px;
+  }
+
+  & .react-tel-input .selected-flag .flag {
+    zoom: 1.3;
+    left: 10px;
+  }
+
+  & .react-tel-input .selected-flag .arrow {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 
   & .react-tel-input .form-control {
@@ -45,6 +108,17 @@ export const FormStyled = styled.form`
     color: ${(p) => p.theme.colors.primary};
     margin-bottom: 20px;
   }
+
+  & .react-tel-input .selected-flag:hover,
+  & .react-tel-input .selected-flag:focus {
+    background-color: transparent;
+  }
+
+  & .react-tel-input .country-list {
+    position: absolute;
+    top: 30px;
+    left: 2px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -58,11 +132,16 @@ export const Title = styled.h2`
 `;
 
 export const CallText = styled.p`
+  font-family: ${(p) => p.theme.fonts.body};
   font-weight: ${(p) => p.theme.fontWeights.medium};
   font-size: ${(p) => p.theme.fontSizes.m};
   line-height: ${(p) => p.theme.lineHeights.body};
   color: ${(p) => p.theme.colors.primary};
   margin-bottom: 19px;
+`;
+
+export const WrapperInput = styled.div`
+  position: relative;
 `;
 
 export const Button = styled.button`
@@ -82,6 +161,7 @@ export const Button = styled.button`
 `;
 
 export const PolicyText = styled.p`
+  font-family: ${(p) => p.theme.fonts.body};
   font-size: ${(p) => p.theme.fontSizes.xs};
   line-height: ${(p) => p.theme.lineHeights.body};
   color: ${(p) => p.theme.colors.secondary};
