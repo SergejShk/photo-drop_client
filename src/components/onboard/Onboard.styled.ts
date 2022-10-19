@@ -37,6 +37,7 @@ export const Text = styled.p`
   line-height: ${(p) => p.theme.lineHeights.body};
   color: ${(p) => p.theme.colors.primary};
   margin-bottom: 30px;
+  text-align: center;
 `;
 
 export const WrapperAvatar = styled.div`

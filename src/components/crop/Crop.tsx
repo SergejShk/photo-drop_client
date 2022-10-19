@@ -4,14 +4,23 @@ import { useAppDispatch } from "../../hooks/reduxHooks";
 import { addSelfieThunk } from "../../redux/user/userOperations";
 import { prepareSelfieData } from "../../services/userApi";
 import getCroppedImg from "../../utils/cropImage";
-import { ButtonWrapper, CropWrapper, Button, Title, Text } from "./Crop.styled";
+import {
+  ButtonWrapper,
+  CropWrapper,
+  Button,
+  Title,
+  Text,
+  BtnClose,
+} from "./Crop.styled";
+import sprite from "../../assets/sprite.svg";
 
 interface IProps {
   photoURL: string;
   onSelectImage: (e: React.MouseEvent<HTMLElement>) => void;
+  setOpenCrop: (boolean: boolean) => void;
 }
 
-const Crop: React.FC<IProps> = ({ photoURL, onSelectImage }) => {
+const Crop: React.FC<IProps> = ({ photoURL, onSelectImage, setOpenCrop }) => {
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Object | null>(
     null
@@ -38,9 +47,17 @@ const Crop: React.FC<IProps> = ({ photoURL, onSelectImage }) => {
     setCroppedAreaPixels(croppedAreaPixels);
   };
 
+  const onClose: React.MouseEventHandler<HTMLButtonElement> = () =>
+    setOpenCrop(false);
+
   return (
     <>
       <CropWrapper>
+        <BtnClose onClick={onClose}>
+          <svg>
+            <use href={sprite + "#icon-close"} />
+          </svg>
+        </BtnClose>
         <Title>Take selfie</Title>
         <Text>Drag and zoom image to crop</Text>
         <Cropper
@@ -55,7 +72,7 @@ const Crop: React.FC<IProps> = ({ photoURL, onSelectImage }) => {
           <Button type="button" onClick={onSelectImage}>
             Retake
           </Button>
-          <Button type="button" onClick={cropImage}>
+          <Button type="button" className="btnSave" onClick={cropImage}>
             Save
           </Button>
         </ButtonWrapper>

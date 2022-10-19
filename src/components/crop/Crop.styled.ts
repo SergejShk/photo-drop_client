@@ -1,5 +1,21 @@
 import styled from "styled-components";
 
+export const BtnClose = styled.button`
+  position: absolute;
+  z-index: 10;
+  top: 16px;
+  left: calc(50% - 166px);
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+`;
+
 export const Title = styled.h2`
   position: absolute;
   top: 23px;
@@ -78,4 +94,9 @@ export const Button = styled.button`
   color: ${(p) => p.theme.colors.white};
   border: 1px solid #fff;
   border-radius: 50px;
+
+  &.btnSave {
+    background-color: ${(p) => p.theme.colors.white};
+    color: ${(p) => p.theme.colors.primary};
+  }
 `;

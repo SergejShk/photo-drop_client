@@ -52,7 +52,7 @@ const AddSelfie: React.FC = () => {
     </Wrapper>
   ) : (
     <>
-      <Crop {...{ photoURL, onSelectImage }} />
+      <Crop {...{ photoURL, onSelectImage, setOpenCrop }} />
       <input
         className="hidden"
         type="file"
