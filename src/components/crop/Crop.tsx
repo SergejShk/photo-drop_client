@@ -17,13 +17,20 @@ interface IProps {
   photoURL: string;
   onSelectImage: (e: React.MouseEvent<HTMLElement>) => void;
   setOpenCrop: (boolean: boolean) => void;
+  setPhotoURL?: (url: string) => void;
 }
 
-const Crop: React.FC<IProps> = ({ photoURL, onSelectImage, setOpenCrop }) => {
+const Crop: React.FC<IProps> = ({
+  photoURL,
+  onSelectImage,
+  setOpenCrop,
+  setPhotoURL,
+}) => {
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Object | null>(
     null
   );
+  const [basePhoto] = useState(photoURL);
 
   const dispatch = useAppDispatch();
 
@@ -44,8 +51,10 @@ const Crop: React.FC<IProps> = ({ photoURL, onSelectImage, setOpenCrop }) => {
     setCroppedAreaPixels(croppedAreaPixels);
   };
 
-  const onClose: React.MouseEventHandler<HTMLButtonElement> = () =>
+  const onClose: React.MouseEventHandler<HTMLButtonElement> = () => {
+    setPhotoURL && setPhotoURL(basePhoto);
     setOpenCrop(false);
+  };
 
   return (
     <>

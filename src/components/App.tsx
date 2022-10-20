@@ -1,7 +1,6 @@
 import React, { lazy, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
-import DashboardPage from "../pages/DashboardPage";
 import {
   getMustCurUser,
   getTokenStore,
@@ -18,6 +17,8 @@ const TermsPage = lazy(() => import("../pages/TermsPage"));
 const PolicyPage = lazy(() => import("../pages/PolicyPage"));
 const VerificationPage = lazy(() => import("../pages/VerificationPage"));
 const OnboardPage = lazy(() => import("../pages/OnboardPage"));
+const DashboardPage = lazy(() => import("../pages/DashboardPage"));
+const ProfilePage = lazy(() => import("../pages/ProfilePage"));
 
 const App: React.FC = () => {
   const token = useAppSelector(getTokenStore);
@@ -86,6 +87,14 @@ const App: React.FC = () => {
           element={
             <PrivateRoute>
               <DashboardPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="profile"
+          element={
+            <PrivateRoute>
+              <ProfilePage />
             </PrivateRoute>
           }
         />

@@ -5,7 +5,7 @@ import {
   HeaderStyled,
 } from "./Header.styled";
 import sprite from "../../assets/sprite.svg";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/reduxHooks";
 import { resetNumber } from "../../redux/auth/authSlice";
 
@@ -43,7 +43,9 @@ const Header: React.FC<IProps> = ({ goBack, selfie }) => {
 
         {selfie && (
           <ContainerAvatar>
+            <Link to='/profile'>
             <img src={selfie} alt="avatar" />
+            </Link>
           </ContainerAvatar>
         )}
       </HeaderStyled>
