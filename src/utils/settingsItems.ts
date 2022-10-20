@@ -15,3 +15,21 @@ export const editUserItems = [
     to: "/notification-settings",
   },
 ];
+
+export const notificationSettings = [
+  {
+    id: "1",
+    label: "Text messages",
+    status: true,
+  },
+  {
+    id: "2",
+    label: "Email",
+    status: true,
+  },
+  {
+    id: "3",
+    label: "Unsubscribe",
+    status: false,
+  },
+];

@@ -16,7 +16,7 @@ const EditName: React.FC = () => {
     <Form onSubmit={handleSubmit}>
       <Title>Your name</Title>
       <Input type="text" value={name} onChange={onChangeInput} />
-      <CommonButton type="submit" disabled={!name && true}>
+      <CommonButton type="submit" disabled={name.length < 3 && true}>
         Save
       </CommonButton>
     </Form>
