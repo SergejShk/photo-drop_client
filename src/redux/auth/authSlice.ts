@@ -2,7 +2,7 @@ import { AnyAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { logInThunk, verificationThunk } from "./authOperations";
 
 import type { Auth } from "../../types/authTypes";
-import { getUserDataThunk } from "../user/userOperations";
+import { addSelfieThunk, getUserDataThunk } from "../user/userOperations";
 
 const initialState: Auth = {
   accessToken: "",
@@ -15,7 +15,11 @@ const initialState: Auth = {
 const authSlice = createSlice({
   name: "authCl",
   initialState,
-  reducers: {},
+  reducers: {
+    resetNumber(state, { payload }) {
+      state.number = payload;
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -41,6 +45,12 @@ const authSlice = createSlice({
       .addCase(getUserDataThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
       })
+      .addCase(addSelfieThunk.pending, (state, { payload }) => {
+        state.isLoading = true;
+      })
+      .addCase(addSelfieThunk.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+      })
 
       .addMatcher(isError, (state, action: PayloadAction<string>) => {
         state.isLoading = false;
@@ -48,6 +58,8 @@ const authSlice = createSlice({
       });
   },
 });
+
+export const { resetNumber } = authSlice.actions;
 
 export default authSlice.reducer;
 

@@ -35,8 +35,10 @@ const AddSelfie: React.FC = () => {
     <Wrapper>
       <Title>Add a selfie</Title>
       <Text>A selfie allows your photos to be synced with your account.</Text>
+
       <WrapperAvatar>
         <Avatar src={avatar} alt="avatar" />
+
         <BtnAddAvatar type="button" onClick={onSelectImage}>
           <AiFillPlusCircle />
         </BtnAddAvatar>

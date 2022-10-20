@@ -21,9 +21,10 @@ const OnboardPage = lazy(() => import("../pages/OnboardPage"));
 
 const App: React.FC = () => {
   const token = useAppSelector(getTokenStore);
-  const dispatch = useAppDispatch();
   const isMustCurUser = useAppSelector(getMustCurUser);
   const isLoggedIn = useAppSelector(isExistToken);
+
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     isMustCurUser && dispatch(getUserDataThunk());

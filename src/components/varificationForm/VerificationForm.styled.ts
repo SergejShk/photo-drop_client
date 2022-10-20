@@ -27,6 +27,10 @@ export const FormStyled = styled.form`
     text-align: center;
     padding: 0;
   }
+
+  & input:focus-visible {
+    outline-color: ${(p) => p.theme.colors.accent};
+  }
 `;
 
 export const Title = styled.h2`

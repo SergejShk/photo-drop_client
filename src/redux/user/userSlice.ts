@@ -20,6 +20,7 @@ const userSlice = createSlice({
     builder
       .addCase(addSelfieThunk.fulfilled, (state, { payload }) => {
         state.selfieUploaded = true;
+        state.selfie = payload;
       })
       .addCase(getUserDataThunk.fulfilled, (state, { payload }) => {
         state.number = payload.number;

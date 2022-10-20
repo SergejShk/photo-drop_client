@@ -1,8 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "./../store";
-import { getUserApi, saveAvatar } from "../../services/userApi";
+import {
+  getUserApi,
+  prepareSelfieData,
+  saveAvatar,
+} from "../../services/userApi";
 
-import type { addSelfieDataType, UserType } from "../../types/userTypes";
+import type { UserType } from "../../types/userTypes";
 
 export const getUserDataThunk = createAsyncThunk<
   UserType,
@@ -26,12 +30,17 @@ export const getUserDataThunk = createAsyncThunk<
 });
 
 export const addSelfieThunk = createAsyncThunk<
-  undefined,
-  addSelfieDataType,
+  string,
+  string | null,
   { rejectValue: string }
->("user/addSelfie", async (selfieData, { rejectWithValue }: string | any) => {
+>("user/addSelfie", async (file, { rejectWithValue }: string | any) => {
   try {
-    await saveAvatar(selfieData);
+    const { url } = await prepareSelfieData({ extension: "jpg" });
+    await saveAvatar({ url, file });
+
+    const avatar = url.split("?")[0];
+
+    return avatar;
   } catch (error: any) {
     return rejectWithValue(error.message);
   }

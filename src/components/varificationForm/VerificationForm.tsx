@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AuthCode from "react-auth-code-input";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { logInThunk, verificationThunk } from "../../redux/auth/authOperations";
 import { getNumber } from "../../redux/auth/authSelectors";
@@ -14,6 +15,11 @@ import {
 const VerificationForm: React.FC = () => {
   const [code, setCode] = useState<string>("");
   const number = useAppSelector(getNumber);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    !number && navigate("/auth");
+  }, [navigate, number]);
 
   const dispatch = useAppDispatch();
 
@@ -34,7 +40,9 @@ const VerificationForm: React.FC = () => {
       <InfoText>
         Enter the code sent to <b>{number}</b>
       </InfoText>
+
       <AuthCode allowedCharacters="numeric" onChange={handleChange} />
+
       <ResendCode
         type="button"
         onClick={() => dispatch(logInThunk({ number }))}

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import { Link, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { logInThunk } from "../../redux/auth/authOperations";
 import sprite from "../../assets/sprite.svg";
 import "react-phone-input-2/lib/style.css";
@@ -14,12 +14,18 @@ import {
   PolicyText,
   WrapperInput,
 } from "./AuthForm.styled";
+import { getNumber } from "../../redux/auth/authSelectors";
 
 const AuthForm: React.FC = () => {
   const [phone, setPhone] = useState<string>("");
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const number = useAppSelector(getNumber);
+
+  useEffect(() => {
+    number && navigate("/verification");
+  }, [navigate, number]);
 
   const handleChange = (value: any) => {
     setPhone(`+${value}`);
@@ -30,7 +36,6 @@ const AuthForm: React.FC = () => {
 
     dispatch(logInThunk({ number: phone }));
     setPhone("");
-    navigate("/verification");
   };
 
   return (

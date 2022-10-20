@@ -5,7 +5,9 @@ import {
   HeaderStyled,
 } from "./Header.styled";
 import sprite from "../../assets/sprite.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../hooks/reduxHooks";
+import { resetNumber } from "../../redux/auth/authSlice";
 
 interface IProps {
   goBack?: boolean;
@@ -14,9 +16,14 @@ interface IProps {
 
 const Header: React.FC<IProps> = ({ goBack, selfie }) => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { pathname } = useLocation();
 
-  const onGoBack: React.MouseEventHandler<HTMLButtonElement> = () =>
+  const onGoBack: React.MouseEventHandler<HTMLButtonElement> = () => {
+    pathname === "/verification" && dispatch(resetNumber(""));
+
     navigate(-1);
+  };
 
   return (
     <>

@@ -2,7 +2,6 @@ import { useState } from "react";
 import Cropper from "react-easy-crop";
 import { useAppDispatch } from "../../hooks/reduxHooks";
 import { addSelfieThunk } from "../../redux/user/userOperations";
-import { prepareSelfieData } from "../../services/userApi";
 import getCroppedImg from "../../utils/cropImage";
 import {
   ButtonWrapper,
@@ -32,9 +31,7 @@ const Crop: React.FC<IProps> = ({ photoURL, onSelectImage, setOpenCrop }) => {
     try {
       const file = await getCroppedImg(photoURL, croppedAreaPixels);
 
-      const { url } = await prepareSelfieData({ extension: "jpg" });
-
-      dispatch(addSelfieThunk({ url, file }));
+      dispatch(addSelfieThunk(file));
     } catch (error) {
       console.log(error);
     }
@@ -58,8 +55,10 @@ const Crop: React.FC<IProps> = ({ photoURL, onSelectImage, setOpenCrop }) => {
             <use href={sprite + "#icon-close"} />
           </svg>
         </BtnClose>
+
         <Title>Take selfie</Title>
         <Text>Drag and zoom image to crop</Text>
+
         <Cropper
           image={photoURL}
           crop={crop}

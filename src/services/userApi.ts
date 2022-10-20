@@ -4,8 +4,8 @@ import { Buffer } from "buffer";
 
 import type { addSelfieDataType, UserDataToUpdate } from "../types/userTypes";
 
-export const getUserApi = async (persistedToken: string) => {
-  saveToken.set(persistedToken);
+export const getUserApi = async (persistedToken?: string) => {
+  persistedToken && saveToken.set(persistedToken);
   const { data } = await axios.get("client");
 
   return data.data;
