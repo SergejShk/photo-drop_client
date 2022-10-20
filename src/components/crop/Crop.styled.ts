@@ -14,6 +14,12 @@ export const BtnClose = styled.button`
   padding: 0;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+
+  & svg {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 export const Title = styled.h2`

@@ -3,7 +3,7 @@ import Header from "../components/header/Header";
 import { useAppSelector } from "../hooks/reduxHooks";
 import { getSelfieStore } from "../redux/user/userSelectors";
 
-const DashboardPage = () => {
+const DashboardPage: React.FC = () => {
   const selfie = useAppSelector(getSelfieStore);
 
   return (

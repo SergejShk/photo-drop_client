@@ -19,6 +19,11 @@ const VerificationPage = lazy(() => import("../pages/VerificationPage"));
 const OnboardPage = lazy(() => import("../pages/OnboardPage"));
 const DashboardPage = lazy(() => import("../pages/DashboardPage"));
 const ProfilePage = lazy(() => import("../pages/ProfilePage"));
+const EditNamePage = lazy(() => import("../pages/EditNamePage"));
+const AccountSettingsPage = lazy(() => import("../pages/AccountSettingsPage"));
+const NotificationSettingsPage = lazy(
+  () => import("../pages/NotificationSettingsPage")
+);
 
 const App: React.FC = () => {
   const token = useAppSelector(getTokenStore);
@@ -95,6 +100,30 @@ const App: React.FC = () => {
           element={
             <PrivateRoute>
               <ProfilePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="edit-name"
+          element={
+            <PrivateRoute>
+              <EditNamePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="account-settings"
+          element={
+            <PrivateRoute>
+              <AccountSettingsPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="notification-settings"
+          element={
+            <PrivateRoute>
+              <NotificationSettingsPage />
             </PrivateRoute>
           }
         />

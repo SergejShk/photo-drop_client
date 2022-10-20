@@ -13,7 +13,7 @@ import Crop from "../crop/Crop";
 
 const AddSelfie: React.FC = () => {
   const filePicker = useRef<HTMLInputElement>(null);
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [, setSelectedFile] = useState<File | null>(null);
   const [photoURL, setPhotoURL] = useState<string>("");
   const [openCrop, setOpenCrop] = useState<boolean>(false);
 

@@ -1,6 +1,6 @@
 import { Text, Title } from "./Terms.styled";
 
-const Terms = () => {
+const Terms: React.FC = () => {
   return (
     <>
       <Title>Terms of service</Title>

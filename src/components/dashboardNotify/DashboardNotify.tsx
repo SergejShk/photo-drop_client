@@ -1,7 +1,7 @@
 import { AccentText, Container, Line, Text } from "./DashBoardNotify.styled";
 import sprite from "../../assets/sprite.svg";
 
-const DashboardNotify = () => {
+const DashboardNotify: React.FC = () => {
   return (
     <>
       <Container>

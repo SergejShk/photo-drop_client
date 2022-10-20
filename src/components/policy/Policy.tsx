@@ -1,6 +1,6 @@
 import { Title, Text, SubTitle } from "./Policy.styled";
 
-const Policy = () => {
+const Policy: React.FC = () => {
   return (
     <>
       <Title>Privacy policy</Title>

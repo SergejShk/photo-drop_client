@@ -10,16 +10,16 @@ import {
   Text,
   WelcomeText,
 } from "./ProfileInfo.styled";
-import sprite from "../../assets/sprite.svg";
 import { useRef, useState } from "react";
 import Crop from "../crop/Crop";
+import sprite from "../../assets/sprite.svg";
 
-const ProfileInfo = () => {
+const ProfileInfo: React.FC = () => {
   const userName = useAppSelector(getUserNameStore);
   const selfie = useAppSelector(getSelfieStore);
   const filePicker = useRef<HTMLInputElement>(null);
 
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [, setSelectedFile] = useState<File | null>(null);
   const [photoURL, setPhotoURL] = useState<string>(selfie);
   const [openCrop, setOpenCrop] = useState<boolean>(false);
 
@@ -52,14 +52,6 @@ const ProfileInfo = () => {
             <use href={sprite + "#icon-editor"} />
           </svg>
         </BtnEditAvatar>
-
-        <input
-          className="hidden"
-          type="file"
-          ref={filePicker}
-          accept="image/*,.png,.jpg,.jpeg"
-          onChange={handleChange}
-        />
       </ContainerSelfie>
     </Container>
   ) : (
