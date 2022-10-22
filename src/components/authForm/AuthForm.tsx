@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import PhoneInput from "react-phone-input-2";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
@@ -22,6 +23,7 @@ const AuthForm: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const number = useAppSelector(getNumber);
+  const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
 
   useEffect(() => {
     number && navigate("/verification");
@@ -54,17 +56,23 @@ const AuthForm: React.FC = () => {
         Create account
       </Button>
 
-      <PolicyText>
+      <PolicyText className="text">
         By proceeding, you consent to get WhatsApp or SMS messages, from
         PhotoDrop and its affiliates to the number provided. Text “STOP” to
         89203 to opt out.
       </PolicyText>
 
-      <PolicyText>
-        By continuing, you indicate that you have read and agree to our
-        <Link to="/terms">Terms of Use</Link> &
-        <Link to="/policy">Privacy Policy</Link>
-      </PolicyText>
+      {isMobile && (
+        <>
+          <PolicyText>
+            By continuing, you indicate that you have read and agree to our
+          </PolicyText>
+          <PolicyText>
+            <Link to="/terms">Terms of Use</Link> &{" "}
+            <Link to="/policy">Privacy Policy</Link>
+          </PolicyText>
+        </>
+      )}
     </FormStyled>
   );
 };

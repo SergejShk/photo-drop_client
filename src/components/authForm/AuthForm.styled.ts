@@ -6,6 +6,15 @@ export const FormStyled = styled.form`
   flex-direction: column;
   padding-top: 136px;
 
+  @media screen and (min-width: 1440px) {
+    padding-top: 178px;
+  }
+
+  & .text {
+    margin-bottom: 38px;
+    letter-spacing: 0;
+  }
+
   & .icon {
     position: absolute;
     z-index: 10;
@@ -38,6 +47,7 @@ export const FormStyled = styled.form`
     color: ${(p) => p.theme.colors.primary};
     margin-right: 10px;
     margin-bottom: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   & .react-tel-input .flag-dropdown.open {
@@ -95,18 +105,25 @@ export const FormStyled = styled.form`
 
   & .react-tel-input .form-control {
     position: static;
-    width: 100%;
+    min-width: 265px;
     height: 40px;
     background-color: ${(p) => p.theme.colors.backgroundInput};
     border: ${(p) => p.theme.borders.normal};
     border-radius: 10px;
+    font-family: ${(p) => p.theme.fonts.body};
     font-size: ${(p) => p.theme.fontSizes.s};
-    line-height: ${(p) => p.theme.lineHeights.secondary};
+    line-height: 11px;
     display: inline-flex;
     align-items: center;
     padding: 15px 13px 14px 13px;
     color: ${(p) => p.theme.colors.primary};
     margin-bottom: 20px;
+
+    @media screen and (min-width: 1440px) {
+      min-width: 341px;
+      padding: 15px 17px 14px;
+      font-size: 18px;
+    }
   }
 
   & .react-tel-input .selected-flag:hover,
@@ -126,18 +143,30 @@ export const Title = styled.h2`
   font-family: ${(p) => p.theme.fonts.heading};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   font-size: ${(p) => p.theme.fontSizes.l};
-  line-height: ${(p) => p.theme.lineHeights.title};
+  line-height: 17px;
   color: ${(p) => p.theme.colors.primary};
   margin-bottom: 14px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 30px;
+    line-height: 22px;
+    margin-bottom: 29px;
+  }
 `;
 
 export const CallText = styled.p`
   font-family: ${(p) => p.theme.fonts.body};
   font-weight: ${(p) => p.theme.fontWeights.medium};
   font-size: ${(p) => p.theme.fontSizes.m};
-  line-height: ${(p) => p.theme.lineHeights.body};
+  line-height: 15px;
   color: ${(p) => p.theme.colors.primary};
   margin-bottom: 19px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 16px;
+    margin-bottom: 18px;
+  }
 `;
 
 export const WrapperInput = styled.div`
@@ -158,20 +187,37 @@ export const Button = styled.button`
   padding: 14px 20px 13px 20px;
   margin-bottom: 20px;
   border: none;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 22px;
+    line-height: 15px;
+    padding: 17px 20px 18px;
+  }
 `;
 
 export const PolicyText = styled.p`
   font-family: ${(p) => p.theme.fonts.body};
   font-size: ${(p) => p.theme.fontSizes.xs};
-  line-height: ${(p) => p.theme.lineHeights.body};
+  line-height: 15.4px;
+  letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.secondary};
 
-  &:not(:last-child) {
-    margin-bottom: 38px;
+  @media screen and (min-width: 1440px) {
+    font-size: 16px;
+    line-height: 19px;
   }
 
   & a {
-    border-bottom: 1px solid #3300cc;
-    margin-left: 3px;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 2px;
+      height: 1px;
+      width: 100%;
+      background-color: #3300cc;
+    }
   }
 `;

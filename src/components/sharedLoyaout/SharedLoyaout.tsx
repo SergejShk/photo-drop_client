@@ -1,11 +1,16 @@
 import React, { useEffect, Suspense } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/reduxHooks";
-import { isExistToken } from "../../redux/auth/authSelectors";
-import { Container } from "./SharedLoyaut.styled";
+import { isExistToken, isLoadingStore } from "../../redux/auth/authSelectors";
+import { getSelfieStore } from "../../redux/user/userSelectors";
+import { isGoBack, isSelfie } from "../../utils/headerContent";
+import Header from "../header/Header";
+import { Container, TextPageContainer } from "./SharedLoyaut.styled";
 
 const SharedLoyaout: React.FC = () => {
+  const isLoadingPage = useAppSelector(isLoadingStore);
   const isLoggedIn = useAppSelector(isExistToken);
+  const selfie = useAppSelector(getSelfieStore);
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -17,13 +22,29 @@ const SharedLoyaout: React.FC = () => {
 
   return (
     <>
-      <main>
+      {!isLoadingPage && (
+        <Header
+          goBack={isGoBack.includes(pathname) ? true : false}
+          selfie={isSelfie.includes(pathname) ? selfie : ""}
+        />
+      )}
+      {pathname === ("/terms" || "/policy") ? (
+        <TextPageContainer>
+          <main>
+            <Suspense fallback={<></>}>
+              <Outlet />
+            </Suspense>
+          </main>
+        </TextPageContainer>
+      ) : (
         <Container>
-          <Suspense fallback={<></>}>
-            <Outlet />
-          </Suspense>
+          <main>
+            <Suspense fallback={<></>}>
+              <Outlet />
+            </Suspense>
+          </main>
         </Container>
-      </main>
+      )}
     </>
   );
 };

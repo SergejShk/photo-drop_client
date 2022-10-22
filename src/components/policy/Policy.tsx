@@ -17,24 +17,26 @@ const Policy: React.FC = () => {
         this Privacy Policy have the same meanings as in our Terms of Service.
         So, please make sure that you have read and understand our Terms of
         Service.
-      </Text>{" "}
-      <SubTitle>User Consent</SubTitle>{" "}
+      </Text>
+      <SubTitle>User Consent</SubTitle>
       <Text>
         By accessing or otherwise using the Service, you agree to the terms and
         conditions of this Privacy Policy and the associated Terms of Service
         (set forth on PhotoDrop) you expressly consent to the processing of your
         Personal Information (as defined below) and Anonymous Information (as
-        defined below) according to this Privacy Policy. Your Personal
-        Information may be processed by us in the country where it was collected
-        and transferred to, and maintained on, computers located outside of your
-        state, province, country (including the United States), or other
-        governmental jurisdiction where privacy laws regarding processing of
-        Personal Information may be less stringent than the laws in your
-        country. If you’re located outside the United States and choose to
-        provide your Personal Information to us, we may transfer your Personal
-        Information to the United States and process it there. Regarding
-        Children Children under the age of 13 are not permitted to use the
-        Service and we do not intentionally collect or maintain Personal
+        defined below) according to this Privacy Policy.
+      </Text>
+      <Text>
+        Your Personal Information may be processed by us in the country where it
+        was collected and transferred to, and maintained on, computers located
+        outside of your state, province, country (including the United States),
+        or other governmental jurisdiction where privacy laws regarding
+        processing of Personal Information may be less stringent than the laws
+        in your country. If you’re located outside the United States and choose
+        to provide your Personal Information to us, we may transfer your
+        Personal Information to the United States and process it there.
+        Regarding Children Children under the age of 13 are not permitted to use
+        the Service and we do not intentionally collect or maintain Personal
         Information from those who are under 13 years old. Protecting the
         privacy of children is very important to us. Thus, if we obtain actual
         knowledge that a user is under 13, we will take steps to remove that

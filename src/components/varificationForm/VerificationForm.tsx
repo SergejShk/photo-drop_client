@@ -8,6 +8,7 @@ import {
   Button,
   FormStyled,
   InfoText,
+  Phone,
   ResendCode,
   Title,
 } from "./VerificationForm.styled";
@@ -38,7 +39,7 @@ const VerificationForm: React.FC = () => {
     <FormStyled onSubmit={handleSubmit}>
       <Title>What’s the code?</Title>
       <InfoText>
-        Enter the code sent to <b>{number}</b>
+        Enter the code sent to <Phone>{number}</Phone>
       </InfoText>
 
       <AuthCode allowedCharacters="numeric" onChange={handleChange} />

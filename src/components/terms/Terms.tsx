@@ -28,149 +28,151 @@ const Terms: React.FC = () => {
         Service on behalf of a company (such as your employer) or other legal
         entity, you represent and warrant that you have the authority to bind
         that company or other legal entity to these Terms. In that case, “you”
-        and “your” will refer to that company or other legal entity. Privacy
-        Policy Please refer to our Privacy Policy at https://photodrop.me/
-        privacy for information on how we collect, use and disclose information
-        from our users. You acknowledge and agree that your use of the Service
-        is subject to our Privacy Policy. Facial Recognition Technology You
-        agree that we may use facial recognition technology to allow us to
-        identify photos on the Service in which you appear when you add a
-        reference photo to the Service. For example, our facial recognition
-        technology will compare your reference image with albums of photos to
-        locate photos of you. In addition, your responses to potential photo
-        matches may improve the accuracy of the facial recognition technology.
-        By using the Service and adding a reference image, you consent to the
-        use of facial recognition technology to identify photos on the Service
-        in which you appear. You represent that the reference image photo added
-        by you to the Service is you (or a family member for whom you are the
-        legal guardian or have their consent) and that you are not impersonating
-        or misrepresenting yourself as any other person or entity. For more
-        information on our use of facial recognition technology, please see our
-        Privacy Policy. Changes to Terms of Service We may modify the Terms at
-        any time, at our sole discretion. If we do so, we’ll let you know either
-        by posting the modified Terms on the Site or through other
-        communications. It’s important that you review the Terms whenever we
-        modify them because if you continue to use the Service after we have
-        posted modified Terms on the Site, you are indicating to us that you
-        agree to be bound by the modified Terms. If you don’t agree to be bound
-        by the modified Terms, then you may not use the Service anymore. Because
-        our Service is evolving over time we may change or discontinue all or
-        any part of the Service, at any time and without notice, at our sole
-        discretion. Who May Use the Service Eligibility You may use the Service
-        only if you are 13 years of age or older and are not barred from using
-        the Service under applicable law. Registration and Your Information If
-        you want to use certain features of the Service you’ll have to create an
-        account (“Account”). It’s important that you provide us with accurate,
-        complete and up-to-date information for your Account and you agree to
-        update such information, as needed, to keep it accurate, complete and
-        up-to-date. If you don’t, we might have to suspend or terminate your
-        Account. You agree that you won’t disclose your Account password to
-        anyone and you’ll notify us immediately of any unauthorized use of your
-        Account. You’re responsible for all activities that occur under your
-        Account, whether or not you know about them. Twilio Short & Long Code
-        Terms of Service When you provide your phone number opt-in to the
-        service, we will send you an SMS message to confirm your signup. By
-        providing your phone number, you agree that we may send you SMS messages
-        in response to SMS messages you send to us, such as when you send a
-        reference image or code to us by SMS. In addition, by registering to use
-        the service, you agree to receive SMS messages sent using an automatic
-        telephone dialing system to inform you of the following: opportunities
-        to join or create albums relevant to you; new photos added to your
-        albums; comments, or reactions added to your photos; new matching photos
-        or links to them based on a code you sent us, your location and
-        proximity to photos taken; or invitations from other users of the
-        Service You can cancel the SMS service at any time. Just text “STOP” to
-        +1 (469) 715-3452. After you send the SMS message “STOP” to us, we will
-        send you an SMS message to confirm that you have been unsubscribed.
-        After this, you will no longer receive SMS messages from us. If you want
-        to join again, just sign up as you did the first time and we will start
-        sending SMS messages to you again. If at any time you forget what
-        keywords are supported, just text “HELP” to [+1 (469) 715-3452]. After
-        you send the SMS message “HELP” to us, we will respond with instructions
-        on how to use our service as well as how to unsubscribe. We are able to
-        deliver messages to the following mobile phone carriers: Major carriers:
-        AT&T, Verizon Wireless, Sprint, T-Mobile, U.S. Cellular, Alltel, Boost
-        Mobile, Nextel, and Virgin Mobile. Minor carriers: Alaska Communications
-        Systems (ACS), Appalachian Wireless (EKN), Bluegrass Cellular, Cellular
-        One of East Central IL (ECIT), Cellular One of Northeast Pennsylvania,
-        Cincinnati Bell Wireless, Cricket, Coral Wireless (Mobi PCS), COX,
-        Cross, Element Mobile (Flat Wireless), Epic Touch (Elkhart Telephone),
-        GCI, Golden State, Hawkeye (Chat Mobility), Hawkeye (NW Missouri),
-        Illinois Valley Cellular, Inland Cellular, iWireless (Iowa Wireless),
-        Keystone Wireless (Immix Wireless/PC Man), Mosaic (Consolidated or CTC
-        Telecom), Nex-Tech Wireless, NTelos, Panhandle Communications, Pioneer,
-        Plateau (Texas RSA 3 Ltd), Revol, RINA, Simmetry (TMP Corporation),
-        Thumb Cellular, Union Wireless, United Wireless, Viaero Wireless, and
-        West Central (WCC or 5 Star Wireless). As always, message and data rates
-        may apply for any messages sent to you from us and to us from you. You
-        will receive periodic messages. If you have any questions about your
-        text plan or data plan, it is best to contact your wireless provider.
-        For all questions about the services provided by this short code, you
-        can send an email to hello@photodrop.me. Feedback We welcome feedback,
-        comments and suggestions for improvements to the Service (“Feedback”).
-        You can submit Feedback by emailing us at feedback@photodrop.me. Any
-        Feedback you provide which is incorporated into the Service, you agree
-        is subject to a non-exclusive, worldwide, perpetual, irrevocable,
-        fully-paid, royalty-free, sublicensable and transferable license to the
-        Company. Content and Content Rights For purposes of these Terms: (a)
-        “Content” means text, graphics, photos (including reference images),
-        data (including feedback on proposed photo matches), images, music,
-        software, audio, video, works of authorship of any kind, personally
-        identifiable information, and information or other materials that are
-        posted, generated, provided or otherwise made available through the
-        Service; and (b) “User Content” means any Content that Account holders
-        (including you) provide to be made available through the Service.
-        Content includes without limitation User Content. Content Ownership,
-        Responsibility and Removal PhotoDrop does not claim any ownership rights
-        in any User Content and nothing in these Terms will be deemed to
-        restrict any rights that you may have to use and exploit your User
-        Content. Subject to the foregoing, PhotoDrop and its licensors
-        exclusively own all right, title and interest in and to the Service and
-        Content, including all associated intellectual property rights. You
-        acknowledge that the Service and Content are protected by copyright,
-        trademark, and other laws of the United States and foreign countries.
-        You agree not to remove, alter or obscure any copyright, trademark,
-        service mark or other proprietary rights notices incorporated in or
-        accompanying the Service or Content. Rights in User Content Granted by
-        You By making any User Content available through the Service you hereby
-        grant to PhotoDrop and the Owner of any gallery you submit your User
-        Content to a non-exclusive, transferable, sublicensable, worldwide,
-        royalty-free license to use, copy, modify, create derivative works based
-        upon, distribute, publicly display, publicly perform and distribute your
-        User Content in connection with operating, marketing, and providing the
-        Service. We do not claim ownership of your content, but you grant us a
-        license to use it. Nothing is changing about your rights in your
-        content. We do not claim ownership of your content that you post on or
-        through the Service and you are free to share your content with anyone
-        else, wherever you want. You are solely responsible for all your User
-        Content. You represent and warrant that you own all your User Content or
-        you have all rights that are necessary to grant us the license rights in
-        your User Content under these Terms. You also represent and warrant that
-        neither your User Content, nor your use and provision of your User
-        Content to be made available through the Service, nor any use of your
-        User Content by PhotoDrop on or through the Service will infringe,
-        misappropriate or violate a third party’s intellectual property rights,
-        or rights of publicity or privacy, or result in the violation of any
-        applicable law or regulation. You can remove your User Content by
-        specifically deleting it. However, in certain instances, some of your
-        User Content (such as photos, posts or comments you make) may not be
-        completely removed and copies of your User Content may continue to exist
-        on the Service. We are not responsible or liable for the removal or
-        deletion of (or the failure to remove or delete) any of your User
-        Content. Rights in Content Granted by PhotoDrop Subject to your
-        compliance with these Terms, PhotoDrop grants you a limited,
-        non-exclusive, non-transferable, non-sublicensable license to download,
-        view, copy, print, and display one copy of the Content solely in
-        connection with your permitted use of the Service and solely for your
-        personal, non-commercial purposes. Fees for Services You agree to pay
-        PhotoDrop any fees for each Service you purchase or use (including any
-        overage fees), in accordance with the pricing and payment terms
-        presented to you for that Service. Where applicable, you will be billed
-        using the billing method you select through our checkout. Fees paid by
-        you are non-refundable, except as provided in these Terms or when
-        required by law. Services Terms These Terms of Use apply to your access
-        to and use of the Site, the Professional Services (as defined below) and
-        any other apps and online services provided by PhotoDrop (the
+        and “your” will refer to that company or other legal entity.
+      </Text>
+      <Text>
+        Privacy Policy Please refer to our Privacy Policy at
+        https://photodrop.me/ privacy for information on how we collect, use and
+        disclose information from our users. You acknowledge and agree that your
+        use of the Service is subject to our Privacy Policy. Facial Recognition
+        Technology You agree that we may use facial recognition technology to
+        allow us to identify photos on the Service in which you appear when you
+        add a reference photo to the Service. For example, our facial
+        recognition technology will compare your reference image with albums of
+        photos to locate photos of you. In addition, your responses to potential
+        photo matches may improve the accuracy of the facial recognition
+        technology. By using the Service and adding a reference image, you
+        consent to the use of facial recognition technology to identify photos
+        on the Service in which you appear. You represent that the reference
+        image photo added by you to the Service is you (or a family member for
+        whom you are the legal guardian or have their consent) and that you are
+        not impersonating or misrepresenting yourself as any other person or
+        entity. For more information on our use of facial recognition
+        technology, please see our Privacy Policy. Changes to Terms of Service
+        We may modify the Terms at any time, at our sole discretion. If we do
+        so, we’ll let you know either by posting the modified Terms on the Site
+        or through other communications. It’s important that you review the
+        Terms whenever we modify them because if you continue to use the Service
+        after we have posted modified Terms on the Site, you are indicating to
+        us that you agree to be bound by the modified Terms. If you don’t agree
+        to be bound by the modified Terms, then you may not use the Service
+        anymore. Because our Service is evolving over time we may change or
+        discontinue all or any part of the Service, at any time and without
+        notice, at our sole discretion. Who May Use the Service Eligibility You
+        may use the Service only if you are 13 years of age or older and are not
+        barred from using the Service under applicable law. Registration and
+        Your Information If you want to use certain features of the Service
+        you’ll have to create an account (“Account”). It’s important that you
+        provide us with accurate, complete and up-to-date information for your
+        Account and you agree to update such information, as needed, to keep it
+        accurate, complete and up-to-date. If you don’t, we might have to
+        suspend or terminate your Account. You agree that you won’t disclose
+        your Account password to anyone and you’ll notify us immediately of any
+        unauthorized use of your Account. You’re responsible for all activities
+        that occur under your Account, whether or not you know about them.
+        Twilio Short & Long Code Terms of Service When you provide your phone
+        number opt-in to the service, we will send you an SMS message to confirm
+        your signup. By providing your phone number, you agree that we may send
+        you SMS messages in response to SMS messages you send to us, such as
+        when you send a reference image or code to us by SMS. In addition, by
+        registering to use the service, you agree to receive SMS messages sent
+        using an automatic telephone dialing system to inform you of the
+        following: opportunities to join or create albums relevant to you; new
+        photos added to your albums; comments, or reactions added to your
+        photos; new matching photos or links to them based on a code you sent
+        us, your location and proximity to photos taken; or invitations from
+        other users of the Service You can cancel the SMS service at any time.
+        Just text “STOP” to +1 (469) 715-3452. After you send the SMS message
+        “STOP” to us, we will send you an SMS message to confirm that you have
+        been unsubscribed. After this, you will no longer receive SMS messages
+        from us. If you want to join again, just sign up as you did the first
+        time and we will start sending SMS messages to you again. If at any time
+        you forget what keywords are supported, just text “HELP” to [+1 (469)
+        715-3452]. After you send the SMS message “HELP” to us, we will respond
+        with instructions on how to use our service as well as how to
+        unsubscribe. We are able to deliver messages to the following mobile
+        phone carriers: Major carriers: AT&T, Verizon Wireless, Sprint,
+        T-Mobile, U.S. Cellular, Alltel, Boost Mobile, Nextel, and Virgin
+        Mobile. Minor carriers: Alaska Communications Systems (ACS), Appalachian
+        Wireless (EKN), Bluegrass Cellular, Cellular One of East Central IL
+        (ECIT), Cellular One of Northeast Pennsylvania, Cincinnati Bell
+        Wireless, Cricket, Coral Wireless (Mobi PCS), COX, Cross, Element Mobile
+        (Flat Wireless), Epic Touch (Elkhart Telephone), GCI, Golden State,
+        Hawkeye (Chat Mobility), Hawkeye (NW Missouri), Illinois Valley
+        Cellular, Inland Cellular, iWireless (Iowa Wireless), Keystone Wireless
+        (Immix Wireless/PC Man), Mosaic (Consolidated or CTC Telecom), Nex-Tech
+        Wireless, NTelos, Panhandle Communications, Pioneer, Plateau (Texas RSA
+        3 Ltd), Revol, RINA, Simmetry (TMP Corporation), Thumb Cellular, Union
+        Wireless, United Wireless, Viaero Wireless, and West Central (WCC or 5
+        Star Wireless). As always, message and data rates may apply for any
+        messages sent to you from us and to us from you. You will receive
+        periodic messages. If you have any questions about your text plan or
+        data plan, it is best to contact your wireless provider. For all
+        questions about the services provided by this short code, you can send
+        an email to hello@photodrop.me. Feedback We welcome feedback, comments
+        and suggestions for improvements to the Service (“Feedback”). You can
+        submit Feedback by emailing us at feedback@photodrop.me. Any Feedback
+        you provide which is incorporated into the Service, you agree is subject
+        to a non-exclusive, worldwide, perpetual, irrevocable, fully-paid,
+        royalty-free, sublicensable and transferable license to the Company.
+        Content and Content Rights For purposes of these Terms: (a) “Content”
+        means text, graphics, photos (including reference images), data
+        (including feedback on proposed photo matches), images, music, software,
+        audio, video, works of authorship of any kind, personally identifiable
+        information, and information or other materials that are posted,
+        generated, provided or otherwise made available through the Service; and
+        (b) “User Content” means any Content that Account holders (including
+        you) provide to be made available through the Service. Content includes
+        without limitation User Content. Content Ownership, Responsibility and
+        Removal PhotoDrop does not claim any ownership rights in any User
+        Content and nothing in these Terms will be deemed to restrict any rights
+        that you may have to use and exploit your User Content. Subject to the
+        foregoing, PhotoDrop and its licensors exclusively own all right, title
+        and interest in and to the Service and Content, including all associated
+        intellectual property rights. You acknowledge that the Service and
+        Content are protected by copyright, trademark, and other laws of the
+        United States and foreign countries. You agree not to remove, alter or
+        obscure any copyright, trademark, service mark or other proprietary
+        rights notices incorporated in or accompanying the Service or Content.
+        Rights in User Content Granted by You By making any User Content
+        available through the Service you hereby grant to PhotoDrop and the
+        Owner of any gallery you submit your User Content to a non-exclusive,
+        transferable, sublicensable, worldwide, royalty-free license to use,
+        copy, modify, create derivative works based upon, distribute, publicly
+        display, publicly perform and distribute your User Content in connection
+        with operating, marketing, and providing the Service. We do not claim
+        ownership of your content, but you grant us a license to use it. Nothing
+        is changing about your rights in your content. We do not claim ownership
+        of your content that you post on or through the Service and you are free
+        to share your content with anyone else, wherever you want. You are
+        solely responsible for all your User Content. You represent and warrant
+        that you own all your User Content or you have all rights that are
+        necessary to grant us the license rights in your User Content under
+        these Terms. You also represent and warrant that neither your User
+        Content, nor your use and provision of your User Content to be made
+        available through the Service, nor any use of your User Content by
+        PhotoDrop on or through the Service will infringe, misappropriate or
+        violate a third party’s intellectual property rights, or rights of
+        publicity or privacy, or result in the violation of any applicable law
+        or regulation. You can remove your User Content by specifically deleting
+        it. However, in certain instances, some of your User Content (such as
+        photos, posts or comments you make) may not be completely removed and
+        copies of your User Content may continue to exist on the Service. We are
+        not responsible or liable for the removal or deletion of (or the failure
+        to remove or delete) any of your User Content. Rights in Content Granted
+        by PhotoDrop Subject to your compliance with these Terms, PhotoDrop
+        grants you a limited, non-exclusive, non-transferable, non-sublicensable
+        license to download, view, copy, print, and display one copy of the
+        Content solely in connection with your permitted use of the Service and
+        solely for your personal, non-commercial purposes. Fees for Services You
+        agree to pay PhotoDrop any fees for each Service you purchase or use
+        (including any overage fees), in accordance with the pricing and payment
+        terms presented to you for that Service. Where applicable, you will be
+        billed using the billing method you select through our checkout. Fees
+        paid by you are non-refundable, except as provided in these Terms or
+        when required by law. Services Terms These Terms of Use apply to your
+        access to and use of the Site, the Professional Services (as defined
+        below) and any other apps and online services provided by PhotoDrop (the
         “Services”). These Terms of Use also apply to your use of the Services
         to purchase photographic prints or other related merchandise and
         products (“Products”) through PhotoDrop’s approved third party vendors

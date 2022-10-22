@@ -2,33 +2,43 @@ import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
   position: relative;
-  height: 55px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 19px 0 18px;
+  border-bottom: 1px solid #f1f0ec;
+  background-color: #fff;
+
+  @media screen and (min-width: 1440px) {
+    padding: 18px 0 17px;
+  }
 
   .logo {
     width: 125px;
-    height: 16px;
-  }
-`;
+    height: 17px;
 
-export const BottomLine = styled.div`
-  position: absolute;
-  left: 0;
-  top: 55px;
-  height: 1px;
-  width: 100vw;
-  background-color: #f1f0ec;
+    @media screen and (min-width: 1440px) {
+      width: 179px;
+      height: 24px;
+    }
+
+    & use {
+      width: 125px;
+      height: 16px;
+
+      @media screen and (min-width: 1440px) {
+        width: 179px;
+        height: 22px;
+      }
+    }
+  }
 `;
 
 export const BtnGoBack = styled.button`
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 15px;
+  top: 19px;
   width: 8px;
-  height: 16px;
+  height: 17px;
   border: none;
   cursor: pointer;
   background-color: transparent;
@@ -37,15 +47,38 @@ export const BtnGoBack = styled.button`
   align-items: center;
   justify-content: center;
 
-  & .iconGoBack {
+  @media screen and (min-width: 1440px) {
+    top: 20px;
+    left: 40px;
+    width: 10px;
+    height: 20px;
+  }
+`;
+
+export const IconGoBack = styled.svg`
+  height: 17px;
+  width: 10px;
+  fill: ${(p) => p.theme.colors.primary};
+
+  @media screen and (min-width: 1440px) {
+    height: 21px;
+    width: 10px;
+  }
+
+  & use {
     height: 16px;
-    width: 8px;
+    width: 9px;
+
+    @media screen and (min-width: 1440px) {
+      height: 20px;
+      width: 10px;
+    }
   }
 `;
 
 export const ContainerAvatar = styled.div`
   position: absolute;
-  right: 0;
+  right: 15px;
   top: 50%;
   transform: translateY(-50%);
   width: 35px;

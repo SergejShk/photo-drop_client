@@ -1,8 +1,9 @@
 import {
-  BottomLine,
+  // BottomLine,
   BtnGoBack,
   ContainerAvatar,
   HeaderStyled,
+  IconGoBack,
 } from "./Header.styled";
 import sprite from "../../assets/sprite.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -27,13 +28,12 @@ const Header: React.FC<IProps> = ({ goBack, selfie }) => {
 
   return (
     <>
-      <BottomLine />
       <HeaderStyled>
         {goBack && (
           <BtnGoBack onClick={onGoBack}>
-            <svg className="iconGoBack">
+            <IconGoBack>
               <use href={sprite + "#icon-Back-Arrow"} />
-            </svg>
+            </IconGoBack>
           </BtnGoBack>
         )}
 
@@ -43,8 +43,8 @@ const Header: React.FC<IProps> = ({ goBack, selfie }) => {
 
         {selfie && (
           <ContainerAvatar>
-            <Link to='/profile'>
-            <img src={selfie} alt="avatar" />
+            <Link to="/profile">
+              <img src={selfie} alt="avatar" />
             </Link>
           </ContainerAvatar>
         )}
