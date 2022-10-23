@@ -13,7 +13,7 @@ export const AccentText = styled.p`
   font-family: ${(p) => p.theme.fonts.body};
   font-weight: ${(p) => p.theme.fontWeights.medium};
   font-size: ${(p) => p.theme.fontSizes.l};
-  line-height: ${(p) => p.theme.lineHeights.body};
+  line-height: 14px;
   color: ${(p) => p.theme.colors.primary};
   margin-top: 21px;
   margin-bottom: 16px;
@@ -22,7 +22,7 @@ export const AccentText = styled.p`
 export const Text = styled.p`
   font-family: ${(p) => p.theme.fonts.body};
   font-size: ${(p) => p.theme.fontSizes.m};
-  line-height: ${(p) => p.theme.lineHeights.body};
+  line-height: 18px;
   display: flex;
   color: ${(p) => p.theme.colors.primary};
   text-align: center;

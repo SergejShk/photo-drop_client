@@ -16,11 +16,6 @@ export const BtnClose = styled.button`
   border: none;
   cursor: pointer;
 
-  /* @media screen and (min-width: 1440px) {
-    top: 16px;
-    left: calc(50% - 166px);
-  } */
-
   & svg {
     width: 30px;
     height: 30px;
@@ -74,6 +69,7 @@ export const CropWrapper = styled.div`
     height: 285px;
     width: 285px;
     border-radius: 50%;
+    z-index: 30;
   }
 
   & img {

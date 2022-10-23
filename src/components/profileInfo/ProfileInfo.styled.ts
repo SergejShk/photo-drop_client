@@ -3,7 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 22px 0;
+  padding: 22px 0 20px;
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 40px;
+  }
 `;
 
 export const WelcomeText = styled.h2`
@@ -11,17 +15,28 @@ export const WelcomeText = styled.h2`
   font-family: ${(p) => p.theme.fonts.heading};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   font-size: ${(p) => p.theme.fontSizes.m};
-  line-height: 1.22;
+  line-height: 12px;
   color: ${(p) => p.theme.colors.primary};
+
+  @media screen and (min-width: 1440px) {
+    font-size: 22px;
+    margin-bottom: 33px;
+  }
 `;
 
 export const Text = styled.p`
   font-family: ${(p) => p.theme.fonts.body};
   font-weight: ${(p) => p.theme.fontWeights.medium};
   font-size: ${(p) => p.theme.fontSizes.s};
-  line-height: ${(p) => p.theme.lineHeights.secondary};
+  line-height: 14px;
   color: ${(p) => p.theme.colors.primary};
   margin-bottom: 13px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 13px;
+    margin-bottom: 15px;
+  }
 `;
 
 export const ContainerSelfie = styled.div`
@@ -31,6 +46,11 @@ export const ContainerSelfie = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (min-width: 1440px) {
+    width: 150px;
+    height: 150px;
+  }
 
   & img {
     border-radius: 50%;
@@ -51,6 +71,12 @@ export const BtnEditAvatar = styled.button`
   padding: 0;
   border: ${(p) => p.theme.borders.none};
   border-radius: 50%;
+
+  @media screen and (min-width: 1440px) {
+    width: 46px;
+    height: 46px;
+    right: -21px;
+  }
 
   & svg {
     width: 100%;
