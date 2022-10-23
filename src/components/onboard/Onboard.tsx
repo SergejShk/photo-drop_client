@@ -1,15 +1,18 @@
 import { useState, useRef } from "react";
-import { AiFillPlusCircle } from "react-icons/ai";
 import avatar from "../../assets/avatar.png";
 import {
   Avatar,
+  BackdropCrop,
   BtnAddAvatar,
+  IconAddAvatar,
+  ModalCrop,
   Text,
   Title,
   Wrapper,
   WrapperAvatar,
 } from "./Onboard.styled";
 import Crop from "../crop/Crop";
+import sprite from "../../assets/sprite.svg";
 
 const AddSelfie: React.FC = () => {
   const filePicker = useRef<HTMLInputElement>(null);
@@ -31,37 +34,38 @@ const AddSelfie: React.FC = () => {
     filePicker.current?.click();
   };
 
-  return !openCrop ? (
-    <Wrapper>
-      <Title>Add a selfie</Title>
-      <Text>A selfie allows your photos to be synced with your account.</Text>
-
-      <WrapperAvatar>
-        <Avatar src={avatar} alt="avatar" />
-
-        <BtnAddAvatar type="button" onClick={onSelectImage}>
-          <AiFillPlusCircle />
-        </BtnAddAvatar>
-
-        <input
-          className="hidden"
-          type="file"
-          ref={filePicker}
-          accept="image/*,.png,.jpg,.jpeg"
-          onChange={handleChange}
-        />
-      </WrapperAvatar>
-    </Wrapper>
-  ) : (
+  return (
     <>
-      <Crop {...{ photoURL, onSelectImage, setOpenCrop }} />
-      <input
-        className="hidden"
-        type="file"
-        ref={filePicker}
-        accept="image/*,.png,.jpg,.jpeg"
-        onChange={handleChange}
-      />
+      <Wrapper>
+        <Title>Add a selfie</Title>
+        <Text>A selfie allows your photos to be synced with your account.</Text>
+
+        <WrapperAvatar>
+          <Avatar src={avatar} alt="avatar" />
+
+          <BtnAddAvatar type="button" onClick={onSelectImage}>
+            <IconAddAvatar>
+              <use href={sprite + "#icon-addAvatar"} />
+            </IconAddAvatar>
+          </BtnAddAvatar>
+
+          <input
+            className="hidden"
+            type="file"
+            ref={filePicker}
+            accept="image/*,.png,.jpg,.jpeg"
+            onChange={handleChange}
+          />
+        </WrapperAvatar>
+      </Wrapper>
+
+      {openCrop && (
+        <BackdropCrop>
+          <ModalCrop>
+            <Crop {...{ photoURL, onSelectImage, setOpenCrop }} />
+          </ModalCrop>
+        </BackdropCrop>
+      )}
     </>
   );
 };

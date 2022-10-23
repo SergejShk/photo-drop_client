@@ -46,6 +46,11 @@
 <path fill="none"   stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.6" d="M8 0.8h16c3.976 0 7.2 3.224 7.2 7.2v16c0 3.976-3.224 7.2-7.2 7.2h-16c-3.976 0-7.2-3.224-7.2-7.2v-16c0-3.976 3.224-7.2 7.2-7.2z"></path>
 <path  d="M13.867 23.364l-8.267-8.598 1.73-1.663 6.502 6.762 10.951-11.864 1.764 1.628-12.679 13.736z"></path>
 </symbol>
+<symbol id="icon-addAvatar" viewBox="0 0 32 32">
+<path fill="#30c" style="fill: var(--color1, #30c); stroke: var(--color1, #30c)" stroke="#30c" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.7619" d="M31.619 16c0 8.626-6.993 15.619-15.619 15.619s-15.619-6.993-15.619-15.619c0-8.626 6.993-15.619 15.619-15.619s15.619 6.993 15.619 15.619z"></path>
+<path fill="none" stroke="#fff" style="stroke: var(--color2, #fff)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.5238" d="M16 9.143v13.714"></path>
+<path fill="none" stroke="#fff" style="stroke: var(--color2, #fff)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.5238" d="M9.143 16h13.714"></path>
+</symbol>
 
 </defs>
 </svg>
