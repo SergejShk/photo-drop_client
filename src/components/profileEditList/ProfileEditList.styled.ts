@@ -19,7 +19,7 @@ export const EditItem = styled.li`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px 9px 15px;
+    padding: 10px 15px 9px;
     border-radius: 10px;
 
     @media screen and (min-width: 1440px) {

@@ -4,6 +4,10 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   padding-top: 167px;
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 255px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -11,23 +15,37 @@ export const Title = styled.h2`
   font-family: ${(p) => p.theme.fonts.heading};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   font-size: ${(p) => p.theme.fontSizes.m};
-  line-height: 1.22;
+  line-height: 13px;
   color: ${(p) => p.theme.colors.primary};
   margin-bottom: 20px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 22px;
+    line-height: 18px;
+    margin-bottom: 30px;
+  }
 `;
 
 export const Input = styled.input`
-  width: calc(100% - 28px);
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
   background-color: ${(p) => p.theme.colors.backgroundInput};
   border: ${(p) => p.theme.borders.normal};
   border-radius: 10px;
   padding: 15px 13px 14px;
+  font-family: ${(p) => p.theme.fonts.body};
   font-size: ${(p) => p.theme.fontSizes.s};
-  line-height: ${(p) => p.theme.lineHeights.secondary};
+  line-height: 11px;
   color: ${(p) => p.theme.colors.primary};
   margin-bottom: 21px;
 
+  @media screen and (min-width: 1440px) {
+    padding: 15px 17px 14px;
+    font-size: 18px;
+  }
+
   &:focus {
-    outline-color: ${(p) => p.theme.colors.accent};
+    outline: none;
   }
 `;

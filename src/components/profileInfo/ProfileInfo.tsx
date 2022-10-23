@@ -13,6 +13,7 @@ import {
 import { useRef, useState } from "react";
 import Crop from "../crop/Crop";
 import sprite from "../../assets/sprite.svg";
+import ModalCrop from "../modalCrop/ModalCrop";
 
 const ProfileInfo: React.FC = () => {
   const userName = useAppSelector(getUserNameStore);
@@ -37,33 +38,37 @@ const ProfileInfo: React.FC = () => {
     filePicker.current?.click();
   };
 
-  return !openCrop ? (
-    <Container>
-      <WelcomeText>
-        {userName ? `Welcome, ${userName}.` : "Welcome"}
-      </WelcomeText>
-      <Text>Your selfie</Text>
-
-      <ContainerSelfie>
-        <img src={selfie} alt="avatar" />
-
-        <BtnEditAvatar type="button" onClick={() => setOpenCrop(true)}>
-          <svg>
-            <use href={sprite + "#icon-editor"} />
-          </svg>
-        </BtnEditAvatar>
-      </ContainerSelfie>
-    </Container>
-  ) : (
+  return (
     <>
-      <Crop {...{ photoURL, onSelectImage, setOpenCrop, setPhotoURL }} />
-      <input
-        className="hidden"
-        type="file"
-        ref={filePicker}
-        accept="image/*,.png,.jpg,.jpeg"
-        onChange={handleChange}
-      />
+      <Container>
+        <WelcomeText>
+          {userName ? `Welcome, ${userName}.` : "Welcome"}
+        </WelcomeText>
+        <Text>Your selfie</Text>
+
+        <ContainerSelfie>
+          <img src={selfie} alt="avatar" />
+
+          <BtnEditAvatar type="button" onClick={() => setOpenCrop(true)}>
+            <svg>
+              <use href={sprite + "#icon-editor"} />
+            </svg>
+          </BtnEditAvatar>
+        </ContainerSelfie>
+      </Container>
+
+      {openCrop && (
+        <ModalCrop>
+          <Crop {...{ photoURL, onSelectImage, setOpenCrop, setPhotoURL }} />
+          <input
+            className="hidden"
+            type="file"
+            ref={filePicker}
+            accept="image/*,.png,.jpg,.jpeg"
+            onChange={handleChange}
+          />
+        </ModalCrop>
+      )}
     </>
   );
 };

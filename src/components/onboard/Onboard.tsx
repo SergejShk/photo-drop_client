@@ -2,10 +2,8 @@ import { useState, useRef } from "react";
 import avatar from "../../assets/avatar.png";
 import {
   Avatar,
-  BackdropCrop,
   BtnAddAvatar,
   IconAddAvatar,
-  ModalCrop,
   Text,
   Title,
   Wrapper,
@@ -13,6 +11,7 @@ import {
 } from "./Onboard.styled";
 import Crop from "../crop/Crop";
 import sprite from "../../assets/sprite.svg";
+import ModalCrop from "../modalCrop/ModalCrop";
 
 const AddSelfie: React.FC = () => {
   const filePicker = useRef<HTMLInputElement>(null);
@@ -60,11 +59,9 @@ const AddSelfie: React.FC = () => {
       </Wrapper>
 
       {openCrop && (
-        <BackdropCrop>
-          <ModalCrop>
-            <Crop {...{ photoURL, onSelectImage, setOpenCrop }} />
-          </ModalCrop>
-        </BackdropCrop>
+        <ModalCrop>
+          <Crop {...{ photoURL, onSelectImage, setOpenCrop }} />
+        </ModalCrop>
       )}
     </>
   );

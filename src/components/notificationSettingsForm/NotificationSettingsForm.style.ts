@@ -5,6 +5,10 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   padding-top: 20px;
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 41px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -12,9 +16,15 @@ export const Title = styled.h2`
   font-family: ${(p) => p.theme.fonts.heading};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   font-size: ${(p) => p.theme.fontSizes.m};
-  line-height: 1.22;
+  line-height: 14px;
   color: ${(p) => p.theme.colors.primary};
-  margin-bottom: 19px;
+  margin-bottom: 25px;
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 36px;
+    font-size: 22px;
+    line-height: 12px;
+  }
 `;
 
 export const Label = styled.label`
@@ -22,21 +32,33 @@ export const Label = styled.label`
   font-family: ${(p) => p.theme.fonts.body};
   font-weight: ${(p) => p.theme.fontWeights.medium};
   font-size: ${(p) => p.theme.fontSizes.s};
-  line-height: ${(p) => p.theme.fontSizes.secondary};
+  line-height: 10px;
   color: ${(p) => p.theme.colors.primary};
-  margin-bottom: 10px;
   padding-left: 30px;
+  margin-bottom: 20px;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 14px;
+    margin-bottom: 16px;
+    padding-left: 28px;
+  }
+
   & .customCheckbox {
     position: absolute;
-    top: -1px;
+    top: -6px;
     left: 0;
     fill: transparent;
     cursor: pointer;
     border: 1px solid #e3e0d8;
     border-radius: 5px;
+
+    @media screen and (min-width: 1440px) {
+      top: -3px;
+      left: -2px;
+    }
   }
 `;
 
@@ -60,8 +82,16 @@ export const Text = styled.p`
   font-family: ${(p) => p.theme.fonts.body};
   font-weight: ${(p) => p.theme.fontWeights.normal};
   font-size: ${(p) => p.theme.fontSizes.xs};
-  line-height: ${(p) => p.theme.fontSizes.body};
+  line-height: 16px;
   color: ${(p) => p.theme.colors.secondary};
   padding-left: 30px;
+  margin-top: -6px;
   margin-bottom: 39px;
+
+  @media screen and (min-width: 1440px) {
+    margin-top: -3px;
+    font-size: 16px;
+    line-height: 17px;
+    padding-left: 28px;
+  }
 `;

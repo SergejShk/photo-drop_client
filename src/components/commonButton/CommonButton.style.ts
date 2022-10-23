@@ -11,7 +11,13 @@ export const Button = styled.button`
   font-size: ${(p) => p.theme.fontSizes.m};
   line-height: ${(p) => p.theme.lineHeights.body};
   color: ${(p) => p.theme.colors.white};
-  padding: 14px 20px 13px 20px;
+  padding: 14px 20px 13px;
   margin-bottom: 20px;
   border: none;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 22px;
+    line-height: 15px;
+    padding: 17px 20px 18px;
+  }
 `;
