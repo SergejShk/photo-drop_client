@@ -4,8 +4,8 @@ import { useAppSelector } from "../../hooks/reduxHooks";
 import { isExistToken, isLoadingStore } from "../../redux/auth/authSelectors";
 import { getSelfieStore } from "../../redux/user/userSelectors";
 import { isGoBack, isSelfie } from "../../utils/headerContent";
+import Container from "../container/Container";
 import Header from "../header/Header";
-import { Container, TextPageContainer } from "./SharedLoyaut.styled";
 
 const SharedLoyaout: React.FC = () => {
   const isLoadingPage = useAppSelector(isLoadingStore);
@@ -28,23 +28,14 @@ const SharedLoyaout: React.FC = () => {
           selfie={isSelfie.includes(pathname) ? selfie : ""}
         />
       )}
-      {pathname === ("/terms" || "/policy") ? (
-        <TextPageContainer>
-          <main>
-            <Suspense fallback={<></>}>
-              <Outlet />
-            </Suspense>
-          </main>
-        </TextPageContainer>
-      ) : (
-        <Container>
-          <main>
-            <Suspense fallback={<></>}>
-              <Outlet />
-            </Suspense>
-          </main>
-        </Container>
-      )}
+
+      <Container>
+        <main>
+          <Suspense fallback={<></>}>
+            <Outlet />
+          </Suspense>
+        </main>
+      </Container>
     </>
   );
 };

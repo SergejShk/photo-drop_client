@@ -12,7 +12,7 @@ import CommonButton from "../commonButton/CommonButton";
 import sprite from "../../assets/sprite.svg";
 import { useNavigate } from "react-router-dom";
 
-const NotificationSettingsForm = () => {
+const NotificationSettingsForm: React.FC = () => {
   const navigate = useNavigate();
   const [settings, setSettings] = useState<AllSettings>(
     () =>

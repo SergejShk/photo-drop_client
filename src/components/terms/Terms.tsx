@@ -1,9 +1,14 @@
+import { useMediaQuery } from "react-responsive";
 import { Text, Title } from "./Terms.styled";
 
 const Terms: React.FC = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
+
   return (
     <>
-      <Title>Terms of service</Title>
+      <Title>
+        {isMobile ? "Terms of service" : "Terms of Use & Privacy Policy"}
+      </Title>
       <Text>
         By registering to use and access the FOM Online, Inc. (“PhotoDrop”)
         websites located at photodrop.me and frameology.com, the PhotoDrop photo

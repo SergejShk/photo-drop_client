@@ -6,7 +6,18 @@ export const Container = styled.div`
   padding-bottom: 41px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+  @media screen and (min-width: 1440px) {
+    padding: 40px 0 100px;
+  }
+`;
+
+export const Icon = styled.svg`
+  margin-left: 136px;
+
+  @media screen and (min-width: 1440px) {
+    margin-left: 569px;
+  }
 `;
 
 export const AccentText = styled.p`
@@ -15,8 +26,13 @@ export const AccentText = styled.p`
   font-size: ${(p) => p.theme.fontSizes.l};
   line-height: 14px;
   color: ${(p) => p.theme.colors.primary};
-  margin-top: 21px;
-  margin-bottom: 16px;
+  margin: 21px auto 16px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 30px;
+    line-height: 22px;
+    margin: 30px auto 19px;
+  }
 `;
 
 export const Text = styled.p`
@@ -26,6 +42,12 @@ export const Text = styled.p`
   display: flex;
   color: ${(p) => p.theme.colors.primary};
   text-align: center;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 22px;
+    line-height: 16px;
+    margin: 0 auto;
+  }
 `;
 
 export const Line = styled.div`
