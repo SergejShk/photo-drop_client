@@ -1,5 +1,4 @@
 import {
-  // BottomLine,
   BtnGoBack,
   ContainerAvatar,
   HeaderStyled,

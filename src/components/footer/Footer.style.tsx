@@ -1,9 +1,20 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const CommonWrapperFooter = styled.div`
+  background-color: ${(p) => p.theme.colors.primary};
+  display: flex;
+  justify-content: center;
+`;
+
+export const WrapperFooter = styled.div`
   max-width: 345px;
   padding: 60px 15px 134px;
-  background-color: ${(p) => p.theme.colors.primary};
+
+  @media screen and (min-width: 1440px) {
+    max-width: 791px;
+    padding: 60px 0 40px;
+    display: flex;
+  }
 `;
 
 export const Title = styled.h2`
@@ -15,6 +26,12 @@ export const Title = styled.h2`
   color: ${(p) => p.theme.colors.white};
   margin-bottom: 15px;
   margin-left: -1px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 22px;
+    line-height: 17px;
+    margin-bottom: 19px;
+  }
 `;
 
 export const IconLogo = styled.svg`
@@ -22,9 +39,20 @@ export const IconLogo = styled.svg`
   height: 25px;
   margin-bottom: 23px;
 
+  @media screen and (min-width: 1440px) {
+    width: 185px;
+    height: 31px;
+    margin-bottom: 21px;
+  }
+
   & use {
     width: 150px;
     height: 24px;
+
+    @media screen and (min-width: 1440px) {
+      width: 185px;
+      height: 30px;
+    }
   }
 `;
 
@@ -36,6 +64,12 @@ export const TextFooter = styled.p`
   color: ${(p) => p.theme.colors.white};
   margin-left: -1px;
   margin-bottom: 39px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 20.75px;
+    margin-bottom: 29px;
+  }
 `;
 
 export const ButtonFooter = styled.button`
@@ -52,6 +86,13 @@ export const ButtonFooter = styled.button`
   background-color: transparent;
   color: ${(p) => p.theme.colors.white};
   margin-bottom: 60px;
+
+  @media screen and (min-width: 1440px) {
+    min-width: 300px;
+    padding: 17px 20px 18px;
+    font-size: 22px;
+    line-height: 15px;
+  }
 `;
 
 export const TextQuestions = styled.p`
@@ -61,6 +102,12 @@ export const TextQuestions = styled.p`
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.white};
   margin-bottom: 30px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 12px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const IconClimateNeutral = styled.svg`
@@ -81,6 +128,12 @@ export const TextInc = styled.p`
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.white};
   margin-bottom: 19px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 14px;
+    margin-bottom: 0;
+  }
 `;
 
 export const TextTerms = styled.p`
@@ -90,6 +143,12 @@ export const TextTerms = styled.p`
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.white};
   margin-bottom: 20px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 14px;
+    margin-bottom: 19px;
+  }
 `;
 
 export const TextPrivacy = styled.p`
@@ -98,4 +157,17 @@ export const TextPrivacy = styled.p`
   line-height: 12px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.white};
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 12px;
+  }
+`;
+
+export const Container = styled.div`
+  max-width: 420px;
+
+  &:not(:last-child) {
+    margin-right: 60px;
+  }
 `;
