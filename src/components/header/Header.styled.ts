@@ -79,8 +79,7 @@ export const IconGoBack = styled.svg`
 export const ContainerAvatar = styled.div`
   position: absolute;
   right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 10px;
   width: 35px;
   height: 35px;
   display: flex;
@@ -89,6 +88,11 @@ export const ContainerAvatar = styled.div`
   border-radius: 50%;
   overflow: hidden;
   margin-left: auto;
+
+  @media screen and (min-width: 1440px) {
+    top: 12px;
+    right: 40px;
+  }
 
   & img {
     width: 100%;

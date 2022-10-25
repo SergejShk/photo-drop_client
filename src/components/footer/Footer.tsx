@@ -28,7 +28,8 @@ const Footer = () => {
         Frame a photo
       </ButtonFooter>
       <TextQuestions>
-        Questions? Get in touch - hello@photodrop.me
+        Questions? Get in touch -{" "}
+        <a href="mailto:hello@photodrop.me">hello@photodrop.me</a>
       </TextQuestions>
       <IconClimateNeutral>
         <use href={sprite + "#icon-climate-neutral"} />
