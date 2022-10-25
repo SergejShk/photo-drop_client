@@ -6,7 +6,7 @@ export const Form = styled.form`
   padding-top: 166px;
 
   @media screen and (min-width: 1440px) {
-    padding-top: 255px;
+    padding-top: 254px;
   }
 `;
 
@@ -43,6 +43,7 @@ export const Input = styled.input`
   @media screen and (min-width: 1440px) {
     padding: 15px 17px 14px;
     font-size: 18px;
+    margin-bottom: 20px;
   }
 
   &:focus {

@@ -25,7 +25,7 @@ const EditEmail: React.FC = () => {
 
       <Input type="text" value={email} onChange={onChangeInput} />
 
-      <CommonButton type="submit" disabled={email.length < 3 && true}>
+      <CommonButton type="submit" disabled={email.length < 4 && true}>
         Save
       </CommonButton>
     </Form>
