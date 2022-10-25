@@ -38,7 +38,7 @@ export const saveAvatar = async (selfieData: addSelfieDataType) => {
 };
 
 export const updateUserData = async (dataToUpd: UserDataToUpdate) => {
-  const { data } = await axios.put("/client", dataToUpd);
+  const { data } = await axios.patch("/client", dataToUpd);
 
   return data;
 };

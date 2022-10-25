@@ -7,8 +7,8 @@ export type UserType = {
 };
 
 export type UserDataToUpdate = {
-  name: string;
-  email: string;
+  name?: string;
+  email?: string;
 };
 
 export type addSelfieDataType = {

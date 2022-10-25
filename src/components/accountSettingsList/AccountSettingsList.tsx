@@ -38,7 +38,7 @@ const AccountSettingsList: React.FC = () => {
           </Link>
         </Item> */}
         <Item>
-          <Link to="/email-settings">
+          <Link to="/edit-email">
             <svg width="26" height="21">
               <use href={sprite + "#icon-Email"} />
             </svg>

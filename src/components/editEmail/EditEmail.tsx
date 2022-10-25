@@ -2,35 +2,34 @@ import { useState } from "react";
 import { useAppDispatch } from "../../hooks/reduxHooks";
 import { updateUserDataThunk } from "../../redux/user/userOperations";
 import CommonButton from "../commonButton/CommonButton";
-import { Input, Title, Form } from "./EditName.style";
+import { Form, Input, Title } from "./EditEmail.style";
 
-const EditName: React.FC = () => {
-  const [name, setName] = useState("");
+const EditEmail: React.FC = () => {
+  const [email, setEmail] = useState("");
 
   const dispatch = useAppDispatch();
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setName(e.target.value);
+    setEmail(e.target.value);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    dispatch(updateUserDataThunk({ name }));
+    dispatch(updateUserDataThunk({ email }));
 
-    setName("");
+    setEmail("");
   };
-
   return (
     <Form onSubmit={handleSubmit}>
-      <Title>Your name</Title>
+      <Title>Your email</Title>
 
-      <Input type="text" value={name} onChange={onChangeInput} />
+      <Input type="text" value={email} onChange={onChangeInput} />
 
-      <CommonButton type="submit" disabled={name.length < 3 && true}>
+      <CommonButton type="submit" disabled={email.length < 3 && true}>
         Save
       </CommonButton>
     </Form>
   );
 };
 
-export default EditName;
+export default EditEmail;

@@ -4,9 +4,10 @@ import {
   getUserApi,
   prepareSelfieData,
   saveAvatar,
+  updateUserData,
 } from "../../services/userApi";
 
-import type { UserType } from "../../types/userTypes";
+import type { UserDataToUpdate, UserType } from "../../types/userTypes";
 
 export const getUserDataThunk = createAsyncThunk<
   UserType,
@@ -41,6 +42,20 @@ export const addSelfieThunk = createAsyncThunk<
     const avatar = url.split("?")[0];
 
     return avatar;
+  } catch (error: any) {
+    return rejectWithValue(error.message);
+  }
+});
+
+export const updateUserDataThunk = createAsyncThunk<
+  UserDataToUpdate,
+  UserDataToUpdate,
+  { rejectValue: string }
+>("user/updateUser", async (newData, { rejectWithValue }: string | any) => {
+  try {
+    await updateUserData(newData);
+
+    return newData;
   } catch (error: any) {
     return rejectWithValue(error.message);
   }

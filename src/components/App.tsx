@@ -20,6 +20,7 @@ const OnboardPage = lazy(() => import("../pages/OnboardPage"));
 const DashboardPage = lazy(() => import("../pages/DashboardPage"));
 const ProfilePage = lazy(() => import("../pages/ProfilePage"));
 const EditNamePage = lazy(() => import("../pages/EditNamePage"));
+const EditEmailPage = lazy(() => import("../pages/EditEmailPage"));
 const AccountSettingsPage = lazy(() => import("../pages/AccountSettingsPage"));
 const NotificationSettingsPage = lazy(
   () => import("../pages/NotificationSettingsPage")
@@ -116,6 +117,14 @@ const App: React.FC = () => {
           element={
             <PrivateRoute>
               <AccountSettingsPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="edit-email"
+          element={
+            <PrivateRoute>
+              <EditEmailPage />
             </PrivateRoute>
           }
         />
