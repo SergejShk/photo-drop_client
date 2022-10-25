@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import Footer from "../footer/Footer";
 import {
   ContainerCommon,
   ContainerDashboard,
@@ -15,7 +16,12 @@ const Container: React.FC<IProps> = ({ children }) => {
   if (pathname === "/policy" || pathname === "/terms") {
     return <ContainerTextPage>{children}</ContainerTextPage>;
   } else if (pathname === "/dashboard") {
-    return <ContainerDashboard>{children}</ContainerDashboard>;
+    return (
+      <>
+        <ContainerDashboard>{children}</ContainerDashboard>
+        <Footer />
+      </>
+    );
   } else {
     return <ContainerCommon>{children}</ContainerCommon>;
   }
