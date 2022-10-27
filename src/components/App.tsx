@@ -56,22 +56,10 @@ const App: React.FC = () => {
             </PublicRoute>
           }
         />
-        <Route
-          path="terms"
-          element={
-            <PublicRoute>
-              <TermsPage />
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="policy"
-          element={
-            <PublicRoute>
-              <PolicyPage />
-            </PublicRoute>
-          }
-        />
+
+        <Route path="terms" element={<TermsPage />} />
+        <Route path="policy" element={<PolicyPage />} />
+
         <Route
           path="verification"
           element={
@@ -83,9 +71,9 @@ const App: React.FC = () => {
         <Route
           path="onboard"
           element={
-            <PrivateRoute>
+            <PublicRoute>
               <OnboardPage />
-            </PrivateRoute>
+            </PublicRoute>
           }
         />
         <Route

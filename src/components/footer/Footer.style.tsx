@@ -15,6 +15,36 @@ export const WrapperFooter = styled.div`
     padding: 60px 0 40px;
     display: flex;
   }
+
+  & .terms {
+    display: block;
+    font-family: ${(p) => p.theme.fonts.body};
+    font-size: 16px;
+    line-height: 11px;
+    letter-spacing: -0.02em;
+    color: ${(p) => p.theme.colors.white};
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 1440px) {
+      font-size: 18px;
+      line-height: 14px;
+      margin-bottom: 19px;
+    }
+  }
+
+  & .policy {
+    display: block;
+    font-family: ${(p) => p.theme.fonts.body};
+    font-size: 16px;
+    line-height: 12px;
+    letter-spacing: -0.02em;
+    color: ${(p) => p.theme.colors.white};
+
+    @media screen and (min-width: 1440px) {
+      font-size: 18px;
+      line-height: 12px;
+    }
+  }
 `;
 
 export const Title = styled.h2`
@@ -133,34 +163,6 @@ export const TextInc = styled.p`
     font-size: 18px;
     line-height: 14px;
     margin-bottom: 0;
-  }
-`;
-
-export const TextTerms = styled.p`
-  font-family: ${(p) => p.theme.fonts.body};
-  font-size: 16px;
-  line-height: 11px;
-  letter-spacing: -0.02em;
-  color: ${(p) => p.theme.colors.white};
-  margin-bottom: 20px;
-
-  @media screen and (min-width: 1440px) {
-    font-size: 18px;
-    line-height: 14px;
-    margin-bottom: 19px;
-  }
-`;
-
-export const TextPrivacy = styled.p`
-  font-family: ${(p) => p.theme.fonts.body};
-  font-size: 16px;
-  line-height: 12px;
-  letter-spacing: -0.02em;
-  color: ${(p) => p.theme.colors.white};
-
-  @media screen and (min-width: 1440px) {
-    font-size: 18px;
-    line-height: 12px;
   }
 `;
 

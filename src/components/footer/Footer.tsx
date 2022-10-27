@@ -7,13 +7,12 @@ import {
   IconLogo,
   TextFooter,
   TextInc,
-  TextPrivacy,
   TextQuestions,
-  TextTerms,
   Title,
   WrapperFooter,
 } from "./Footer.style";
 import sprite from "../../assets/sprite.svg";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
@@ -47,8 +46,12 @@ const Footer: React.FC = () => {
         </IconClimateNeutral>
 
         <TextInc>© 2022 FOM Online Inc</TextInc>
-        <TextTerms>Terms</TextTerms>
-        <TextPrivacy>Privacy Party</TextPrivacy>
+        <Link to="/terms" className="terms">
+          Terms
+        </Link>
+        <Link to="/policy" className="policy">
+          Privacy Party
+        </Link>
       </WrapperFooter>
     </CommonWrapperFooter>
   ) : (
@@ -84,8 +87,12 @@ const Footer: React.FC = () => {
             <use href={sprite + "#icon-climate-neutral"} />
           </IconClimateNeutral>
 
-          <TextTerms>Terms of services</TextTerms>
-          <TextPrivacy>Privacy Party</TextPrivacy>
+          <Link to="/terms" className="terms">
+            Terms of services
+          </Link>
+          <Link to="/policy" className="policy">
+            Privacy Party
+          </Link>
         </Container>
       </WrapperFooter>
     </CommonWrapperFooter>

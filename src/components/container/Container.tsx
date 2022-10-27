@@ -19,7 +19,7 @@ const Container: React.FC<IProps> = ({ children }) => {
     return (
       <>
         <ContainerDashboard>{children}</ContainerDashboard>
-        <Footer />
+        {children && <Footer />}
       </>
     );
   } else {
