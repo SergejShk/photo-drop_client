@@ -12,6 +12,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import authReducer from "./auth/authSlice";
 import userReducer from "./user/userSlice";
+import albumsReducer from "./albums/albumsSlice";
 
 const authPersistConfig = {
   key: "authCl",
@@ -22,6 +23,7 @@ const authPersistConfig = {
 const reducers = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   user: userReducer,
+  albums: albumsReducer,
 });
 
 const store = configureStore({

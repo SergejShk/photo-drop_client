@@ -39,9 +39,9 @@ export const addSelfieThunk = createAsyncThunk<
     const { url } = await prepareSelfieData({ extension: "jpg" });
     await saveAvatar({ url, file });
 
-    const avatar = url.split("?")[0];
+    const data = await getUserApi();
 
-    return avatar;
+    return data.selfie;
   } catch (error: any) {
     return rejectWithValue(error.message);
   }

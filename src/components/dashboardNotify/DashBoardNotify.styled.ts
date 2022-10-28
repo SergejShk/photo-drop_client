@@ -14,9 +14,13 @@ export const Container = styled.div`
 
 export const Icon = styled.svg`
   margin-left: 136px;
+  width: 82px;
+  height: 75px;
 
   @media screen and (min-width: 1440px) {
-    margin-left: 569px;
+    margin-left: 559px;
+    width: 109px;
+    height: 100px;
   }
 `;
 

@@ -1,5 +1,4 @@
 import { useLocation } from "react-router-dom";
-import Footer from "../footer/Footer";
 import {
   ContainerCommon,
   ContainerDashboard,
@@ -19,7 +18,6 @@ const Container: React.FC<IProps> = ({ children }) => {
     return (
       <>
         <ContainerDashboard>{children}</ContainerDashboard>
-        {children && <Footer />}
       </>
     );
   } else {

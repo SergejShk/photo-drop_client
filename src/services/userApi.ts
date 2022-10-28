@@ -42,3 +42,9 @@ export const updateUserData = async (dataToUpd: UserDataToUpdate) => {
 
   return data;
 };
+
+export const getAlbumsApi = async () => {
+  const { data } = await axios.get("/client/albums");
+
+  return data.data;
+};

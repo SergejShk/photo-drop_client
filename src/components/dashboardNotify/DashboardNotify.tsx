@@ -14,7 +14,7 @@ const DashboardNotify: React.FC = () => {
   return (
     <>
       <Container>
-        <Icon className="icoNotify" width="82" height="75">
+        <Icon className="icoNotify">
           <use href={sprite + "#icon-notify"} />
         </Icon>
         <AccentText>Your photos will drop soon.</AccentText>

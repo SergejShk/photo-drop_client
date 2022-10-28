@@ -1,9 +1,17 @@
 import styled from "styled-components";
 
 export const CommonWrapperFooter = styled.div`
+  position: absolute;
+  top: 635px;
+  left: 0;
   background-color: ${(p) => p.theme.colors.primary};
   display: flex;
   justify-content: center;
+
+  @media screen and (min-width: 1440px) {
+    width: 100vw;
+    top: 782px;
+  }
 `;
 
 export const WrapperFooter = styled.div`
@@ -67,12 +75,12 @@ export const Title = styled.h2`
 export const IconLogo = styled.svg`
   width: 150px;
   height: 25px;
-  margin-bottom: 23px;
+  margin-bottom: 22px;
 
   @media screen and (min-width: 1440px) {
     width: 185px;
     height: 31px;
-    margin-bottom: 21px;
+    margin-bottom: 20px;
   }
 
   & use {
