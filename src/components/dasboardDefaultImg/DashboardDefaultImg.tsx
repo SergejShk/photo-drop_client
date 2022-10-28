@@ -16,21 +16,23 @@ const DashboardDefaultImg: React.FC = () => {
       <Title>Browse Art Prints</Title>
       <ImgWrapper>
         {isMobile ? (
-          <Swiper
-            watchSlidesProgress={true}
-            slidesPerView={2.05}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              <Image src={imgMob1} alt="new-york city" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={imgMob2} alt="bridge" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src={imgMob1} alt="new-york city" />
-            </SwiperSlide>
-          </Swiper>
+          <>
+            <Swiper
+              watchSlidesProgress={true}
+              slidesPerView={2.05}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <Image src={imgMob1} alt="new-york city" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={imgMob2} alt="bridge" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={imgMob1} alt="new-york city" />
+              </SwiperSlide>
+            </Swiper>
+          </>
         ) : (
           <>
             <Image src={imgDes1} alt="bridge" />
