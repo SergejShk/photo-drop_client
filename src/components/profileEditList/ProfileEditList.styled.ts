@@ -6,7 +6,7 @@ export const EditList = styled.ul`
 
 export const EditItem = styled.li`
   background-color: ${(p) => p.theme.colors.white};
-  outline: 1px solid #ceccb5;
+  border: 1px solid #ceccb5;
   border-radius: 10px;
   min-width: 345px;
 

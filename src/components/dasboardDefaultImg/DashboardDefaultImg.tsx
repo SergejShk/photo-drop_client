@@ -18,7 +18,7 @@ const DashboardDefaultImg: React.FC = () => {
         {isMobile ? (
           <Swiper
             watchSlidesProgress={true}
-            slidesPerView={2.06}
+            slidesPerView={2.05}
             className="mySwiper"
           >
             <SwiperSlide>

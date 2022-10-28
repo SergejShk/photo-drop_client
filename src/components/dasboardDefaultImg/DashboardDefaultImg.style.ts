@@ -30,7 +30,7 @@ export const ImgWrapper = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    width: 360px;
+    width: calc(100vw - 15px - (100vw - 375px) / 2);
     height: 216px;
   }
 
