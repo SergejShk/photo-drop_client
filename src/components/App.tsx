@@ -79,7 +79,7 @@ const App: React.FC = () => {
           }
         />
         <Route
-          path="edit-name"
+          path="edit_name"
           element={
             <PrivateRoute>
               <EditNamePage />

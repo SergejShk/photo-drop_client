@@ -3,15 +3,14 @@ import styled from "styled-components";
 export const CommonWrapperFooter = styled.div`
   position: absolute;
   width: 100vw;
-  top: 635px;
+  top: 100%;
   left: 0;
   background-color: ${(p) => p.theme.colors.primary};
   display: flex;
   justify-content: center;
 
   @media screen and (min-width: 1440px) {
-    width: 100vw;
-    top: 782px;
+    position: static;
   }
 `;
 
@@ -27,6 +26,7 @@ export const WrapperFooter = styled.div`
 
   & .terms {
     display: block;
+    width: 45px;
     font-family: ${(p) => p.theme.fonts.body};
     font-size: 16px;
     line-height: 11px;
@@ -35,6 +35,7 @@ export const WrapperFooter = styled.div`
     margin-bottom: 20px;
 
     @media screen and (min-width: 1440px) {
+      width: 120px;
       font-size: 18px;
       line-height: 14px;
       margin-bottom: 19px;
@@ -43,6 +44,7 @@ export const WrapperFooter = styled.div`
 
   & .policy {
     display: block;
+    width: 80px;
     font-family: ${(p) => p.theme.fonts.body};
     font-size: 16px;
     line-height: 12px;
@@ -50,6 +52,7 @@ export const WrapperFooter = styled.div`
     color: ${(p) => p.theme.colors.white};
 
     @media screen and (min-width: 1440px) {
+      width: 100px;
       font-size: 18px;
       line-height: 12px;
     }

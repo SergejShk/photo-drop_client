@@ -7,13 +7,22 @@ export const TitlePhotos = styled.h3`
   line-height: 10px;
   color: ${(p) => p.theme.colors.primary};
   margin: 40px 0 10px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 16px;
+    line-height: 13px;
+    margin: 100px 0 19px;
+  }
 `;
 
 export const WrapperPhotos = styled.div`
   position: absolute;
   top: 290;
   left: 0;
-  width: 375px;
+
+  @media screen and (min-width: 1440px) {
+    position: static;
+  }
 `;
 
 export const ListPhotos = styled.ul`
@@ -22,8 +31,13 @@ export const ListPhotos = styled.ul`
 `;
 
 export const ItemPhotos = styled.li`
-  width: 125px;
-  height: 125px;
+  width: 33.333vw;
+  height: 33.333vw;
+
+  @media screen and (min-width: 1440px) {
+    width: 400px;
+    height: 400px;
+  }
 `;
 
 export const ImagePhotos = styled.img`
@@ -31,5 +45,3 @@ export const ImagePhotos = styled.img`
   width: 100%;
   height: 100%;
 `;
-
-

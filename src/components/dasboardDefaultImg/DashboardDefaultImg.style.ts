@@ -16,12 +16,17 @@ export const Title = styled.h2`
 `;
 
 export const ImgWrapper = styled.div`
-  position: relative;
+  position: absolute;
+  top: 359px;
+  left: 0;
+  width: 100vw;
   height: 216px;
   padding-bottom: 60px;
 
   @media screen and (min-width: 1440px) {
+    position: static;
     display: flex;
+    width: 100%;
     height: 255px;
     padding-bottom: 100px;
   }
@@ -29,7 +34,7 @@ export const ImgWrapper = styled.div`
   & .mySwiper {
     position: absolute;
     top: 0;
-    left: 0;
+    left: calc(50% - 172.5px);
     width: calc(100vw - 15px - (100vw - 375px) / 2);
     height: 216px;
   }
@@ -41,6 +46,9 @@ export const ImgWrapper = styled.div`
 `;
 
 export const ImageBox = styled.div`
+  position: absolute;
+  top: 0;
+  left: calc(50% - 172.5px);
   display: flex;
   gap: 5px;
 `;

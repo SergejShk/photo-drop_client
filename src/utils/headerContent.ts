@@ -4,10 +4,7 @@ export const isGoBack = [
   "/verification",
   "/onboard",
   "/profile",
-  "/edit-name",
-  "/account-settings",
-  "/notification-settings",
-  "/edit-email",
+  "/edit_name",
 ];
 
 export const isSelfie = ["/dashboard"];

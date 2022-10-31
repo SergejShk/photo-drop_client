@@ -12,6 +12,7 @@ import imgMob2 from "../../assets/dashboard/mob/img-mob2.jpg";
 import imgDes1 from "../../assets/dashboard/desc/img-desc1.jpg";
 import imgDes2 from "../../assets/dashboard/desc/img-desc2.jpg";
 import imgDes3 from "../../assets/dashboard/desc/img-desc3.jpg";
+import Footer from "../footer/Footer";
 
 const DashboardDefaultImg: React.FC = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
@@ -46,6 +47,7 @@ const DashboardDefaultImg: React.FC = () => {
                 <Image src={imgMob1} alt="new-york city" />
               </ImageBox>
             )}
+            <Footer />
           </>
         ) : (
           <>

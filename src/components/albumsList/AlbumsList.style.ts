@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const WrapperAlbums = styled.div`
   padding-top: 15px;
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 40px;
+  }
 `;
 
 export const TitleAlbums = styled.h2`
@@ -11,6 +15,12 @@ export const TitleAlbums = styled.h2`
   line-height: 10px;
   color: ${(p) => p.theme.colors.primary};
   margin-bottom: 10px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 16px;
+    line-height: 13px;
+    margin-bottom: 19px;
+  }
 `;
 
 export const ListAlbums = styled.ul`
@@ -25,6 +35,11 @@ export const ItemAlbums = styled.li`
   height: 140px;
   border-radius: 20px;
   overflow: hidden;
+
+  @media screen and (min-width: 1440px) {
+    width: 200px;
+    height: 255px;
+  }
 `;
 
 export const Album = styled.img`

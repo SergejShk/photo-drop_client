@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import AlbumsList from "../components/albumsList/AlbumsList";
 import DashboardDefaultImg from "../components/dasboardDefaultImg/DashboardDefaultImg";
 import DashboardNotify from "../components/dashboardNotify/DashboardNotify";
-import Footer from "../components/footer/Footer";
 import PhotosList from "../components/photosList/PhotosList";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 import { getAlbumsThunk } from "../redux/albums/albumsOperations";
@@ -37,7 +36,6 @@ const DashboardPage: React.FC = () => {
     <>
       <DashboardNotify />
       <DashboardDefaultImg />
-      <Footer />
     </>
   );
 };

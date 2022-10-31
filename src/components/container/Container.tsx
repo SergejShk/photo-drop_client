@@ -1,4 +1,6 @@
+import { useMediaQuery } from "react-responsive";
 import { useLocation } from "react-router-dom";
+import Footer from "../footer/Footer";
 import {
   ContainerCommon,
   ContainerDashboard,
@@ -11,6 +13,7 @@ interface IProps {
 
 const Container: React.FC<IProps> = ({ children }) => {
   const { pathname } = useLocation();
+  const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
 
   if (pathname === "/policy" || pathname === "/terms") {
     return <ContainerTextPage>{children}</ContainerTextPage>;
@@ -18,6 +21,7 @@ const Container: React.FC<IProps> = ({ children }) => {
     return (
       <>
         <ContainerDashboard>{children}</ContainerDashboard>
+        {isDesktop && <Footer />}
       </>
     );
   } else {

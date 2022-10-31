@@ -1,4 +1,6 @@
+import { useMediaQuery } from "react-responsive";
 import ButtonUnlock from "../buttonUnlock/ButtonUnlock";
+import Footer from "../footer/Footer";
 import {
   ImagePhotos,
   ItemPhotos,
@@ -13,6 +15,7 @@ interface IProps {
 }
 
 const PhotosList: React.FC<IProps> = ({ allPhotos, isExistUnlock }) => {
+  const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
   return (
     <>
       <TitlePhotos>All photos</TitlePhotos>
@@ -27,6 +30,7 @@ const PhotosList: React.FC<IProps> = ({ allPhotos, isExistUnlock }) => {
         </ListPhotos>
 
         {isExistUnlock && <ButtonUnlock />}
+        {isMobile && <Footer />}
       </WrapperPhotos>
     </>
   );

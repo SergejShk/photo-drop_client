@@ -14,4 +14,12 @@ export const BtnUnlock = styled.button`
   display: block;
   margin: 40px auto 17px;
   min-width: 345px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 22px;
+    line-height: 15px;
+    margin: 100px auto 100px;
+    padding: 17px 20px 18px;
+    min-width: 300px;
+  }
 `;
