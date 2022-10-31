@@ -65,7 +65,8 @@ export const CropWrapper = styled.div`
 
   & .reactEasyCrop_Container {
     top: 183px;
-    left: 45px;
+    left: 50%;
+    transform: translateX(-50%);
     height: 285px;
     width: 285px;
     border-radius: 50%;

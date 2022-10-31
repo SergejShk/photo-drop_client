@@ -1,3 +1,4 @@
+import { getAlbumsApi } from "./../../services/userApi";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "./../store";
 import {
@@ -7,10 +8,10 @@ import {
   updateUserData,
 } from "../../services/userApi";
 
-import type { UserDataToUpdate, UserType } from "../../types/userTypes";
+import type { GetUserType, UserDataToUpdate } from "../../types/userTypes";
 
 export const getUserDataThunk = createAsyncThunk<
-  UserType,
+  GetUserType,
   undefined,
   { rejectValue: string }
 >("user/getData", async (_, { getState, rejectWithValue }) => {
@@ -23,8 +24,9 @@ export const getUserDataThunk = createAsyncThunk<
 
   try {
     const data = await getUserApi(persistedToken);
+    const albums = await getAlbumsApi();
 
-    return data;
+    return { ...data, albums };
   } catch (error: any) {
     return rejectWithValue(error.message);
   }

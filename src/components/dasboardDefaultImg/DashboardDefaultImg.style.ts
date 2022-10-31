@@ -40,6 +40,11 @@ export const ImgWrapper = styled.div`
   }
 `;
 
+export const ImageBox = styled.div`
+  display: flex;
+  gap: 5px;
+`;
+
 export const Image = styled.img`
   width: 167px;
   height: 100%;

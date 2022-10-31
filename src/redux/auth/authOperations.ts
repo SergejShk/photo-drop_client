@@ -1,7 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { logInApi, verificationLogInApi } from "../../services/authApi";
+import { getAlbumsApi, getUserApi } from "../../services/userApi";
 
-import type { Credentials, VerifyData, Token } from "../../types/authTypes";
+import type {
+  Credentials,
+  VerifyData,
+  VeryfyResToStore,
+} from "../../types/authTypes";
 
 export const logInThunk = createAsyncThunk<
   Credentials,
@@ -18,14 +23,16 @@ export const logInThunk = createAsyncThunk<
 });
 
 export const verificationThunk = createAsyncThunk<
-  Token,
+  VeryfyResToStore,
   VerifyData,
   { rejectValue: string }
 >("auth/verify", async (credentials, { rejectWithValue }) => {
   try {
-    const data = await verificationLogInApi(credentials);
+    const token = await verificationLogInApi(credentials);
+    const userData = await getUserApi();
+    const albums = await getAlbumsApi();
 
-    return data;
+    return { ...userData, ...token, albums };
   } catch (error: any) {
     return rejectWithValue(error.message);
   }

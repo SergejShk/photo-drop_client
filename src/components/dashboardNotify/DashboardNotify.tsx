@@ -17,6 +17,7 @@ const DashboardNotify: React.FC = () => {
         <Icon className="icoNotify">
           <use href={sprite + "#icon-notify"} />
         </Icon>
+
         <AccentText>Your photos will drop soon.</AccentText>
         <Text>
           You will get a text message when they are ready. It can take up to 48

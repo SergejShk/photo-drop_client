@@ -6,6 +6,8 @@ export const getTokenStore = (state: any) => state.auth.accessToken;
 
 export const isLoadingStore = (state: any) => state.auth.isLoading;
 
+export const isLoadingDataStore = (state: any) => state.auth.isLoadingData;
+
 export const getNumber = (state: any) => state.auth.number;
 
 export const getMustCurUser = (state: any) =>

@@ -2,11 +2,10 @@ import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import PhoneInput from "react-phone-input-2";
 import { Link } from "react-router-dom";
-import { useAppDispatch } from "../../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { logInThunk } from "../../redux/auth/authOperations";
 import sprite from "../../assets/sprite.svg";
 import "react-phone-input-2/lib/style.css";
-
 import {
   CallText,
   FormStyled,
@@ -15,9 +14,11 @@ import {
   PolicyText,
   WrapperInput,
 } from "./AuthForm.styled";
+import { isLoadingStore } from "../../redux/auth/authSelectors";
 
 const AuthForm: React.FC = () => {
   const [phone, setPhone] = useState<string>("");
+  const isloading = useAppSelector(isLoadingStore);
 
   const dispatch = useAppDispatch();
 
@@ -31,7 +32,6 @@ const AuthForm: React.FC = () => {
     e.preventDefault();
 
     dispatch(logInThunk({ number: phone }));
-    setPhone("");
   };
 
   return (
@@ -47,7 +47,7 @@ const AuthForm: React.FC = () => {
       </WrapperInput>
 
       <Button type="submit" disabled={phone.length < 8 ? true : false}>
-        Create account
+        Create account{isloading && <span className="loader"></span>}
       </Button>
 
       <PolicyText className="text">
@@ -61,6 +61,7 @@ const AuthForm: React.FC = () => {
           <PolicyText>
             By continuing, you indicate that you have read and agree to our
           </PolicyText>
+
           <PolicyText>
             <Link to="/terms">Terms of Use</Link> &{" "}
             <Link to="/policy">Privacy Policy</Link>

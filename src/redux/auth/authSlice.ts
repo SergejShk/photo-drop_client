@@ -2,13 +2,19 @@ import { AnyAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { logInThunk, verificationThunk } from "./authOperations";
 
 import type { Auth } from "../../types/authTypes";
-import { addSelfieThunk, getUserDataThunk } from "../user/userOperations";
+import {
+  addSelfieThunk,
+  getUserDataThunk,
+  updateUserDataThunk,
+} from "../user/userOperations";
+import { getAlbumsThunk } from "../albums/albumsOperations";
 
 const initialState: Auth = {
   accessToken: "",
   number: "",
   isLoggedIn: false,
   isLoading: false,
+  isLoadingData: false,
   error: null,
 };
 
@@ -27,35 +33,52 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(logInThunk.pending, (state) => {
+        state.isLoading = true;
         state.error = null;
       })
       .addCase(logInThunk.fulfilled, (state, { payload }) => {
         state.number = payload.number;
+        state.isLoading = false;
         state.error = null;
       })
       .addCase(verificationThunk.pending, (state) => {
+        state.isLoading = true;
         state.error = null;
       })
       .addCase(verificationThunk.fulfilled, (state, { payload }) => {
         state.accessToken = payload.token;
         state.isLoggedIn = true;
         state.number = "";
+        state.isLoading = false;
         state.error = null;
       })
-      .addCase(getUserDataThunk.pending, (state, { payload }) => {
-        state.isLoading = true;
+      .addCase(getUserDataThunk.pending, (state) => {
+        state.isLoadingData = true;
       })
-      .addCase(getUserDataThunk.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
+      .addCase(getUserDataThunk.fulfilled, (state) => {
+        state.isLoadingData = false;
       })
-      .addCase(addSelfieThunk.pending, (state, { payload }) => {
-        state.isLoading = true;
+      .addCase(addSelfieThunk.pending, (state) => {
+        state.isLoadingData = true;
       })
-      .addCase(addSelfieThunk.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
+      .addCase(addSelfieThunk.fulfilled, (state) => {
+        state.isLoadingData = false;
+      })
+      .addCase(updateUserDataThunk.pending, (state) => {
+        state.isLoadingData = true;
+      })
+      .addCase(updateUserDataThunk.fulfilled, (state) => {
+        state.isLoadingData = false;
+      })
+      .addCase(getAlbumsThunk.pending, (state) => {
+        state.isLoadingData = true;
+      })
+      .addCase(getAlbumsThunk.fulfilled, (state) => {
+        state.isLoadingData = false;
       })
 
       .addMatcher(isError, (state, action: PayloadAction<string>) => {
+        state.isLoadingData = false;
         state.isLoading = false;
         state.error = action.payload;
       });

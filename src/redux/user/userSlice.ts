@@ -6,6 +6,7 @@ import {
 } from "./userOperations";
 
 import type { UserType } from "../../types/userTypes";
+import { verificationThunk } from "../auth/authOperations";
 
 const initialState: UserType = {
   number: "",
@@ -18,10 +19,20 @@ const initialState: UserType = {
 const userSlice = createSlice({
   name: "userData",
   initialState,
-  reducers: {},
+  reducers: {
+    resetSelfie(state, { payload }) {
+      state.selfie = payload;
+    },
+  },
 
   extraReducers: (builder) => {
     builder
+      .addCase(verificationThunk.fulfilled, (state, { payload }) => {
+        state.number = payload.number;
+        state.email = payload.email;
+        state.name = payload.name;
+        state.selfie = payload.selfie;
+      })
       .addCase(addSelfieThunk.fulfilled, (state, { payload }) => {
         state.selfieUploaded = true;
         state.selfie = payload;
@@ -38,5 +49,7 @@ const userSlice = createSlice({
       });
   },
 });
+
+export const { resetSelfie } = userSlice.actions;
 
 export default userSlice.reducer;

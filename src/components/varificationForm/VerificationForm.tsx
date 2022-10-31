@@ -3,7 +3,7 @@ import AuthCode from "react-auth-code-input";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { logInThunk, verificationThunk } from "../../redux/auth/authOperations";
-import { getNumber } from "../../redux/auth/authSelectors";
+import { getNumber, isLoadingStore } from "../../redux/auth/authSelectors";
 import {
   Button,
   FormStyled,
@@ -16,6 +16,7 @@ import {
 const VerificationForm: React.FC = () => {
   const [code, setCode] = useState<string>("");
   const number = useAppSelector(getNumber);
+  const isloading = useAppSelector(isLoadingStore);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,7 +51,9 @@ const VerificationForm: React.FC = () => {
       >
         Resend code
       </ResendCode>
-      <Button disabled={code.length < 6 ? true : false}>Next</Button>
+      <Button disabled={code.length < 6 ? true : false}>
+        Next{isloading && <span className="loader"></span>}
+      </Button>
     </FormStyled>
   );
 };

@@ -1,11 +1,7 @@
 import React, { lazy, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
-import {
-  getMustCurUser,
-  getTokenStore,
-  isExistToken,
-} from "../redux/auth/authSelectors";
+import { getMustCurUser, getTokenStore } from "../redux/auth/authSelectors";
 import { getUserDataThunk } from "../redux/user/userOperations";
 import { saveToken } from "../services/authApi";
 import PrivateRoute from "./routes/PrivateRoute";
@@ -20,26 +16,16 @@ const OnboardPage = lazy(() => import("../pages/OnboardPage"));
 const DashboardPage = lazy(() => import("../pages/DashboardPage"));
 const ProfilePage = lazy(() => import("../pages/ProfilePage"));
 const EditNamePage = lazy(() => import("../pages/EditNamePage"));
-const EditEmailPage = lazy(() => import("../pages/EditEmailPage"));
-const AccountSettingsPage = lazy(() => import("../pages/AccountSettingsPage"));
-const NotificationSettingsPage = lazy(
-  () => import("../pages/NotificationSettingsPage")
-);
 
 const App: React.FC = () => {
   const token = useAppSelector(getTokenStore);
   const isMustCurUser = useAppSelector(getMustCurUser);
-  const isLoggedIn = useAppSelector(isExistToken);
 
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     isMustCurUser && dispatch(getUserDataThunk());
   }, [dispatch, isMustCurUser]);
-
-  useEffect(() => {
-    isLoggedIn && dispatch(getUserDataThunk());
-  }, [dispatch, isLoggedIn]);
 
   useEffect(() => {
     saveToken.set(token);
@@ -97,30 +83,6 @@ const App: React.FC = () => {
           element={
             <PrivateRoute>
               <EditNamePage />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="account-settings"
-          element={
-            <PrivateRoute>
-              <AccountSettingsPage />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="edit-email"
-          element={
-            <PrivateRoute>
-              <EditEmailPage />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="notification-settings"
-          element={
-            <PrivateRoute>
-              <NotificationSettingsPage />
             </PrivateRoute>
           }
         />

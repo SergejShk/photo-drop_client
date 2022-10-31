@@ -1,8 +1,11 @@
+import { Albums } from "./albumsType";
+
 export type Auth = {
   accessToken: string;
   number: string;
   isLoggedIn: boolean;
   isLoading: boolean;
+  isLoadingData: boolean;
   error: string | null;
 };
 
@@ -23,4 +26,13 @@ export type PreparedData = {
   method: string;
   url: string;
   fields: {};
+};
+
+export type VeryfyResToStore = {
+  email: string;
+  name: string;
+  number: string;
+  selfie: string;
+  token: string;
+  albums: Albums;
 };

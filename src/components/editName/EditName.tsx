@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/reduxHooks";
 import { updateUserDataThunk } from "../../redux/user/userOperations";
 import CommonButton from "../commonButton/CommonButton";
@@ -7,6 +8,7 @@ import { Input, Title, Form } from "./EditName.style";
 const EditName: React.FC = () => {
   const [name, setName] = useState("");
 
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -17,7 +19,7 @@ const EditName: React.FC = () => {
 
     dispatch(updateUserDataThunk({ name }));
 
-    setName("");
+    navigate("/profile");
   };
 
   return (

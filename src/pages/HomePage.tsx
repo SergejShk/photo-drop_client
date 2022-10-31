@@ -1,12 +1,18 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthForm from "../components/authForm/AuthForm";
-import { useAppSelector } from "../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 import { getNumber } from "../redux/auth/authSelectors";
+import { resetSelfie } from "../redux/user/userSlice";
 
 const HomePage: React.FC = () => {
   const number = useAppSelector(getNumber);
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(resetSelfie(""));
+  }, [dispatch]);
 
   useEffect(() => {
     number && navigate("/verification");

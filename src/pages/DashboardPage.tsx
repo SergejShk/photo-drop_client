@@ -18,8 +18,8 @@ const DashboardPage: React.FC = () => {
   }
 
   useEffect(() => {
-    dispatch(getAlbumsThunk());
-  }, [dispatch]);
+    !albumsFromStore.length && dispatch(getAlbumsThunk());
+  }, [albumsFromStore.length, dispatch]);
 
   const allPhotos = reversedAlbums.reduce((acc: {}[], album: any) => {
     return [...acc, ...album.photos];
