@@ -33,7 +33,6 @@ const VerificationForm: React.FC = () => {
     e.preventDefault();
 
     dispatch(verificationThunk({ number, code }));
-    setCode("");
   };
 
   return (
@@ -51,7 +50,7 @@ const VerificationForm: React.FC = () => {
       >
         Resend code
       </ResendCode>
-      <Button disabled={code.length < 6 ? true : false}>
+      <Button disabled={code.length < 6 || isloading ? true : false}>
         Next{isloading && <span className="loader"></span>}
       </Button>
     </FormStyled>

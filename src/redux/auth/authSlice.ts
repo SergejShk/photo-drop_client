@@ -7,7 +7,6 @@ import {
   getUserDataThunk,
   updateUserDataThunk,
 } from "../user/userOperations";
-import { getAlbumsThunk } from "../albums/albumsOperations";
 
 const initialState: Auth = {
   accessToken: "",
@@ -68,12 +67,6 @@ const authSlice = createSlice({
         state.isLoadingData = true;
       })
       .addCase(updateUserDataThunk.fulfilled, (state) => {
-        state.isLoadingData = false;
-      })
-      .addCase(getAlbumsThunk.pending, (state) => {
-        state.isLoadingData = true;
-      })
-      .addCase(getAlbumsThunk.fulfilled, (state) => {
         state.isLoadingData = false;
       })
 

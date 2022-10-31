@@ -46,7 +46,10 @@ const AuthForm: React.FC = () => {
         </svg>
       </WrapperInput>
 
-      <Button type="submit" disabled={phone.length < 8 ? true : false}>
+      <Button
+        type="submit"
+        disabled={phone.length < 8 || isloading ? true : false}
+      >
         Create account{isloading && <span className="loader"></span>}
       </Button>
 
