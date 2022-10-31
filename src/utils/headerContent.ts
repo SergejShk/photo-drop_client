@@ -1,10 +1,3 @@
-export const isGoBack = [
-  "/terms",
-  "/policy",
-  "/verification",
-  "/onboard",
-  "/profile",
-  "/edit_name",
-];
+export const isNotGoBack = ["/auth", "/dashboard"];
 
 export const isSelfie = ["/dashboard"];

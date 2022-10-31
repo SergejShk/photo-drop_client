@@ -6,7 +6,7 @@ import {
   isLoadingDataStore,
 } from "../../redux/auth/authSelectors";
 import { getSelfieStore } from "../../redux/user/userSelectors";
-import { isGoBack, isSelfie } from "../../utils/headerContent";
+import { isNotGoBack, isSelfie } from "../../utils/headerContent";
 import Container from "../container/Container";
 import Header from "../header/Header";
 
@@ -27,7 +27,7 @@ const SharedLoyaout: React.FC = () => {
     <>
       {!isLoading && (
         <Header
-          goBack={isGoBack.includes(pathname) ? true : false}
+          goBack={!isNotGoBack.includes(pathname) ? true : false}
           selfie={isSelfie.includes(pathname) ? selfie : ""}
         />
       )}

@@ -16,6 +16,7 @@ const OnboardPage = lazy(() => import("../pages/OnboardPage"));
 const DashboardPage = lazy(() => import("../pages/DashboardPage"));
 const ProfilePage = lazy(() => import("../pages/ProfilePage"));
 const EditNamePage = lazy(() => import("../pages/EditNamePage"));
+const AlbumPage = lazy(() => import("../pages/AlbumPage"));
 
 const App: React.FC = () => {
   const token = useAppSelector(getTokenStore);
@@ -83,6 +84,14 @@ const App: React.FC = () => {
           element={
             <PrivateRoute>
               <EditNamePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="album/:albumId"
+          element={
+            <PrivateRoute>
+              <AlbumPage />
             </PrivateRoute>
           }
         />

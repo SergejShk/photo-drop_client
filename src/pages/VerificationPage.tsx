@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import VerificationForm from "../components/varificationForm/VerificationForm";
 import { useAppSelector } from "../hooks/reduxHooks";
 import { isExistToken } from "../redux/auth/authSelectors";
@@ -9,11 +9,12 @@ const VerificationPage: React.FC = () => {
   const isLoggedIn = useAppSelector(isExistToken);
   const isExistSelfie = useAppSelector(getSelfieStore);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    if (isLoggedIn && !isExistSelfie) navigate("/onboard");
+    if (isLoggedIn && !isExistSelfie) navigate("/onboard", { state: location });
     if (isLoggedIn && isExistSelfie) navigate("/dashboard");
-  }, [isExistSelfie, isLoggedIn, navigate]);
+  }, [isExistSelfie, isLoggedIn, location, navigate]);
 
   return <VerificationForm />;
 };

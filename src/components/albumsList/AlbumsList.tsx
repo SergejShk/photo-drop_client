@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Albums } from "../../types/albumsType";
 import {
   Album,
@@ -32,10 +33,12 @@ const AlbumsList: React.FC<IProps> = ({ albums }) => {
       <TitleAlbums>Albums</TitleAlbums>
 
       <ListAlbums>
-        {albums.map(({ cover, location }) => (
-          <ItemAlbums key={cover}>
-            <Album src={cover} alt={location} />
-            <NameAlbum>{formatNameAlbum(location)}</NameAlbum>
+        {albums.map(({ cover, location, id }) => (
+          <ItemAlbums key={id}>
+            <Link to={`/album/${id}`}>
+              <Album src={cover} alt={location} />
+              <NameAlbum>{formatNameAlbum(location)}</NameAlbum>
+            </Link>
           </ItemAlbums>
         ))}
       </ListAlbums>

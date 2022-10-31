@@ -12,10 +12,11 @@ import {
   WrapperFooter,
 } from "./Footer.style";
 import sprite from "../../assets/sprite.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer: React.FC = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
+  const location = useLocation();
 
   return isMobile ? (
     <CommonWrapperFooter>
@@ -46,10 +47,10 @@ const Footer: React.FC = () => {
         </IconClimateNeutral>
 
         <TextInc>© 2022 FOM Online Inc</TextInc>
-        <Link to="/terms" className="terms">
+        <Link to="/terms" state={location} className="terms">
           Terms
         </Link>
-        <Link to="/policy" className="policy">
+        <Link to="/policy" state={location} className="policy">
           Privacy Party
         </Link>
       </WrapperFooter>

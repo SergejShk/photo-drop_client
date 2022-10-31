@@ -17,13 +17,13 @@ interface IProps {
 const Header: React.FC<IProps> = ({ goBack, selfie }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { pathname } = useLocation();
+  const location = useLocation();
 
   const onGoBack: React.MouseEventHandler<HTMLButtonElement> = () => {
-    pathname === "/verification" && dispatch(resetNumber(""));
-    pathname === "/onboard" && dispatch(resetAccessToken(""));
+    location.pathname === "/verification" && dispatch(resetNumber(""));
+    location.pathname === "/onboard" && dispatch(resetAccessToken(""));
 
-    navigate(-1);
+    navigate(location.state ?? "/");
   };
 
   return (
@@ -43,7 +43,7 @@ const Header: React.FC<IProps> = ({ goBack, selfie }) => {
 
         {selfie && (
           <ContainerAvatar>
-            <Link to="/profile">
+            <Link to="/profile" state={location}>
               <img src={selfie} alt="avatar" />
             </Link>
           </ContainerAvatar>
