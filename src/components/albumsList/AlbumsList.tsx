@@ -1,11 +1,12 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import { formatNameAlbum } from "../../hooks/formatNameAlbum";
 import { Albums } from "../../types/albumsType";
 import {
-  Album,
-  ItemAlbums,
-  ListAlbums,
+  AlbumImg,
   NameAlbum,
+  NameContainer,
   TitleAlbums,
   WrapperAlbums,
 } from "./AlbumsList.style";
@@ -15,20 +16,29 @@ interface IProps {
 }
 
 const AlbumsList: React.FC<IProps> = ({ albums }) => {
+  const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
+
   return (
     <WrapperAlbums>
       <TitleAlbums>Albums</TitleAlbums>
 
-      <ListAlbums>
+      <Swiper
+        watchSlidesProgress={false}
+        slidesPerView={isMobile ? 3.05 : 5.85}
+        className="mySwiper"
+      >
         {albums.map(({ cover, location, id }) => (
-          <ItemAlbums key={id}>
-            <Link to={`/album/${id}`}>
-              <Album src={cover} alt={location} />
-              <NameAlbum>{formatNameAlbum(location, 18)}</NameAlbum>
+          <SwiperSlide key={id}>
+            <Link to={`/album/${id}`} className="albumLink">
+              <AlbumImg src={cover} alt={location} />
+
+              <NameContainer>
+                <NameAlbum>{formatNameAlbum(location, 18)}</NameAlbum>
+              </NameContainer>
             </Link>
-          </ItemAlbums>
+          </SwiperSlide>
         ))}
-      </ListAlbums>
+      </Swiper>
     </WrapperAlbums>
   );
 };
