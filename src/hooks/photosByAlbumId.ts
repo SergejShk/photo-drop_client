@@ -1,7 +1,7 @@
 import { Albums } from "../types/albumsType";
 
-export const getPhotosByAlbumId = (albums: Albums, albumId: string) => {
+export const getAlbumAndPhotosByAlbumId = (albums: Albums, albumId: string) => {
   const album = albums.find((album) => album.id === albumId);
 
-  return album ? album.photos : [];
+  return album ? { album, photos: album.photos } : {};
 };

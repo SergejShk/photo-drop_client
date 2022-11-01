@@ -1,4 +1,5 @@
 import { useMediaQuery } from "react-responsive";
+import { useLocation } from "react-router-dom";
 import ButtonUnlock from "../buttonUnlock/ButtonUnlock";
 import Footer from "../footer/Footer";
 import {
@@ -16,9 +17,11 @@ interface IProps {
 
 const PhotosList: React.FC<IProps> = ({ allPhotos, isExistUnlock }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
+  const { pathname } = useLocation();
+
   return (
     <>
-      <TitlePhotos>All photos</TitlePhotos>
+      {pathname === "/dashboard" && <TitlePhotos>All photos</TitlePhotos>}
 
       <WrapperPhotos>
         <ListPhotos>

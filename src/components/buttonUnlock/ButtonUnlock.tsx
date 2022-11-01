@@ -1,7 +1,15 @@
-import { BtnUnlock } from "./ButtonUnlock.style";
+import { BtnUnlock, BtnUnlockHeader } from "./ButtonUnlock.style";
 
-const ButtonUnlock: React.FC = () => {
-  return <BtnUnlock>Unlock your photos</BtnUnlock>;
+interface IProps {
+  forAlbumHeader?: boolean;
+}
+
+const ButtonUnlock: React.FC<IProps> = ({ forAlbumHeader }) => {
+  return forAlbumHeader ? (
+    <BtnUnlockHeader>Unlock your photos</BtnUnlockHeader>
+  ) : (
+    <BtnUnlock>Unlock your photos</BtnUnlock>
+  );
 };
 
 export default ButtonUnlock;

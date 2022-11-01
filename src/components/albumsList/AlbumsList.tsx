@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { formatNameAlbum } from "../../hooks/formatNameAlbum";
 import { Albums } from "../../types/albumsType";
 import {
   Album,
@@ -14,20 +15,6 @@ interface IProps {
 }
 
 const AlbumsList: React.FC<IProps> = ({ albums }) => {
-  const formatNameAlbum = (name: string) => {
-    const maxLength = 18;
-
-    let result = "";
-
-    if (name.length <= maxLength) {
-      result = name;
-    } else {
-      result = name.slice(0, maxLength) + "...";
-    }
-
-    return result;
-  };
-
   return (
     <WrapperAlbums>
       <TitleAlbums>Albums</TitleAlbums>
@@ -37,7 +24,7 @@ const AlbumsList: React.FC<IProps> = ({ albums }) => {
           <ItemAlbums key={id}>
             <Link to={`/album/${id}`}>
               <Album src={cover} alt={location} />
-              <NameAlbum>{formatNameAlbum(location)}</NameAlbum>
+              <NameAlbum>{formatNameAlbum(location, 18)}</NameAlbum>
             </Link>
           </ItemAlbums>
         ))}

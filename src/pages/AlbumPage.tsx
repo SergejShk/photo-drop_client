@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getPhotosByAlbumId } from "../hooks/photosByAlbumId";
+import PhotosList from "../components/photosList/PhotosList";
+import { getAlbumAndPhotosByAlbumId } from "../hooks/photosByAlbumId";
 import { useAppSelector } from "../hooks/reduxHooks";
 import { getAlbumsStore } from "../redux/albums/albumsSelectors";
 
@@ -8,14 +9,17 @@ const AlbumPage = () => {
   const navigate = useNavigate();
   const { albumId } = useParams();
   const albums = useAppSelector(getAlbumsStore);
-  const photos = getPhotosByAlbumId(albums, albumId!);
-  console.log(photos);
+  const { photos } = getAlbumAndPhotosByAlbumId(albums, albumId!);
 
   useEffect(() => {
-    !photos.length && navigate("/dashboard");
-  }, [navigate, photos.length]);
+    !photos?.length && navigate("/dashboard");
+  }, [photos?.length, navigate, photos]);
 
-  return <></>;
+  return (
+    <>
+      <PhotosList allPhotos={photos!} isExistUnlock />
+    </>
+  );
 };
 
 export default AlbumPage;

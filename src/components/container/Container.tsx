@@ -15,9 +15,11 @@ const Container: React.FC<IProps> = ({ children }) => {
   const { pathname } = useLocation();
   const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
 
+  const curPage = pathname.split("/")[1];
+
   if (pathname === "/policy" || pathname === "/terms") {
     return <ContainerTextPage>{children}</ContainerTextPage>;
-  } else if (pathname === "/dashboard") {
+  } else if (pathname === "/dashboard" || curPage === "album") {
     return (
       <>
         <ContainerDashboard>{children}</ContainerDashboard>

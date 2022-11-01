@@ -12,6 +12,14 @@ export const HeaderStyled = styled.header`
     padding: 18px 0 17px;
   }
 
+  &.albumHeader {
+    padding: 11px 0 10px;
+
+    @media screen and (min-width: 1440px) {
+      padding: 23px 0 21px;
+    }
+  }
+
   .logo {
     width: 125px;
     height: 17px;
@@ -98,4 +106,43 @@ export const ContainerAvatar = styled.div`
     width: 100%;
     height: 100%;
   }
+`;
+
+export const TitleAlbum = styled.h2`
+  font-family: ${(p) => p.theme.fonts.heading};
+  font-weight: ${(p) => p.theme.fontWeights.bold};
+  font-size: 18px;
+  line-height: 13px;
+  color: ${(p) => p.theme.colors.primary};
+  margin-bottom: 10px;
+
+  @media screen and (min-width: 1440px) {
+    margin: 0 38px 0 0;
+  }
+`;
+
+export const ContainerAlbumDescr = styled.div`
+  width: 299px;
+
+  @media screen and (min-width: 1440px) {
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+  }
+`;
+
+export const DescrAlbum = styled.p`
+  font-family: ${(p) => p.theme.fonts.body};
+  font-size: 14px;
+  line-height: 10px;
+  color: ${(p) => p.theme.colors.primary};
+
+  @media screen and (min-width: 1440px) {
+    font-size: 16px;
+  }
+`;
+
+export const DescrAccent = styled.span`
+  color: ${(p) => p.theme.colors.accent};
 `;

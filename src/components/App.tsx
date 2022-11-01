@@ -87,6 +87,7 @@ const App: React.FC = () => {
             </PrivateRoute>
           }
         />
+        <Route path="album" element={<Navigate to="/dashboard" />} />
         <Route
           path="album/:albumId"
           element={
