@@ -9,15 +9,15 @@ const AlbumPage = () => {
   const navigate = useNavigate();
   const { albumId } = useParams();
   const albums = useAppSelector(getAlbumsStore);
-  const { photos } = getAlbumAndPhotosByAlbumId(albums, albumId!);
+  const { album } = getAlbumAndPhotosByAlbumId(albums, albumId!);
 
   useEffect(() => {
-    !photos?.length && navigate("/dashboard");
-  }, [photos?.length, navigate, photos]);
+    !album?.photos?.length && navigate("/dashboard");
+  }, [navigate, album?.photos?.length]);
 
   return (
     <>
-      <PhotosList allPhotos={photos!} albumId={albumId ? albumId : ""} />
+      <PhotosList albums={[album!]} albumId={albumId ? albumId : ""} />
     </>
   );
 };

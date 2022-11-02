@@ -17,6 +17,7 @@ const VerificationForm: React.FC = () => {
   const [code, setCode] = useState<string>("");
   const number = useAppSelector(getNumber);
   const isloading = useAppSelector(isLoadingStore);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,6 +51,7 @@ const VerificationForm: React.FC = () => {
       >
         Resend code
       </ResendCode>
+
       <Button disabled={code.length < 6 || isloading ? true : false}>
         Next{isloading && <span className="loader"></span>}
       </Button>

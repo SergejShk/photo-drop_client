@@ -19,6 +19,8 @@ export const WrapperPhotos = styled.div`
   position: absolute;
   top: 290;
   left: 0;
+  display: flex;
+  flex-wrap: wrap;
 
   @media screen and (min-width: 1440px) {
     position: static;
@@ -33,6 +35,7 @@ export const ListPhotos = styled.ul`
 export const ItemPhotos = styled.li`
   width: 33.333vw;
   height: 33.333vw;
+  list-style: none;
 
   @media screen and (min-width: 1440px) {
     width: 400px;

@@ -20,15 +20,11 @@ const DashboardPage: React.FC = () => {
     !albumsFromStore.length && dispatch(getAlbumsThunk());
   }, [albumsFromStore.length, dispatch]);
 
-  const allPhotos = reversedAlbums.reduce((acc: {}[], album: any) => {
-    return [...acc, ...album.photos];
-  }, []);
-
   return reversedAlbums.length ? (
     <>
       <AlbumsList albums={reversedAlbums} />
       <PhotosList
-        allPhotos={allPhotos}
+        albums={reversedAlbums}
         albumId={albumsFromStore.length === 1 ? albumsFromStore[0].id : ""}
       />
     </>

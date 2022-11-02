@@ -140,6 +140,10 @@ export const Button = styled.button`
     text-indent: -9999em;
     transform: translateZ(0);
     animation-delay: -0.16s;
+
+    @media screen and (min-width: 1440px) {
+      left: 247px;
+    }
   }
   & .loader:before,
   .loader:after {

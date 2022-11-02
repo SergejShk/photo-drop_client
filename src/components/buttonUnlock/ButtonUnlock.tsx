@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { getPurcaseLinkThunk } from "../../redux/albums/albumsOperations";
 import { getPurchaseLinkStore } from "../../redux/albums/albumsSelectors";
+import { isLoadingStore } from "../../redux/auth/authSelectors";
 import { BtnUnlock, BtnUnlockHeader } from "./ButtonUnlock.style";
 
 interface IProps {
@@ -12,6 +13,7 @@ interface IProps {
 const ButtonUnlock: React.FC<IProps> = ({ forAlbumHeader, albumId }) => {
   const dispatch = useAppDispatch();
   const purchaseLink = useAppSelector(getPurchaseLinkStore);
+  const isloading = useAppSelector(isLoadingStore);
 
   useEffect(() => {
     purchaseLink && window.location.assign(purchaseLink);
@@ -22,11 +24,16 @@ const ButtonUnlock: React.FC<IProps> = ({ forAlbumHeader, albumId }) => {
   };
 
   return forAlbumHeader ? (
-    <BtnUnlockHeader onClick={onClickUnlock}>
-      Unlock your photos
+    <BtnUnlockHeader
+      disabled={isloading ? true : false}
+      onClick={onClickUnlock}
+    >
+      Unlock your photos{isloading && <span className="loader"></span>}
     </BtnUnlockHeader>
   ) : (
-    <BtnUnlock onClick={onClickUnlock}>Unlock your photos</BtnUnlock>
+    <BtnUnlock disabled={isloading ? true : false} onClick={onClickUnlock}>
+      Unlock your photos{isloading && <span className="loader"></span>}
+    </BtnUnlock>
   );
 };
 
