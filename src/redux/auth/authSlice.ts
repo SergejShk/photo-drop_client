@@ -7,6 +7,7 @@ import {
   getUserDataThunk,
   updateUserDataThunk,
 } from "../user/userOperations";
+import { getPurcaseLinkThunk } from "../albums/albumsOperations";
 
 const initialState: Auth = {
   accessToken: "",
@@ -68,6 +69,12 @@ const authSlice = createSlice({
       })
       .addCase(updateUserDataThunk.fulfilled, (state) => {
         state.isLoadingData = false;
+      })
+      .addCase(getPurcaseLinkThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getPurcaseLinkThunk.fulfilled, (state) => {
+        state.isLoading = false;
       })
 
       .addMatcher(isError, (state, action: PayloadAction<string>) => {

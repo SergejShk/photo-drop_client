@@ -12,10 +12,10 @@ import {
 
 interface IProps {
   allPhotos: {}[];
-  isExistUnlock: boolean;
+  albumId: string;
 }
 
-const PhotosList: React.FC<IProps> = ({ allPhotos, isExistUnlock }) => {
+const PhotosList: React.FC<IProps> = ({ allPhotos, albumId }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
   const { pathname } = useLocation();
 
@@ -32,7 +32,7 @@ const PhotosList: React.FC<IProps> = ({ allPhotos, isExistUnlock }) => {
           ))}
         </ListPhotos>
 
-        {isExistUnlock && <ButtonUnlock />}
+        {albumId && <ButtonUnlock albumId={albumId} />}
         {isMobile && <Footer />}
       </WrapperPhotos>
     </>

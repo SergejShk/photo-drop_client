@@ -18,5 +18,6 @@ export type Album = {
 export type Albums = Album[];
 
 export type AllAlbumsStore = {
-  allAlbums: Albums
+  allAlbums: Albums;
+  purchaseLink: string;
 }

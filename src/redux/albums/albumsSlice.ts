@@ -3,10 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import { AllAlbumsStore } from "../../types/albumsType";
 import { verificationThunk } from "../auth/authOperations";
 import { getUserDataThunk } from "../user/userOperations";
-import { getAlbumsThunk } from "./albumsOperations";
+import { getAlbumsThunk, getPurcaseLinkThunk } from "./albumsOperations";
 
 const initialState: AllAlbumsStore = {
   allAlbums: [],
+  purchaseLink: "",
 };
 
 const albumsSlice = createSlice({
@@ -23,6 +24,9 @@ const albumsSlice = createSlice({
       })
       .addCase(getAlbumsThunk.fulfilled, (state, { payload }) => {
         state.allAlbums = [...payload];
+      })
+      .addCase(getPurcaseLinkThunk.fulfilled, (state, { payload }) => {
+        state.purchaseLink = payload;
       });
   },
 });

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getAlbumsApi } from "../../services/userApi";
+import { getAlbumsApi, getPurchaseLinkApi } from "../../services/userApi";
 import { Albums } from "../../types/albumsType";
 
 export const getAlbumsThunk = createAsyncThunk<
@@ -11,6 +11,20 @@ export const getAlbumsThunk = createAsyncThunk<
     const data = await getAlbumsApi();
 
     return data;
+  } catch (error: any) {
+    return rejectWithValue(error.message);
+  }
+});
+
+export const getPurcaseLinkThunk = createAsyncThunk<
+  string,
+  string,
+  { rejectValue: string }
+>("albums/getPurcaseLink", async (albumId, { rejectWithValue }) => {
+  try {
+    const link = await getPurchaseLinkApi(albumId);
+
+    return link;
   } catch (error: any) {
     return rejectWithValue(error.message);
   }

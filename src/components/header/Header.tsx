@@ -78,7 +78,7 @@ const Header: React.FC<IProps> = ({ goBack, selfie, album }) => {
               {normalizedDate} •{" "}
               <DescrAccent>{album.photos.length} photos</DescrAccent>
             </DescrAlbum>
-            {isDesktop && <ButtonUnlock forAlbumHeader />}
+            {isDesktop && <ButtonUnlock forAlbumHeader albumId={album.id} />}
           </ContainerAlbumDescr>
         </HeaderStyled>
       )}

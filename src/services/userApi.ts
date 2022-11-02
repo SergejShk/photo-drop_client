@@ -48,3 +48,9 @@ export const getAlbumsApi = async () => {
 
   return data.data;
 };
+
+export const getPurchaseLinkApi = async (albumId: string) => {
+  const { data } = await axios.post(`/client/purchase/${albumId}`);
+
+  return data.url;
+};

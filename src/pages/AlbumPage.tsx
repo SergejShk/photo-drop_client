@@ -17,7 +17,7 @@ const AlbumPage = () => {
 
   return (
     <>
-      <PhotosList allPhotos={photos!} isExistUnlock />
+      <PhotosList allPhotos={photos!} albumId={albumId ? albumId : ""} />
     </>
   );
 };

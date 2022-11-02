@@ -88,10 +88,10 @@ const Footer: React.FC = () => {
             <use href={sprite + "#icon-climate-neutral"} />
           </IconClimateNeutral>
 
-          <Link to="/terms" className="terms">
+          <Link to="/terms" state={location} className="terms">
             Terms of services
           </Link>
-          <Link to="/policy" className="policy">
+          <Link to="/policy" state={location} className="policy">
             Privacy Party
           </Link>
         </Container>

@@ -29,7 +29,7 @@ const DashboardPage: React.FC = () => {
       <AlbumsList albums={reversedAlbums} />
       <PhotosList
         allPhotos={allPhotos}
-        isExistUnlock={reversedAlbums.length === 1 ? true : false}
+        albumId={albumsFromStore.length === 1 ? albumsFromStore[0].id : ""}
       />
     </>
   ) : (
