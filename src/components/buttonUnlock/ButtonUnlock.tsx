@@ -7,10 +7,15 @@ import { BtnUnlock, BtnUnlockHeader } from "./ButtonUnlock.style";
 
 interface IProps {
   forAlbumHeader?: boolean;
+  forModal?: boolean;
   albumId: string;
 }
 
-const ButtonUnlock: React.FC<IProps> = ({ forAlbumHeader, albumId }) => {
+const ButtonUnlock: React.FC<IProps> = ({
+  forAlbumHeader,
+  forModal,
+  albumId,
+}) => {
   const dispatch = useAppDispatch();
   const purchaseLink = useAppSelector(getPurchaseLinkStore);
   const isloading = useAppSelector(isLoadingStore);
@@ -23,18 +28,32 @@ const ButtonUnlock: React.FC<IProps> = ({ forAlbumHeader, albumId }) => {
     dispatch(getPurcaseLinkThunk(albumId));
   };
 
-  return forAlbumHeader ? (
-    <BtnUnlockHeader
-      disabled={isloading ? true : false}
-      onClick={onClickUnlock}
-    >
-      Unlock your photos{isloading && <span className="loader"></span>}
-    </BtnUnlockHeader>
-  ) : (
-    <BtnUnlock disabled={isloading ? true : false} onClick={onClickUnlock}>
-      Unlock your photos{isloading && <span className="loader"></span>}
-    </BtnUnlock>
-  );
+  if (forAlbumHeader) {
+    return (
+      <BtnUnlockHeader
+        disabled={isloading ? true : false}
+        onClick={onClickUnlock}
+      >
+        Unlock your photos{isloading && <span className="loader"></span>}
+      </BtnUnlockHeader>
+    );
+  } else if (forModal) {
+    return (
+      <BtnUnlock
+        className="forModal"
+        disabled={isloading ? true : false}
+        onClick={onClickUnlock}
+      >
+        Unlock photo{isloading && <span className="loader"></span>}
+      </BtnUnlock>
+    );
+  } else {
+    return (
+      <BtnUnlock disabled={isloading ? true : false} onClick={onClickUnlock}>
+        Unlock your photos{isloading && <span className="loader"></span>}
+      </BtnUnlock>
+    );
+  }
 };
 
 export default ButtonUnlock;

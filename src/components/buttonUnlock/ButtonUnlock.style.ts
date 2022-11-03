@@ -75,6 +75,36 @@ export const BtnUnlock = styled.button`
     padding: 17px 20px 18px;
     min-width: 300px;
   }
+
+  &.forModal {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    z-index: 20;
+    transform: translateX(-50%);
+    margin: 0;
+    color: ${(p) => p.theme.colors.primary};
+    background-color: ${(p) => p.theme.colors.white};
+
+    & .loader {
+      position: absolute;
+      top: 22px;
+      left: 231px;
+      color: ${(p) => p.theme.colors.primary};
+    }
+
+    @media screen and (min-width: 1440px) {
+      min-width: 200px;
+      line-height: 17px;
+      padding: 17px 20px 16px;
+
+      & .loader {
+        top: 28px;
+        left: 165px;
+        font-size: 1px;
+      }
+    }
+  }
 `;
 
 export const BtnUnlockHeader = styled.button`
