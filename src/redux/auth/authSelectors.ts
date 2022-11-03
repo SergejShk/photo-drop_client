@@ -12,3 +12,5 @@ export const getNumber = (state: any) => state.auth.number;
 
 export const getMustCurUser = (state: any) =>
   state.auth.accessToken && !state.auth.isLoggedIn;
+
+export const getErrorStore = (state: any) => state.auth.error;

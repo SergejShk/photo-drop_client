@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const FormStyled = styled.form`
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -174,5 +175,21 @@ export const Button = styled.button`
     font-size: 22px;
     line-height: 15px;
     padding: 17px 20px 18px;
+  }
+`;
+
+export const ErrorText = styled.p`
+  position: absolute;
+  top: 212px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: ${(p) => p.theme.fonts.body};
+  font-size: 12px;
+  line-height: 10px;
+  color: #ff0000;
+
+  @media screen and (min-width: 1440px) {
+    top: 347px;
+    font-size: 14px;
   }
 `;

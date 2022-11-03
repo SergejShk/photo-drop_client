@@ -3,9 +3,14 @@ import AuthCode from "react-auth-code-input";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { logInThunk, verificationThunk } from "../../redux/auth/authOperations";
-import { getNumber, isLoadingStore } from "../../redux/auth/authSelectors";
+import {
+  getErrorStore,
+  getNumber,
+  isLoadingStore,
+} from "../../redux/auth/authSelectors";
 import {
   Button,
+  ErrorText,
   FormStyled,
   InfoText,
   Phone,
@@ -17,6 +22,7 @@ const VerificationForm: React.FC = () => {
   const [code, setCode] = useState<string>("");
   const number = useAppSelector(getNumber);
   const isloading = useAppSelector(isLoadingStore);
+  const isError = useAppSelector(getErrorStore);
 
   const navigate = useNavigate();
 
@@ -44,6 +50,7 @@ const VerificationForm: React.FC = () => {
       </InfoText>
 
       <AuthCode allowedCharacters="numeric" onChange={handleChange} />
+      {isError && <ErrorText>Code is wrong</ErrorText>}
 
       <ResendCode
         type="button"
