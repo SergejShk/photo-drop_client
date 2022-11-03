@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CommonWrapperFooter = styled.div`
   position: absolute;
-  width: calc(100vw - 21px);
+  width: 100vw;
   top: 100%;
   left: 0;
   background-color: ${(p) => p.theme.colors.primary};
@@ -11,6 +11,7 @@ export const CommonWrapperFooter = styled.div`
 
   @media screen and (min-width: 1440px) {
     position: static;
+    width: auto;
   }
 `;
 

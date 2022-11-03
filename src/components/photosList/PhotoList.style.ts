@@ -24,6 +24,7 @@ export const WrapperPhotos = styled.div`
 
   @media screen and (min-width: 1440px) {
     position: static;
+    flex-direction: column;
   }
 `;
 
