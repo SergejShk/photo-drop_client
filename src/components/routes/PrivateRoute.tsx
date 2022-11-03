@@ -18,7 +18,16 @@ const PrivateRoute: React.FC<IProps> = ({ children }) => {
   return isLoading ? (
     <Loader />
   ) : (
-    <Suspense fallback={<></>}>
+    <Suspense
+      fallback={
+        <div
+          style={{
+            height: "100vh",
+            backgroundColor: "#ffffff",
+          }}
+        ></div>
+      }
+    >
       {isLoggedIn ? children : <Navigate to="/auth" />}
     </Suspense>
   );
