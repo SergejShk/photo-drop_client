@@ -76,11 +76,11 @@ export const TextReceive = styled.p`
 export const ImgAlbum = styled.img`
   display: block;
   height: 200px;
-  margin-top: 30px;
+  margin: 30px auto 0;
   border-radius: 20px;
 
   @media screen and (min-width: 1440px) {
     height: 250px;
-    margin-top: 39px;
+    margin: 39px auto 0;
   }
 `;
