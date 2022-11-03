@@ -34,7 +34,7 @@ const ButtonUnlock: React.FC<IProps> = ({
         disabled={isloading ? true : false}
         onClick={onClickUnlock}
       >
-        Unlock your photos{isloading && <span className="loader"></span>}
+        Unlock your photos
       </BtnUnlockHeader>
     );
   } else if (forModal) {

@@ -33,6 +33,7 @@ export const ListPhotos = styled.ul`
 `;
 
 export const ItemPhotos = styled.li`
+  cursor: pointer;
   width: 33.333vw;
   height: 33.333vw;
   list-style: none;

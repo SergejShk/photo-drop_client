@@ -17,6 +17,7 @@ const DashboardPage = lazy(() => import("../pages/DashboardPage"));
 const ProfilePage = lazy(() => import("../pages/ProfilePage"));
 const EditNamePage = lazy(() => import("../pages/EditNamePage"));
 const AlbumPage = lazy(() => import("../pages/AlbumPage"));
+const PaymentSuccessPage = lazy(() => import("../pages/PaymentSuccessPage"));
 
 const App: React.FC = () => {
   const token = useAppSelector(getTokenStore);
@@ -93,6 +94,14 @@ const App: React.FC = () => {
           element={
             <PrivateRoute>
               <AlbumPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="payment_success"
+          element={
+            <PrivateRoute>
+              <PaymentSuccessPage />
             </PrivateRoute>
           }
         />
