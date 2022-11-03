@@ -63,3 +63,24 @@ export const TextSuccess = styled.p`
     line-height: 22.5px;
   }
 `;
+
+export const TextReceive = styled.p`
+  font-family: ${(p) => p.theme.fonts.body};
+  font-size: 18px;
+  line-height: 14px;
+  text-align: center;
+  color: ${(p) => p.theme.colors.primary};
+  margin-top: 19px;
+`;
+
+export const ImgAlbum = styled.img`
+  display: block;
+  height: 200px;
+  margin-top: 30px;
+  border-radius: 20px;
+
+  @media screen and (min-width: 1440px) {
+    height: 250px;
+    margin-top: 39px;
+  }
+`;

@@ -22,6 +22,7 @@ const PhotosList: React.FC<IProps> = ({ albums, albumId }) => {
   const [selectedAlbumId, setSelectedAlbumId] = useState("");
   const [selectedPhotoSrc, setSelectedPhotoSrc] = useState("");
   const [selectedPhotoLocation, setSelectedPhotoLocation] = useState("");
+  const [selectedAlbumCover, setSelectedAlbumCover] = useState("");
   const [isPurchased, setIsPurchased] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -32,12 +33,14 @@ const PhotosList: React.FC<IProps> = ({ albums, albumId }) => {
     albumId: string,
     purchased: boolean,
     photoSrc: string,
-    location: string
+    location: string,
+    cover: string
   ) => {
     setSelectedAlbumId(albumId);
     setIsPurchased(purchased);
     setSelectedPhotoSrc(photoSrc);
     setSelectedPhotoLocation(location);
+    setSelectedAlbumCover(cover);
     toogleModal();
   };
 
@@ -61,7 +64,8 @@ const PhotosList: React.FC<IProps> = ({ albums, albumId }) => {
                       album.id,
                       album.purchased,
                       photo.original,
-                      album.location
+                      album.location,
+                      album.cover
                     )
                   }
                 >
@@ -71,7 +75,13 @@ const PhotosList: React.FC<IProps> = ({ albums, albumId }) => {
             )}
           </ListPhotos>
 
-          {albumId && <ButtonUnlock albumId={albumId} />}
+          {albumId && (
+            <ButtonUnlock
+              albumId={albumId}
+              location={selectedPhotoLocation}
+              cover={selectedAlbumCover}
+            />
+          )}
           {isMobile && <Footer />}
         </WrapperPhotos>
       )}
@@ -81,6 +91,7 @@ const PhotosList: React.FC<IProps> = ({ albums, albumId }) => {
           purchased={isPurchased}
           photoSrc={selectedPhotoSrc}
           location={selectedPhotoLocation}
+          cover={selectedAlbumCover}
           toogleModal={toogleModal}
         />
       )}

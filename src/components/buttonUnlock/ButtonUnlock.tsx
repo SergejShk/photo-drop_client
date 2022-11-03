@@ -9,12 +9,16 @@ interface IProps {
   forAlbumHeader?: boolean;
   forModal?: boolean;
   albumId: string;
+  location: string;
+  cover: string;
 }
 
 const ButtonUnlock: React.FC<IProps> = ({
   forAlbumHeader,
   forModal,
   albumId,
+  location,
+  cover,
 }) => {
   const dispatch = useAppDispatch();
   const purchaseLink = useAppSelector(getPurchaseLinkStore);
@@ -26,6 +30,9 @@ const ButtonUnlock: React.FC<IProps> = ({
 
   const onClickUnlock = (e: React.MouseEvent<HTMLElement>): void => {
     dispatch(getPurcaseLinkThunk(albumId));
+
+    localStorage.setItem("location", JSON.stringify(location));
+    localStorage.setItem("cover", JSON.stringify(cover));
   };
 
   if (forAlbumHeader) {

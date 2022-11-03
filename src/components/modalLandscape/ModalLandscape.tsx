@@ -9,6 +9,7 @@ interface IProps {
   purchased: boolean;
   photoSrc: string;
   location: string;
+  cover: string;
 }
 
 const ModalLandscape: React.FC<IProps> = ({
@@ -17,6 +18,7 @@ const ModalLandscape: React.FC<IProps> = ({
   purchased,
   photoSrc,
   location,
+  cover,
 }) => {
   return (
     <Backdrop>
@@ -28,7 +30,14 @@ const ModalLandscape: React.FC<IProps> = ({
       <Modal>
         <PhotoImg src={photoSrc} alt={location} />
       </Modal>
-      {!purchased && <ButtonUnlock forModal albumId={albumId} />}
+      {!purchased && (
+        <ButtonUnlock
+          forModal
+          albumId={albumId}
+          location={location}
+          cover={cover}
+        />
+      )}
     </Backdrop>
   );
 };
