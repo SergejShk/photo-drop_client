@@ -81,7 +81,7 @@ const ModalLandscape: React.FC<IProps> = ({
           </LinkDownload>
 
           {!isDesktop && (
-            <BtnSahre>
+            <BtnSahre onClick={() => navigator.share({ url: photoSrc })}>
               <IconShare>
                 <use href={sprite + "#icon-share"} />
               </IconShare>
