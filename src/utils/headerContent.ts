@@ -1,4 +1,4 @@
-export const isNotGoBack = ["/auth", "/dashboard"];
+export const isNotGoBack = ["/auth", "/dashboard", "/payment_success"];
 
 export const isNotGoBackDesk = ["/auth", "/dashboard", "/payment_success"];
 

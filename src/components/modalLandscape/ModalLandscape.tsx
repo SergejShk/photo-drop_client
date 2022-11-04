@@ -38,7 +38,7 @@ const ModalLandscape: React.FC<IProps> = ({
     fetch(photoSrc, {
       method: "GET",
       headers: {
-        "Content-Type": "application/pdf",
+        "Content-Type": "image/jpeg",
       },
     })
       .then((response) => response.blob())
