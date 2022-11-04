@@ -1,5 +1,17 @@
-import React from "react";
-import { Backdrop, BtnClose, Modal, PhotoImg } from "./ModalLandscape.style";
+import { useMediaQuery } from "react-responsive";
+import { nanoid } from "nanoid";
+import {
+  Backdrop,
+  BtnClose,
+  BtnSahre,
+  BtnSeeFrame,
+  IconDownload,
+  IconShare,
+  LinkDownload,
+  Modal,
+  PhotoImg,
+  UnlockedContainer,
+} from "./ModalLandscape.style";
 import sprite from "../../assets/sprite.svg";
 import ButtonUnlock from "../buttonUnlock/ButtonUnlock";
 
@@ -20,6 +32,29 @@ const ModalLandscape: React.FC<IProps> = ({
   location,
   cover,
 }) => {
+  const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
+
+  const downloadImg = () => {
+    fetch(photoSrc, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/pdf",
+      },
+    })
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", `${nanoid()}.jpg`);
+
+        document.body.appendChild(link);
+
+        link.click();
+        link.parentNode?.removeChild(link);
+      });
+  };
+
   return (
     <Backdrop>
       <BtnClose onClick={toogleModal}>
@@ -30,13 +65,33 @@ const ModalLandscape: React.FC<IProps> = ({
       <Modal>
         <PhotoImg src={photoSrc} alt={location} />
       </Modal>
-      {!purchased && (
+      {!purchased ? (
         <ButtonUnlock
           forModal
           albumId={albumId}
           location={location}
           cover={cover}
         />
+      ) : (
+        <UnlockedContainer>
+          <LinkDownload onClick={downloadImg}>
+            <IconDownload>
+              <use href={sprite + "#icon-download"} />
+            </IconDownload>
+          </LinkDownload>
+
+          {!isDesktop && (
+            <BtnSahre>
+              <IconShare>
+                <use href={sprite + "#icon-share"} />
+              </IconShare>
+            </BtnSahre>
+          )}
+
+          <BtnSeeFrame type="button" disabled>
+            See in a frame
+          </BtnSeeFrame>
+        </UnlockedContainer>
       )}
     </Backdrop>
   );

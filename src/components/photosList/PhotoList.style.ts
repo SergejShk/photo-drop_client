@@ -29,8 +29,8 @@ export const WrapperPhotos = styled.div`
 `;
 
 export const ListPhotos = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 `;
 
 export const ItemPhotos = styled.li`
