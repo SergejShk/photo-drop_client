@@ -36,7 +36,9 @@ const SharedLoyaout: React.FC = () => {
           selfie={isSelfie.includes(pathname) ? selfie : ""}
         />
       )}
+
       {!isLoading && albumId && <Header goBack album={album} />}
+
       <Container>
         <main>
           <Suspense fallback={<></>}>

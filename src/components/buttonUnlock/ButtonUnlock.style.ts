@@ -16,6 +16,7 @@ export const BtnUnlock = styled.button`
   display: block;
   margin: 40px auto;
   min-width: 345px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   & .loader,
   .loader:before,
@@ -120,6 +121,7 @@ export const BtnUnlockHeader = styled.button`
   display: block;
   margin-left: auto;
   padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   & .loader,
   .loader:before,

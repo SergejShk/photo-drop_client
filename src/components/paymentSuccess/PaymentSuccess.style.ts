@@ -21,6 +21,7 @@ export const WrapperPaySuccess = styled.div`
     border-radius: 50px;
     border: none;
     margin-top: 30px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     @media screen and (min-width: 1440px) {
       width: 310px;

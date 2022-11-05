@@ -38,6 +38,7 @@ const Header: React.FC<IProps> = ({ goBack, selfie, album }) => {
   };
 
   const normalizedDate = moment(album?.date).format("ll");
+  const isDeskSuccess = location.pathname === "/payment_success" && isDesktop;
 
   return (
     <>
@@ -55,7 +56,7 @@ const Header: React.FC<IProps> = ({ goBack, selfie, album }) => {
             <use href={sprite + "#icon-Logo"} />
           </svg>
 
-          {selfie && (
+          {selfie && !isDeskSuccess && (
             <ContainerAvatar>
               <Link to="/profile" state={location}>
                 <img src={selfie} alt="avatar" />

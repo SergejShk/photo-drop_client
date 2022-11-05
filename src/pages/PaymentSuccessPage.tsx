@@ -20,7 +20,7 @@ const PaymentSuccessPage: React.FC = () => {
       localStorage.setItem("location", JSON.stringify(""));
       localStorage.setItem("cover", JSON.stringify(""));
     };
-  });
+  }, []);
 
   useEffect(() => {
     !location && !cover && navigate("/");
