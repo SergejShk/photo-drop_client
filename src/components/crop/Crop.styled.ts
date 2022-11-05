@@ -74,8 +74,8 @@ export const CropWrapper = styled.div`
   }
 
   & img {
-    height: 285px;
-    max-width: 345px;
+    /* height: 285px; */
+    /* max-width: 345px; */
   }
 
   & .reactEasyCrop_CropArea {

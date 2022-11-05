@@ -27,6 +27,7 @@ const Crop: React.FC<IProps> = ({
   setPhotoURL,
 }) => {
   const [crop, setCrop] = useState({ x: 0, y: 0 });
+  const [zoom, setZoom] = useState(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Object | null>(
     null
   );
@@ -71,9 +72,11 @@ const Crop: React.FC<IProps> = ({
         <Cropper
           image={photoURL}
           crop={crop}
+          zoom={zoom}
           aspect={1}
           showGrid={false}
           onCropChange={setCrop}
+          onZoomChange={setZoom}
           onCropComplete={cropComplete}
         />
         <ButtonWrapper>
