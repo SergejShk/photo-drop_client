@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useLocation } from "react-router-dom";
 import { Albums } from "../../types/albumsType";
@@ -44,6 +44,10 @@ const PhotosList: React.FC<IProps> = ({ albums, albumId }) => {
     toogleModal();
   };
 
+  useEffect(() => {
+    albums.length === 1 && setIsPurchased(albums[0].purchased);
+  }, [albums]);
+
   const toogleModal = () => {
     setIsModalOpen((prev) => !prev);
   };
@@ -75,7 +79,7 @@ const PhotosList: React.FC<IProps> = ({ albums, albumId }) => {
             )}
           </ListPhotos>
 
-          {albumId && (
+          {albumId && !isPurchased && (
             <ButtonUnlock
               albumId={albumId}
               location={selectedPhotoLocation}

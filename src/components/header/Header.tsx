@@ -79,7 +79,7 @@ const Header: React.FC<IProps> = ({ goBack, selfie, album }) => {
               <DescrAccent>{album.photos.length} photos</DescrAccent>
             </DescrAlbum>
 
-            {isDesktop && (
+            {isDesktop && !album.purchased && (
               <ButtonUnlock
                 forAlbumHeader
                 albumId={album.id}
