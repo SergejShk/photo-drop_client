@@ -29,7 +29,6 @@ export const saveAvatar = async (selfieData: addSelfieDataType) => {
   );
 
   const data = await fetch(url, {
-    mode: "no-cors",
     method: "put",
     headers: { ContentEncoding: "base64", "Content-Type": "image/jpeg" },
     body: buf,
