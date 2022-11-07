@@ -20,6 +20,7 @@ import {
 
 const VerificationForm: React.FC = () => {
   const [code, setCode] = useState<string>("");
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const number = useAppSelector(getNumber);
   const isloading = useAppSelector(isLoadingStore);
   const isError = useAppSelector(getErrorStore);
@@ -42,6 +43,11 @@ const VerificationForm: React.FC = () => {
     dispatch(verificationThunk({ number, code }));
   };
 
+  const onClickResend = (e: React.MouseEvent) => {
+    dispatch(logInThunk({ number }));
+    setIsDisabled(true);
+  };
+
   return (
     <FormStyled onSubmit={handleSubmit}>
       <Title>What’s the code?</Title>
@@ -52,10 +58,7 @@ const VerificationForm: React.FC = () => {
       <AuthCode allowedCharacters="numeric" onChange={handleChange} />
       {isError && <ErrorText>Code is wrong</ErrorText>}
 
-      <ResendCode
-        type="button"
-        onClick={() => dispatch(logInThunk({ number }))}
-      >
+      <ResendCode type="button" disabled={isDisabled} onClick={onClickResend}>
         Resend code
       </ResendCode>
 
