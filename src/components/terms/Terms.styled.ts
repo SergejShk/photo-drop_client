@@ -10,11 +10,13 @@ export const Title = styled.h2`
   text-align: center;
 `;
 
-export const Text = styled.p`
-  font-family: ${(p) => p.theme.fonts.body};
-  font-size: ${(p) => p.theme.fontSizes.s};
-  line-height: 21px;
-  letter-spacing: -0.02em;
-  color: ${(p) => p.theme.colors.primary};
-  margin-bottom: 21px;
+export const TextWrapper = styled.div`
+  & .photodrop-futura {
+    font-family: ${(p) => p.theme.fonts.body};
+    font-size: ${(p) => p.theme.fontSizes.s};
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    color: ${(p) => p.theme.colors.primary};
+    margin-bottom: 21px;
+  }
 `;
