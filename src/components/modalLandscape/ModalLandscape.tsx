@@ -36,9 +36,11 @@ const ModalLandscape: React.FC<IProps> = ({
 
   const downloadImg = () => {
     fetch(photoSrc, {
+      mode: "no-cors",
       method: "GET",
       headers: {
         "Content-Type": "image/jpeg",
+        "Access-Control-Allow-Origin": "*",
       },
     })
       .then((response) => response.blob())
