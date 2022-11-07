@@ -64,9 +64,11 @@ const ModalLandscape: React.FC<IProps> = ({
           <use href={sprite + "#icon-close"} />
         </svg>
       </BtnClose>
+
       <Modal>
         <PhotoImg src={photoSrc} alt={location} />
       </Modal>
+
       {!purchased ? (
         <ButtonUnlock
           forModal

@@ -18,11 +18,13 @@ const AddSelfie: React.FC = () => {
   const [, setSelectedFile] = useState<File | null>(null);
   const [photoURL, setPhotoURL] = useState<string>("");
   const [openCrop, setOpenCrop] = useState<boolean>(false);
+  const [inputValue, setInputValue] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files![0];
 
     if (file) {
+      setInputValue(e.target.value);
       setSelectedFile(file);
       setPhotoURL(URL.createObjectURL(file));
       setOpenCrop(true);
@@ -51,6 +53,7 @@ const AddSelfie: React.FC = () => {
           <input
             className="hidden"
             type="file"
+            value={inputValue}
             ref={filePicker}
             accept="image/*,.png,.jpg,.jpeg"
             onChange={handleChange}
@@ -60,7 +63,15 @@ const AddSelfie: React.FC = () => {
 
       {openCrop && (
         <ModalCrop>
-          <Crop {...{ photoURL, onSelectImage, setOpenCrop }} />
+          <Crop
+            {...{
+              photoURL,
+              onSelectImage,
+              setOpenCrop,
+              setPhotoURL,
+              setInputValue,
+            }}
+          />
         </ModalCrop>
       )}
     </>

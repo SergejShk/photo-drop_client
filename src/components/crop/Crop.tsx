@@ -18,6 +18,7 @@ interface IProps {
   onSelectImage: (e: React.MouseEvent<HTMLElement>) => void;
   setOpenCrop: (boolean: boolean) => void;
   setPhotoURL?: (url: string) => void;
+  setInputValue?: (value: string) => void;
 }
 
 const Crop: React.FC<IProps> = ({
@@ -25,6 +26,7 @@ const Crop: React.FC<IProps> = ({
   onSelectImage,
   setOpenCrop,
   setPhotoURL,
+  setInputValue,
 }) => {
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
@@ -53,7 +55,9 @@ const Crop: React.FC<IProps> = ({
   };
 
   const onClose: React.MouseEventHandler<HTMLButtonElement> = () => {
+    setInputValue && setInputValue("");
     setPhotoURL && setPhotoURL(basePhoto);
+
     setOpenCrop(false);
   };
 
