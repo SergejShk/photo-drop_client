@@ -39,6 +39,11 @@ const Crop: React.FC<IProps> = ({
 
   const cropImage = async () => {
     try {
+      if (!croppedAreaPixels) {
+        setOpenCrop(false);
+        return;
+      }
+
       const file = await getCroppedImg(photoURL, croppedAreaPixels);
 
       dispatch(addSelfieThunk(file));
