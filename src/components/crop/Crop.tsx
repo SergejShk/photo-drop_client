@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Cropper from "react-easy-crop";
-import { useAppDispatch } from "../../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { addSelfieThunk } from "../../redux/user/userOperations";
 import getCroppedImg from "../../utils/cropImage";
 import {
@@ -12,6 +12,8 @@ import {
   BtnClose,
 } from "./Crop.styled";
 import sprite from "../../assets/sprite.svg";
+import { getSelfieStore } from "../../redux/user/userSelectors";
+import { useLocation } from "react-router-dom";
 
 interface IProps {
   photoURL: string;
@@ -36,10 +38,11 @@ const Crop: React.FC<IProps> = ({
   const [basePhoto] = useState(photoURL);
 
   const dispatch = useAppDispatch();
+  const { pathname } = useLocation();
 
   const cropImage = async () => {
     try {
-      if (!croppedAreaPixels) {
+      if (photoURL === basePhoto && zoom === 1 && pathname === "/profile") {
         setOpenCrop(false);
         return;
       }
