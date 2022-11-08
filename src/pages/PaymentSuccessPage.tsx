@@ -28,11 +28,17 @@ const PaymentSuccessPage: React.FC = () => {
   }, [albumId, navigate]);
 
   return (
-    <PaymentSuccess
-      location={album.location}
-      cover={album.cover}
-      albumId={albumId}
-    />
+    <>
+      {albumId ? (
+        <PaymentSuccess
+          location={album.location}
+          cover={album.cover}
+          albumId={albumId}
+        />
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 
