@@ -29,10 +29,10 @@ const ButtonUnlock: React.FC<IProps> = ({
   }, [purchaseLink]);
 
   const onClickUnlock = (e: React.MouseEvent<HTMLElement>): void => {
-    dispatch(getPurcaseLinkThunk(albumId));
-
     localStorage.setItem("location", JSON.stringify(location));
     localStorage.setItem("cover", JSON.stringify(cover));
+
+    dispatch(getPurcaseLinkThunk(albumId));
   };
 
   if (forAlbumHeader) {
