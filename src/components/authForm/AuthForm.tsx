@@ -40,7 +40,12 @@ const AuthForm: React.FC = () => {
       <CallText>Enter your phone number</CallText>
 
       <WrapperInput>
-        <PhoneInput country={"us"} value={phone} onChange={handleChange} />
+        <PhoneInput
+          country={"us"}
+          enableSearch
+          value={phone}
+          onChange={handleChange}
+        />
         <svg className="icon">
           <use href={sprite + "#icon-arrow-bottom"} />
         </svg>

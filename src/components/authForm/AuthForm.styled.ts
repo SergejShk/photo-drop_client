@@ -143,6 +143,7 @@ export const FormStyled = styled.form`
     min-height: calc(100vh - 56px);
     z-index: 50;
     box-shadow: none;
+    font-family: ${(p) => p.theme.fonts.body};
 
     & li {
       width: 350px;
@@ -151,6 +152,28 @@ export const FormStyled = styled.form`
     @media screen and (min-width: 1440px) {
       top: -273px;
       min-height: calc(100vh - 60px);
+    }
+
+    & .search {
+      padding: 6px 0;
+
+      & .search-emoji {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+      }
+
+      & .search-box {
+        width: 100%;
+        margin: 0;
+      }
     }
   }
 `;
