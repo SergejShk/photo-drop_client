@@ -86,10 +86,18 @@ const Crop: React.FC<IProps> = ({
           crop={crop}
           zoom={zoom}
           aspect={1}
-          showGrid={false}
           onCropChange={setCrop}
           onZoomChange={setZoom}
           onCropComplete={cropComplete}
+          cropShape="round"
+          showGrid={false}
+          cropSize={{ width: 285, height: 285 }}
+          style={{
+            cropAreaStyle: {
+              color: "#262626",
+              border: "none",
+            },
+          }}
         />
         <ButtonWrapper>
           <Button type="button" onClick={onSelectImage}>

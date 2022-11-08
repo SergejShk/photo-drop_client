@@ -62,32 +62,6 @@ export const CropWrapper = styled.div`
     width: 100%;
     height: 100%;
   }
-
-  & .reactEasyCrop_Container {
-    top: 183px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 285px;
-    width: 285px;
-    border-radius: 50%;
-    z-index: 30;
-  }
-
-  & img {
-    /* height: 285px; */
-    /* max-width: 345px; */
-  }
-
-  & .reactEasyCrop_CropArea {
-    height: 285px !important;
-    width: 285px !important;
-    border-radius: 50%;
-  }
-  & .reactEasyCrop_CropAreaGrid {
-    height: 285px !important;
-    width: 285px !important;
-    border-radius: 50%;
-  }
 `;
 
 export const ButtonWrapper = styled.div`
