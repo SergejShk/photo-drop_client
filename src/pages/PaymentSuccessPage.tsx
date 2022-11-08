@@ -1,32 +1,39 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PaymentSuccess from "../components/paymentSuccess/PaymentSuccess";
+import { useAppSelector } from "../hooks/reduxHooks";
+import { getAlbumsStore } from "../redux/albums/albumsSelectors";
 
 const PaymentSuccessPage: React.FC = () => {
   const navigate = useNavigate();
-  const [location] = useState<string>(
+
+  const [albumId] = useState<string>(
     () =>
       //@ts-ignore
-      JSON.parse(localStorage.getItem("location")) || ""
+      JSON.parse(localStorage.getItem("albumId")) || ""
   );
-  const [cover] = useState<string>(
-    () =>
-      //@ts-ignore
-      JSON.parse(localStorage.getItem("cover")) || ""
+  const albums = useAppSelector(getAlbumsStore);
+  const [album] = useState(() =>
+    albums.find((album: any) => album.id === albumId)
   );
 
   useEffect(() => {
     return () => {
-      localStorage.setItem("location", JSON.stringify(""));
-      localStorage.setItem("cover", JSON.stringify(""));
+      localStorage.setItem("albumId", JSON.stringify(""));
     };
   }, []);
 
   useEffect(() => {
-    !location && !cover && navigate("/");
-  }, [cover, location, navigate]);
+    !albumId && navigate("/");
+  }, [albumId, navigate]);
 
-  return <PaymentSuccess location={location} cover={cover} />;
+  return (
+    <PaymentSuccess
+      location={album.location}
+      cover={album.cover}
+      albumId={albumId}
+    />
+  );
 };
 
 export default PaymentSuccessPage;

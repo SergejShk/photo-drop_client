@@ -11,9 +11,10 @@ import {
 interface IProps {
   location: string;
   cover: string;
+  albumId: string;
 }
 
-const PaymentSuccess: React.FC<IProps> = ({ location, cover }) => {
+const PaymentSuccess: React.FC<IProps> = ({ location, cover, albumId }) => {
   const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
 
   return (
@@ -30,7 +31,7 @@ const PaymentSuccess: React.FC<IProps> = ({ location, cover }) => {
 
       <ImgAlbum src={cover} alt="cover of album" />
 
-      <Link to="/dashboard" className="linkToDashboard">
+      <Link to={`/album/${albumId}`} className="linkToDashboard">
         See photos
       </Link>
 

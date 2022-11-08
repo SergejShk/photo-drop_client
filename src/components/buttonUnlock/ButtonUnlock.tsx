@@ -17,8 +17,6 @@ const ButtonUnlock: React.FC<IProps> = ({
   forAlbumHeader,
   forModal,
   albumId,
-  location,
-  cover,
 }) => {
   const dispatch = useAppDispatch();
   const purchaseLink = useAppSelector(getPurchaseLinkStore);
@@ -29,8 +27,7 @@ const ButtonUnlock: React.FC<IProps> = ({
   }, [purchaseLink]);
 
   const onClickUnlock = (e: React.MouseEvent<HTMLElement>): void => {
-    localStorage.setItem("location", JSON.stringify(location));
-    localStorage.setItem("cover", JSON.stringify(cover));
+    localStorage.setItem("albumId", JSON.stringify(albumId));
 
     dispatch(getPurcaseLinkThunk(albumId));
   };
