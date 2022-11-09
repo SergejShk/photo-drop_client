@@ -43,7 +43,7 @@ export const Title = styled.h2`
 export const Text = styled.p`
   font-family: ${(p) => p.theme.fonts.body};
   font-size: ${(p) => p.theme.fontSizes.m};
-  line-height: 19px;
+  line-height: 23px;
   color: ${(p) => p.theme.colors.primary};
   margin-bottom: 30px;
   text-align: center;

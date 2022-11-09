@@ -102,7 +102,7 @@ export const IconLogo = styled.svg`
 export const TextFooter = styled.p`
   font-family: ${(p) => p.theme.fonts.body};
   font-size: 16px;
-  line-height: 19px;
+  line-height: 21px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.white};
   margin-left: -1px;
@@ -110,7 +110,7 @@ export const TextFooter = styled.p`
 
   @media screen and (min-width: 1440px) {
     font-size: 18px;
-    line-height: 20.75px;
+    line-height: 23px;
     margin-bottom: 29px;
   }
 `;

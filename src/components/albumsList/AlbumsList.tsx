@@ -30,7 +30,7 @@ const AlbumsList: React.FC<IProps> = ({ albums }) => {
   }, []);
 
   const slidesPerViewMob = (viewWidth / 2 - 187.5 + 360) / 115;
-  const slidesPerViewDesc = (viewWidth / 2 - 720 + 1320) / 205;
+  const slidesPerViewDesc = (viewWidth / 2 - 730 + 1320) / 205;
 
   return (
     <WrapperAlbums>

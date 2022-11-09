@@ -37,14 +37,14 @@ export const TitleText = styled.h2`
   font-family: ${(p) => p.theme.fonts.heading};
   font-weight: 700;
   font-size: 18px;
-  line-height: 13px;
+  line-height: 23px;
   text-align: center;
   color: ${(p) => p.theme.colors.primary};
   margin-bottom: 20px;
 
   @media screen and (min-width: 1440px) {
     font-size: 30px;
-    line-height: 22px;
+    line-height: 28px;
   }
 `;
 

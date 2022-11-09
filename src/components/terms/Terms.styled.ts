@@ -18,5 +18,10 @@ export const TextWrapper = styled.div`
     letter-spacing: -0.02em;
     color: ${(p) => p.theme.colors.primary};
     margin-bottom: 21px;
+
+    @media screen and (min-width: 1440px) {
+      font-size: 18px;
+      line-height: 23px;
+    }
   }
 `;

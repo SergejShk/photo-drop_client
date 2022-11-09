@@ -42,7 +42,7 @@ export const AccentText = styled.p`
 export const Text = styled.p`
   font-family: ${(p) => p.theme.fonts.body};
   font-size: ${(p) => p.theme.fontSizes.m};
-  line-height: 18px;
+  line-height: 23px;
   display: flex;
   color: ${(p) => p.theme.colors.primary};
   text-align: center;

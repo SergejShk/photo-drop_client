@@ -293,13 +293,13 @@ export const Button = styled.button`
 export const PolicyText = styled.p`
   font-family: ${(p) => p.theme.fonts.body};
   font-size: ${(p) => p.theme.fontSizes.xs};
-  line-height: 15.4px;
+  line-height: 18px;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.colors.secondary};
 
   @media screen and (min-width: 1440px) {
     font-size: 16px;
-    line-height: 19px;
+    line-height: 21px;
   }
 
   & a {
