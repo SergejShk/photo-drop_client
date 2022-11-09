@@ -10,16 +10,27 @@ import {
   TitleAlbums,
   WrapperAlbums,
 } from "./AlbumsList.style";
+import { useEffect, useState } from "react";
 
 interface IProps {
   albums: Albums;
 }
 
 const AlbumsList: React.FC<IProps> = ({ albums }) => {
+  const [viewWidth, setViewWidth] = useState(window.innerWidth);
   const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
 
-  const widthSwiperBoxMob = (window.innerWidth / 2 - 187.5 + 360) / 115;
-  const widthSwiperBoxDesc = (window.innerWidth / 2 - 720 + 1320) / 205;
+  useEffect(() => {
+    window.addEventListener("resize", () => setViewWidth(window.innerWidth));
+
+    return () =>
+      window.removeEventListener("resize", () =>
+        setViewWidth(window.innerWidth)
+      );
+  }, []);
+
+  const slidesPerViewMob = (viewWidth / 2 - 187.5 + 360) / 115;
+  const slidesPerViewDesc = (viewWidth / 2 - 720 + 1320) / 205;
 
   return (
     <WrapperAlbums>
@@ -27,7 +38,7 @@ const AlbumsList: React.FC<IProps> = ({ albums }) => {
 
       <Swiper
         watchSlidesProgress={false}
-        slidesPerView={isMobile ? widthSwiperBoxMob : widthSwiperBoxDesc}
+        slidesPerView={isMobile ? slidesPerViewMob : slidesPerViewDesc}
         className="mySwiper"
       >
         {albums.map(({ cover, location, id }) => (

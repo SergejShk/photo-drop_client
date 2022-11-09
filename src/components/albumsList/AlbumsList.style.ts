@@ -23,7 +23,7 @@ export const WrapperAlbums = styled.div`
       left: 0;
       height: 255px;
       /* width: 1200px; */
-      width: calc(100vw - 120px - (100vw - 1440px) / 2);
+      width: calc(100vw - 120px - (100vw - 1420px) / 2);
     }
   }
 
