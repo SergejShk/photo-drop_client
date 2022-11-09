@@ -18,13 +18,16 @@ interface IProps {
 const AlbumsList: React.FC<IProps> = ({ albums }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 1439px)" });
 
+  const widthSwiperBoxMob = (window.innerWidth / 2 - 187.5 + 360) / 115;
+  const widthSwiperBoxDesc = (window.innerWidth / 2 - 720 + 1320) / 205;
+
   return (
     <WrapperAlbums>
       <TitleAlbums>Albums</TitleAlbums>
 
       <Swiper
         watchSlidesProgress={false}
-        slidesPerView={isMobile ? 3 : 5.85}
+        slidesPerView={isMobile ? widthSwiperBoxMob : widthSwiperBoxDesc}
         className="mySwiper"
       >
         {albums.map(({ cover, location, id }) => (

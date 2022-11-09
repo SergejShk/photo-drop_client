@@ -14,16 +14,16 @@ export const WrapperAlbums = styled.div`
     position: absolute;
     top: 35px;
     left: calc(50% - 172.5px);
-    /* width: calc(100vw - 15px - (100vw - 375px) / 2); */
-    width: 345px;
+    width: calc(100vw - 15px - (100vw - 375px) / 2);
+    /* width: 345px; */
     height: 140px;
 
     @media screen and (min-width: 1440px) {
       top: 72px;
       left: 0;
       height: 255px;
-      width: 1200px;
-      /* width: calc(100vw - 15px - (100vw - 1200px) / 2); */
+      /* width: 1200px; */
+      width: calc(100vw - 120px - (100vw - 1440px) / 2);
     }
   }
 
