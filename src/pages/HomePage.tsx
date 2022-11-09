@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AuthForm from "../components/authForm/AuthForm";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 import { getNumber } from "../redux/auth/authSelectors";
-import { resetAccessToken } from "../redux/auth/authSlice";
+import { resetAccessToken, resetNumber } from "../redux/auth/authSlice";
 import { resetSelfie } from "../redux/user/userSlice";
 
 const HomePage: React.FC = () => {
@@ -14,6 +14,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     dispatch(resetSelfie(""));
     dispatch(resetAccessToken(""));
+    dispatch(resetNumber(""));
   }, [dispatch]);
 
   useEffect(() => {

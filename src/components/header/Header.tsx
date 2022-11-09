@@ -8,6 +8,7 @@ import {
   DescrAlbum,
   HeaderStyled,
   IconGoBack,
+  LinkLogo,
   TitleAlbum,
 } from "./Header.styled";
 import sprite from "../../assets/sprite.svg";
@@ -52,9 +53,11 @@ const Header: React.FC<IProps> = ({ goBack, selfie, album }) => {
             </BtnGoBack>
           )}
 
-          <svg className="logo">
-            <use href={sprite + "#icon-Logo"} />
-          </svg>
+          <LinkLogo to="/auth">
+            <svg className="logo">
+              <use href={sprite + "#icon-Logo"} />
+            </svg>
+          </LinkLogo>
 
           {selfie && !isDeskSuccess && (
             <ContainerAvatar>

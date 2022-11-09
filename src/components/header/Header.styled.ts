@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 19px 0 18px;
+  padding: 19px 0 19px;
   border-bottom: 1px solid #f1f0ec;
   background-color: #fff;
 
   @media screen and (min-width: 1440px) {
-    padding: 18px 0 17px;
+    padding: 19px 0 18px;
   }
 
   &.albumHeader {
@@ -55,6 +56,7 @@ export const BtnGoBack = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   @media screen and (min-width: 1440px) {
     top: 20px;
@@ -82,6 +84,16 @@ export const IconGoBack = styled.svg`
       height: 20px;
       width: 10px;
     }
+  }
+`;
+
+export const LinkLogo = styled(Link)`
+  height: 16px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  padding: 0;
+
+  @media screen and (min-width: 1440px) {
+    height: 22px;
   }
 `;
 
