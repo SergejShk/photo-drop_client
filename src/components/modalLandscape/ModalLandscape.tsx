@@ -37,9 +37,9 @@ const ModalLandscape: React.FC<IProps> = ({
   const downloadImg = () => {
     fetch(
       photoSrc,
-      isDesktop
+      !isDesktop
         ? {
-            mode: "no-cors",
+            // mode: "no-cors",
             method: "GET",
             headers: {
               "Content-Type": "image/jpeg",
@@ -47,6 +47,7 @@ const ModalLandscape: React.FC<IProps> = ({
             },
           }
         : {
+            mode: "no-cors",
             method: "GET",
             headers: {
               "Content-Type": "image/jpeg",
