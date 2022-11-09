@@ -24,7 +24,7 @@ const AlbumsList: React.FC<IProps> = ({ albums }) => {
 
       <Swiper
         watchSlidesProgress={false}
-        slidesPerView={isMobile ? 3.05 : 5.85}
+        slidesPerView={isMobile ? 3 : 5.85}
         className="mySwiper"
       >
         {albums.map(({ cover, location, id }) => (

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Cropper from "react-easy-crop";
-import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
+import { useAppDispatch } from "../../hooks/reduxHooks";
 import { addSelfieThunk } from "../../redux/user/userOperations";
 import getCroppedImg from "../../utils/cropImage";
 import {
@@ -12,7 +12,6 @@ import {
   BtnClose,
 } from "./Crop.styled";
 import sprite from "../../assets/sprite.svg";
-import { getSelfieStore } from "../../redux/user/userSelectors";
 import { useLocation } from "react-router-dom";
 
 interface IProps {

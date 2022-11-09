@@ -14,7 +14,8 @@ export const WrapperAlbums = styled.div`
     position: absolute;
     top: 35px;
     left: calc(50% - 172.5px);
-    width: calc(100vw - 15px - (100vw - 375px) / 2);
+    /* width: calc(100vw - 15px - (100vw - 375px) / 2); */
+    width: 345px;
     height: 140px;
 
     @media screen and (min-width: 1440px) {

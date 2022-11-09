@@ -48,7 +48,6 @@ const authSlice = createSlice({
       .addCase(verificationThunk.fulfilled, (state, { payload }) => {
         state.accessToken = payload.token;
         state.isLoggedIn = true;
-        state.number = "";
         state.isLoading = false;
         state.error = null;
       })

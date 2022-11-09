@@ -1,7 +1,8 @@
-import React, { Suspense } from "react";
-import { Navigate } from "react-router-dom";
+import React, { Suspense, useEffect } from "react";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/reduxHooks";
 import {
+  getNumber,
   isExistToken,
   isLoadingDataStore,
 } from "../../redux/auth/authSelectors";
@@ -16,6 +17,13 @@ const PublicRoute: React.FC<IProps> = ({ children }) => {
   const isLoggedIn = useAppSelector(isExistToken);
   const isExistSelfie = useAppSelector(getSelfieStore);
   const isLoading = useAppSelector(isLoadingDataStore);
+  const number = useAppSelector(getNumber);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (pathname === "/verification" && !number) navigate("/auth");
+  }, [navigate, number, pathname]);
 
   return isLoading ? (
     <Loader />

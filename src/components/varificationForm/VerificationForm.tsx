@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AuthCode from "react-auth-code-input";
-import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { logInThunk, verificationThunk } from "../../redux/auth/authOperations";
 import {
@@ -24,12 +23,6 @@ const VerificationForm: React.FC = () => {
   const number = useAppSelector(getNumber);
   const isloading = useAppSelector(isLoadingStore);
   const isError = useAppSelector(getErrorStore);
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    !number && navigate("/auth");
-  }, [navigate, number]);
 
   const dispatch = useAppDispatch();
 
