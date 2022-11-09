@@ -35,14 +35,25 @@ const ModalLandscape: React.FC<IProps> = ({
   const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
 
   const downloadImg = () => {
-    fetch(photoSrc, {
-      mode: "no-cors",
-      method: "GET",
-      headers: {
-        "Content-Type": "image/jpeg",
-        "Access-Control-Allow-Origin": "*",
-      },
-    })
+    fetch(
+      photoSrc,
+      isDesktop
+        ? {
+            mode: "no-cors",
+            method: "GET",
+            headers: {
+              "Content-Type": "image/jpeg",
+              "Access-Control-Allow-Origin": "*",
+            },
+          }
+        : {
+            method: "GET",
+            headers: {
+              "Content-Type": "image/jpeg",
+              "Access-Control-Allow-Origin": "*",
+            },
+          }
+    )
       .then((response) => response.blob())
       .then((blob) => {
         const url = window.URL.createObjectURL(new Blob([blob]));
