@@ -7,14 +7,14 @@ import { getAlbumsStore } from "../redux/albums/albumsSelectors";
 const PaymentSuccessPage: React.FC = () => {
   const navigate = useNavigate();
 
-  const [albumId] = useState<string>(
-    () => localStorage.getItem("albumId") || ""
+  const [albumId] = useState<string>(() =>
+    JSON.parse(localStorage.getItem("albumId") ?? "")
   );
   const albums = useAppSelector(getAlbumsStore);
   const [album] = useState(() =>
     albums.find((album: any) => album.id === albumId)
   );
-  console.log(albumId);
+
   useEffect(() => {
     return () => {
       localStorage.setItem("albumId", JSON.stringify(""));
