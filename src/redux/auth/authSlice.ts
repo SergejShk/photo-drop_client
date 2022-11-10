@@ -10,7 +10,7 @@ import {
 import { getPurcaseLinkThunk } from "../albums/albumsOperations";
 
 const initialState: Auth = {
-  accessToken: "",
+  accessToken: null,
   number: "",
   isLoggedIn: false,
   isLoading: false,
@@ -55,6 +55,10 @@ const authSlice = createSlice({
         state.isLoadingData = true;
       })
       .addCase(getUserDataThunk.fulfilled, (state) => {
+        state.isLoadingData = false;
+      })
+      .addCase(getUserDataThunk.rejected, (state) => {
+        state.accessToken = null;
         state.isLoadingData = false;
       })
       .addCase(addSelfieThunk.pending, (state) => {

@@ -1,7 +1,7 @@
 import { Albums } from "./albumsType";
 
 export type Auth = {
-  accessToken: string;
+  accessToken: null | string;
   number: string;
   isLoggedIn: boolean;
   isLoading: boolean;
