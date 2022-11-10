@@ -56,39 +56,38 @@ const PhotosList: React.FC<IProps> = ({ albums, albumId }) => {
     <>
       {pathname === "/dashboard" && <TitlePhotos>All photos</TitlePhotos>}
 
-      {!isModalOpen && (
-        <WrapperPhotos>
-          <ListPhotos>
-            {albums.map((album) =>
-              album.photos.map((photo) => (
-                <ItemPhotos
-                  key={photo.thumbnail}
-                  onClick={() =>
-                    onClickPhoto(
-                      album.id,
-                      album.purchased,
-                      photo.original,
-                      album.location,
-                      album.cover
-                    )
-                  }
-                >
-                  <ImagePhotos src={photo.thumbnail} alt="photo" />
-                </ItemPhotos>
-              ))
-            )}
-          </ListPhotos>
-
-          {albumId && !isPurchased && (
-            <ButtonUnlock
-              albumId={albumId}
-              location={selectedPhotoLocation}
-              cover={selectedAlbumCover}
-            />
+      <WrapperPhotos>
+        <ListPhotos>
+          {albums.map((album) =>
+            album.photos.map((photo) => (
+              <ItemPhotos
+                key={photo.thumbnail}
+                onClick={() =>
+                  onClickPhoto(
+                    album.id,
+                    album.purchased,
+                    photo.original,
+                    album.location,
+                    album.cover
+                  )
+                }
+              >
+                <ImagePhotos src={photo.thumbnail} alt="photo" />
+              </ItemPhotos>
+            ))
           )}
-          {isMobile && <Footer />}
-        </WrapperPhotos>
-      )}
+        </ListPhotos>
+
+        {albumId && !isPurchased && (
+          <ButtonUnlock
+            albumId={albumId}
+            location={selectedPhotoLocation}
+            cover={selectedAlbumCover}
+          />
+        )}
+        {isMobile && <Footer />}
+      </WrapperPhotos>
+
       {isModalOpen && (
         <ModalLandscape
           albumId={selectedAlbumId}

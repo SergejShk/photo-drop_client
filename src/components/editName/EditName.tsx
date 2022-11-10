@@ -2,10 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/reduxHooks";
 import { updateUserDataThunk } from "../../redux/user/userOperations";
-import CommonButton from "../commonButton/CommonButton";
-import { Input, Title, Form } from "./EditName.style";
+import { Input, Title, Form, Button } from "./EditName.style";
 
-const EditName: React.FC = () => {
+interface IProps {
+  curName: string;
+}
+
+const EditName: React.FC<IProps> = ({ curName }) => {
   const [name, setName] = useState("");
 
   const navigate = useNavigate();
@@ -26,11 +29,16 @@ const EditName: React.FC = () => {
     <Form onSubmit={handleSubmit}>
       <Title>Your name</Title>
 
-      <Input type="text" value={name} onChange={onChangeInput} />
+      <Input
+        type="text"
+        value={name}
+        placeholder={curName}
+        onChange={onChangeInput}
+      />
 
-      <CommonButton type="submit" disabled={name.length < 3 && true}>
+      <Button type="submit" disabled={name.length < 3 && true}>
         Save
-      </CommonButton>
+      </Button>
     </Form>
   );
 };
