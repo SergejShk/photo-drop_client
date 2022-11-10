@@ -8,15 +8,13 @@ const PaymentSuccessPage: React.FC = () => {
   const navigate = useNavigate();
 
   const [albumId] = useState<string>(
-    () =>
-      //@ts-ignore
-      JSON.parse(localStorage.getItem("albumId")) || ""
+    () => localStorage.getItem("albumId") || ""
   );
   const albums = useAppSelector(getAlbumsStore);
   const [album] = useState(() =>
     albums.find((album: any) => album.id === albumId)
   );
-
+  console.log(albumId);
   useEffect(() => {
     return () => {
       localStorage.setItem("albumId", JSON.stringify(""));
