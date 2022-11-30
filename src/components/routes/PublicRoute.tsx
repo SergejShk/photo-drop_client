@@ -5,9 +5,9 @@ import {
   getNumber,
   isExistToken,
   isLoadingDataStore,
-} from "../../redux/auth/authSelectors";
-import { getSelfieStore } from "../../redux/user/userSelectors";
-import Loader from "../loader/Loader";
+} from "../../store/auth/authSelectors";
+import { getSelfieStore } from "../../store/user/userSelectors";
+import Loader from "../shared/loader/Loader";
 
 interface IProps {
   children: React.ReactNode;

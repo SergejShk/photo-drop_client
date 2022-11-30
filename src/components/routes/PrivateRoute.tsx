@@ -4,8 +4,8 @@ import { useAppSelector } from "../../hooks/reduxHooks";
 import {
   isExistToken,
   isLoadingDataStore,
-} from "../../redux/auth/authSelectors";
-import Loader from "../loader/Loader";
+} from "../../store/auth/authSelectors";
+import Loader from "../shared/loader/Loader";
 
 interface IProps {
   children: React.ReactNode;
